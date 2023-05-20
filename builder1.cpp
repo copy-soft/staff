@@ -12,8 +12,8 @@ class HousePlan
 
 class House : public HousePlan
 {	
-	public:
-	//private: 
+
+	private: 
 	string basement;
 	string structure;
 	string roof;
@@ -169,7 +169,7 @@ int main()
 
 		House* house = (*engineer).getHouse();
 
-		cout<<"Builder constructed: "<< house->roof << endl;
+		cout<<"Builder constructed: "<< house << endl;
 
 return 0;
 }

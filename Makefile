@@ -1,5 +1,5 @@
 all:
-	g++ builder1.cpp -fpermissive	
+	g++ ICharismaCharacter.cpp -fpermissive	
 	#output: 
 	./a.out
 	
