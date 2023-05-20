@@ -10,7 +10,7 @@ using namespace std;
 //#include "RangerCharacter.h"
 
 class Character {
-	public:
+
 	ICharismaCharacter* charismaCharacter;
 	IConstitutionCharacter* constitutionCharacter;
 	IDextrityCharacter* dextrityCharacter;
@@ -54,7 +54,7 @@ class Character {
 		this->constitutionCharacter = cc;
 	}
 	
-	void setIDextrityCharacter(IDextrityCharacter* dc) {
+	void setDextrityCharacter(IDextrityCharacter* dc) {
 		this->dextrityCharacter = dc;
 	}
 	
@@ -62,7 +62,7 @@ class Character {
 		this->intelligenceCharacter = ic;
 	}
 	
-	void setIStrengthCharacter(IStrengthCharacter* sc) {
+	void setStrengthCharacter(IStrengthCharacter* sc) {
 		this->strengthCharacter = sc;
 	}
 	
@@ -76,12 +76,12 @@ class Character {
 class RangerCharacter : public Character {
 
         public: RangerCharacter() {
-                this->charismaCharacter = new CharismaLeadership();
-                this->constitutionCharacter = new ConstitutionStrong();
-                this->dextrityCharacter = new DexteritySlim();
-                this->intelligenceCharacter = new IntelligenceInquisitive();
-                this->strengthCharacter = new StrengthPlump();
-                this->wisdomCharacter = new WisdomFoolish();
+                this->setCharismaCharacter(new CharismaLeadership());
+                this->setConstitutionCharacter(new ConstitutionStrong());
+                this->setDextrityCharacter(new DexteritySlim());
+                this->setIntelligenceCharacter(new IntelligenceInquisitive());
+                this->setStrengthCharacter(new StrengthPlump());
+                this->setWisdomCharacter(new WisdomFoolish());
         }
 
         //@Override
