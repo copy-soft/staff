@@ -86,7 +86,7 @@ class RangerCharacter : public Character {
 
         //@Override
         void display() {
-                cout<<"Hi, I am Ranger Character in this D&D popular game.";
+                cout<<"Hi, I am Ranger Character in this D&D popular game."<<endl;
         }
 
 };

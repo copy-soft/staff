@@ -9,7 +9,7 @@ class ConstitutionFrail : public IConstitutionCharacter{
         //@Override
 	public:
 		void constitution() override {
-                cout<<"This Constitution innate abilities has Frail Characteristics.";
+                cout<<"This Constitution innate abilities has Frail Characteristics."<<endl;
         }
 
 };
@@ -18,7 +18,7 @@ class ConstitutionHealthy : public IConstitutionCharacter{
         //@Override
 	public:
 		void constitution() override {
-                cout<<"This Constitution innate abilities has Healthy Characteristics.";
+                cout<<"This Constitution innate abilities has Healthy Characteristics."<<endl;
         }
 
 };
@@ -28,7 +28,7 @@ class ConstitutionSick : public IConstitutionCharacter{
         //@Override
 	public:
 		void constitution() override {
-                cout<<"This Constitution innate abilities has Sick Characteristics.";
+                cout<<"This Constitution innate abilities has Sick Characteristics."<<endl;
         }
 
 };
@@ -39,7 +39,7 @@ class ConstitutionStrong : public IConstitutionCharacter{
 	public:
 		ConstitutionStrong(){};
 		void constitution() override{
-                cout<<"This Constitution innate abilities has Strong Characteristics.";
+                cout<<"This Constitution innate abilities has Strong Characteristics."<<endl;
         }
 
 };

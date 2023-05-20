@@ -9,7 +9,7 @@ class StrengthBurly : public IStrengthCharacter {
 
         //@Override
 	public: void strength() override{
-                cout<<"This Strength innate abilities has Burly Characteristics.";
+                cout<<"This Strength innate abilities has Burly Characteristics."<<endl;
         }
 
 };
@@ -18,7 +18,7 @@ class StrengthFit : public IStrengthCharacter {
 
         //@Override
 	public: void strength() override{
-                cout<<"This Strength innate abilities has Fit Characteristics.";
+                cout<<"This Strength innate abilities has Fit Characteristics."<<endl;
         }
 
 };
@@ -28,7 +28,7 @@ class StrengthPlump : public IStrengthCharacter {
 
         //@Override
 	public: void strength() override{
-                cout<<"This Strength innate abilities has Plump Characteristics.";
+                cout<<"This Strength innate abilities has Plump Characteristics."<<endl;
         }
 
 };
@@ -36,7 +36,7 @@ class StrengthScrawny : public IStrengthCharacter {
 
         //@Override
 	public: void strength() override{
-                cout<<"This Strength innate abilities has Scrawny Characteristics.";
+                cout<<"This Strength innate abilities has Scrawny Characteristics."<<endl;
         }
 
 };

@@ -8,7 +8,7 @@ class WisdomEmpathy : public IWisdomCharacter{
 
         //@Override
 	public: void wisdom() override{
-                cout<<"This Wisdom innate abilities has Empathy Characteristics.";
+                cout<<"This Wisdom innate abilities has Empathy Characteristics."<<endl;
         }
 
 };
@@ -17,7 +17,7 @@ class WisdomFoolish : public IWisdomCharacter{
 
         //@Override
 	public: void wisdom() override{
-                cout<<"This Wisdom innate abilities has Foolish Characteristics.";
+                cout<<"This Wisdom innate abilities has Foolish Characteristics."<<endl;
         }
 
 };
@@ -25,7 +25,7 @@ class WisdomGoodJudgement : public IWisdomCharacter{
 
         //@Override
 	public: void wisdom() override{
-                cout<<"This Wisdom innate abilities has Good Judgement Characteristics.";
+                cout<<"This Wisdom innate abilities has Good Judgement Characteristics."<<endl;
         }
 
 };
@@ -34,7 +34,7 @@ class WisdomOblivious : public IWisdomCharacter{
 
         //@Override
 	public: void wisdom() override{
-                cout<<"This Wisdom innate abilities has Oblivious Characteristics.";
+                cout<<"This Wisdom innate abilities has Oblivious Characteristics."<<endl;
         }
 
 };

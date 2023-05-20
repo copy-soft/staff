@@ -11,7 +11,7 @@ class DexterityAwkward : public  IDextrityCharacter{
         //@Override
 	public: 
 		void dextrity() override{
-                cout<<"This Dexterity innate abilities has Awkward Characteristics.";
+                cout<<"This Dexterity innate abilities has Awkward Characteristics."<<endl;
         }
 
 };
@@ -21,7 +21,7 @@ class DexterityClumsy : public IDextrityCharacter{
         //@Override
 	public: 
 		void dextrity() override{
-                cout<<"This Dexterity innate abilities has Clumsy Characteristics.";
+                cout<<"This Dexterity innate abilities has Clumsy Characteristics."<<endl;
         }
 
 };
@@ -32,7 +32,7 @@ class DexteritySlim : public IDextrityCharacter{
 	public:
 		DexteritySlim(){};
 		void dextrity() override{
-                cout<<"This Dexterity innate abilities has Slim Characteristics.";
+                cout<<"This Dexterity innate abilities has Slim Characteristics."<<endl;
         }
 
 };
@@ -41,7 +41,7 @@ class DexteritySneaky : public IDextrityCharacter{
         //@Override
 	public: 
 		void dextrity() override{
-                cout<<("This Dexterity innate abilities has Sneaky Characteristics.");
+                cout<<"This Dexterity innate abilities has Sneaky Characteristics."<<endl;
         }
 
 };
