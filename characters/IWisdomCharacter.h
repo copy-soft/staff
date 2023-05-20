@@ -1,13 +1,13 @@
 #include <iostream>
 using namespace std;
 class IWisdomCharacter {
-	public: void wisdom();
+	public: virtual void wisdom()=0;
 };
 
 class WisdomEmpathy : public IWisdomCharacter{
 
         //@Override
-	public: void wisdom() {
+	public: void wisdom() override{
                 cout<<"This Wisdom innate abilities has Empathy Characteristics.";
         }
 
@@ -16,7 +16,7 @@ class WisdomEmpathy : public IWisdomCharacter{
 class WisdomFoolish : public IWisdomCharacter{
 
         //@Override
-	public: void wisdom() {
+	public: void wisdom() override{
                 cout<<"This Wisdom innate abilities has Foolish Characteristics.";
         }
 
@@ -24,7 +24,7 @@ class WisdomFoolish : public IWisdomCharacter{
 class WisdomGoodJudgement : public IWisdomCharacter{
 
         //@Override
-	public: void wisdom() {
+	public: void wisdom() override{
                 cout<<"This Wisdom innate abilities has Good Judgement Characteristics.";
         }
 
@@ -33,7 +33,7 @@ class WisdomGoodJudgement : public IWisdomCharacter{
 class WisdomOblivious : public IWisdomCharacter{
 
         //@Override
-	public: void wisdom() {
+	public: void wisdom() override{
                 cout<<"This Wisdom innate abilities has Oblivious Characteristics.";
         }
 

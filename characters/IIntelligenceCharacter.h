@@ -17,7 +17,7 @@ class IntelligenceForgetful : public IIntelligenceCharacter{
 class IntelligenceInquisitive : public IIntelligenceCharacter{
 
         //@Override
-	public: void intelligence() {
+	public: void intelligence() override{
                 cout<<"This Intelligence innate abilities has Inquisitive Characteristics.";
         }
 
@@ -26,7 +26,7 @@ class IntelligenceInquisitive : public IIntelligenceCharacter{
 class IntelligenceSimple :public IIntelligenceCharacter{
 
         //@Override
-	public: void intelligence() {
+	public: void intelligence() override{
                 cout<<"This Intelligence innate abilities has Simple Characteristics.";
         }
 
@@ -35,7 +35,7 @@ class IntelligenceSimple :public IIntelligenceCharacter{
 class IntelligenceStudious : public IIntelligenceCharacter{
 
         //@Override
-	public: void intelligence() {
+	public: void intelligence() override{
                 cout<<"This Intelligence innate abilities has Studious Characteristics.";
         }
 
