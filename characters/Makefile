@@ -1,2 +1,2 @@
 all:
-	g++ character.cpp;./a.out
+	g++ main.cpp;./a.out
