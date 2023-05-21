@@ -3,27 +3,12 @@
 using namespace std;
 //#include "character.h"
 #include "rangercharacter.h"
-//class BarbarianCharacter : public Character{
-
-///	public: BarbarianCharacter() {
-                //this->charismaCharacter = new CharismaAwkward();
-                //this->constitutionCharacter = new ConstitutionHealthy();
-                //this->dextrityCharacter = new DexteritySneaky();
-                //this->intelligenceCharacter = new IntelligenceInquisitive();
-                //this->strengthCharacter = new StrengthBurly();
-                //this->wisdomCharacter = new WisdomFoolish();
-//        }
-        
-        //@Override
-//	public: void display() {
-//                cout<<"Hi, I am Barbarian Character in this D&D popular game."<<endl;
-  //      }
-
-//};
-
+#include "barbariancharacter.h"
+#include "wizardcharacter.h"
+#include "druidcharacter.h"
 int main(){
 
-	RangerCharacter* ranger = new RangerCharacter();
+		RangerCharacter* ranger = new RangerCharacter();
                 ranger->display();
                 ranger->performCharismaCharacter();
                 ranger->performConstitutionCharacter();
@@ -31,23 +16,40 @@ int main(){
                 ranger->performIntelligenceCharacter();
                 ranger->performStrengthCharacter();
                 ranger->performWisdomCharacter();
-	/*
+	
 		BarbarianCharacter* barbarian = new BarbarianCharacter();
                 barbarian->display();
-                barbarian->setCharismaCharacter(new CharismaConfidence());
+                //barbarian->setCharismaCharacter(new CharismaConfidence());
                 barbarian->performCharismaCharacter();
-                barbarian->setConstitutionCharacter(new ConstitutionStrong());
+                //barbarian->setConstitutionCharacter(new ConstitutionStrong());
                 barbarian->performConstitutionCharacter();
-                barbarian->setDextrityCharacter(new DexteritySneaky());
+                //barbarian->setDextrityCharacter(new DexteritySneaky());
                 barbarian->performDextrityCharacter();
-                barbarian->setIntelligenceCharacter(new IntelligenceForgetful());
+                //barbarian->setIntelligenceCharacter(new IntelligenceForgetful());
                 barbarian->performIntelligenceCharacter();
-                barbarian->setStrengthCharacter(new StrengthScrawny());
+                //barbarian->setStrengthCharacter(new StrengthScrawny());
                 barbarian->performStrengthCharacter();
-                barbarian->setWisdomCharacter(new WisdomOblivious());
+                //barbarian->setWisdomCharacter(new WisdomOblivious());
                 barbarian->performWisdomCharacter();
 
-*/
+		WizardCharacter* wizard = new WizardCharacter();
+                wizard->display();
+		wizard->performCharismaCharacter();
+		wizard->performConstitutionCharacter();
+                wizard->performDextrityCharacter();
+                wizard->performIntelligenceCharacter();
+                wizard->performStrengthCharacter();
+                wizard->performWisdomCharacter();
+	
+		DruidCharacter* druid = new DruidCharacter();
+                druid->display();
+		druid->performCharismaCharacter();
+                druid->performConstitutionCharacter();
+                druid->performDextrityCharacter();
+                druid->performIntelligenceCharacter();
+                druid->performStrengthCharacter();
+                druid->performWisdomCharacter();
+
 
 return 0;
 }
