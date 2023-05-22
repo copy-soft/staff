@@ -1,7 +1,13 @@
 #include "IRanger.h"
 #include <string>
-class RangerCharacter : public IRanger {
+using namespace std;
+class RangerCharacter : public IRanger{
 
+	public: RangerCharacter(IRanger* rangerCharacterDecorator){
+
+	IRanger((IRanger*)rangerCharacterDecorator);
+	};
+	RangerCharacter(){};
 	//@Override
 	public: string getStrength() {
 		

@@ -4,14 +4,14 @@
 #include <string>
 #include <iostream>
 #define null NULL
-//using namespace std;
+using namespace std;
 class ClothingsDecorator : public CharacterDecorator{
 	protected: Clothings clothings;
 
-	public: ClothingsDecorator(IRanger* rangerCharacterDecorator, Clothings clothings){
-		//super(rangerCharacterDecorator);
+	public: ClothingsDecorator(IRanger* rangerCharacterDecorator, Clothings clothings):CharacterDecorator(rangerCharacterDecorator)
+		{
 		this->clothings = clothings;
-	}
+		}
 
 	//@Override
 	string getStrength() {
@@ -51,9 +51,9 @@ class ClothingsDecorator : public CharacterDecorator{
 
 	//@Override
 	string getClothings() {
-		rangerCharacterDecorator->getClothings();
-		cout<<"XYR Character Clothings Option: " + clothings<<endl;
-		return "XYR Character Clothings Option: " + clothings;
+		cout<<rangerCharacterDecorator->getClothings()<<endl;
+		cout<<"XYR Character Clothings Option: " /*<< &clothings*/<<endl;
+		return "XYR Character Clothings Option: ";// + clothings;
 	}
 
 };

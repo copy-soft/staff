@@ -9,7 +9,7 @@ class WisdomDecorator : public CharacterDecorator{
 	protected: Wisdom wisdom;
 
 	public: WisdomDecorator(IRanger* rangerCharacterDecorator, Wisdom wisdom){
-		//super(rangerCharacterDecorator);
+	CharacterDecorator((IRanger*)rangerCharacterDecorator);
 		this->wisdom = wisdom;
 	}
 

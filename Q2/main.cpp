@@ -19,26 +19,27 @@
 #include <string>
 using namespace std;
 int main() {
-		RangerCharacter* ranger= new RangerCharacter(); 
-		cout<<(ranger->getClothings())<<endl;
+		//RangerCharacter* ranger= new RangerCharacter(); 
+		//cout<<(ranger->getClothings())<<endl;
 		//RangerCharacter* cloths = new RangerCharacter();
+		//cout<<Charisma::leadership<<endl;
 		//for (Clothings clothes : Clothings.values()){
 		//typedef Iterator<Clothings, Clothings::armour, Clothings::cloaks> CIterator;
 		//for (int i=0; i<cloaks; i++ ){
 		//ICharacter* Character = new ClothingsDecorator(cloths, (Clothings)i);
-		//Character->getClothings(); 
+		//cout<<Character->getClothings()<<endl; 
 		//}
 		
 		IRanger* rangerCharacter = new CharismaDecorator(new ConstitutionDecorator(new DexterityDecorator(new IntelligenceDecorator(new StrengthDecorator(new WisdomDecorator(new ClothingsDecorator(new RangerCharacter(),Clothings::armour), Wisdom::empathy),Strength::plump), Intelligence::simple),Dexterity::akward), Constitution::healthy),Charisma::leadership);
-		rangerCharacter->getClothings();
-		//rangerCharacter->getCharisma();
+		cout<<(rangerCharacter)->getClothings()<<endl;
+		//cout<<(rangerCharacter)->getCharisma()<<endl;
 		//rangerCharacter->getConstitution();
 		//rangerCharacter->getDexterity();
 		//rangerCharacter->getIntelligence();
 		//rangerCharacter->getStrength();
 		//rangerCharacter->getWisdom();
 		
-		
+	/*	
 		RangerCharacter* c = new RangerCharacter();
 		ClothingsDecorator* cd = new ClothingsDecorator(c, Clothings::armour);
 		WisdomDecorator* wd = new WisdomDecorator(cd, Wisdom::foolish);
@@ -47,7 +48,7 @@ int main() {
 		DexterityDecorator* dd = new DexterityDecorator(id, Dexterity::sneaky);
 		ConstitutionDecorator* cnd = new ConstitutionDecorator(dd, Constitution::strong);
 		CharismaDecorator* cd1 = new CharismaDecorator(cnd, Charisma::confidence);
-		
+		*/
 		//ICharacter BarbarianCharacter = cd1;
 		//BarbarianCharacter.getClothings(); 
 		//BarbarianCharacter.getCharisma();

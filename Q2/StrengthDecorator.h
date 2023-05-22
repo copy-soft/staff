@@ -52,7 +52,7 @@ class StrengthDecorator : public CharacterDecorator{
 	}
 
 	//@Override
-	string getClothings() {
+	string getClothings(){
 		rangerCharacterDecorator->getClothings();
 		return null;
 	}

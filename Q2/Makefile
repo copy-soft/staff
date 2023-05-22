@@ -1,2 +1,2 @@
 all:
-	g++ main.cpp;./a.out
+	g++ main.cpp -fpermissive;./a.out

@@ -10,11 +10,11 @@ class CharismaDecorator : public CharacterDecorator{
 	protected: Charisma charisma;
 
 	public: 
-	//typedef CharacterDecorator super;
 
-	CharismaDecorator(IRanger* rangerCharacterDecorator, Charisma charisma){
-		super(rangerCharacterDecorator);
+	CharismaDecorator(IRanger* rangerCharacterDecorator, Charisma charisma):
+        CharacterDecorator(rangerCharacterDecorator){
 		this->charisma = charisma;
+	cout<<this->getCharisma()<<endl;	
 	}
 
 	//@Override
@@ -50,12 +50,12 @@ class CharismaDecorator : public CharacterDecorator{
 	//@Override
 	string getCharisma() {
 		rangerCharacterDecorator->getCharisma();
-		cout<<"XYR Character Charisma Option: " + charisma<<endl;
+		cout<<"XYR Character Charisma Option: " << charisma<<endl;
 		return "XYR Character Charisma Option: " + charisma;
 	}
 
 	//@Override
-	string getClothings() {
+	string getClothings(){
 		rangerCharacterDecorator->getClothings();
 		return null;
 	}

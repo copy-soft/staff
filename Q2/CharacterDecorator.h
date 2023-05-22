@@ -1,14 +1,16 @@
 #include "IRanger.h"
-
+#include <iostream>
 class CharacterDecorator : public IRanger{
 	
-	protected: IRanger* rangerCharacterDecorator;
+	public: IRanger* rangerCharacterDecorator;
 
 	public: 
-		   void super(IRanger* rangerCharacterDecorator){};
-		   CharacterDecorator(IRanger* rangerCharacterDecorator){
-		//void super();
-		this->rangerCharacterDecorator = rangerCharacterDecorator;
+	CharacterDecorator(IRanger* rangerCharacterDecorator1):IRanger(rangerCharacterDecorator1)
+	{
+	//IRanger((IRanger*)rangerCharacterDecorator1);
+	rangerCharacterDecorator = rangerCharacterDecorator1;
+	//std::cout<<rangerCharacterDecorator->getClothings()<<std::endl;
+        //IRanger((IRanger*)rangerCharacterDecorator1);
 	}
 	CharacterDecorator(){};
 };
