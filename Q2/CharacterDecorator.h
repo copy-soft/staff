@@ -1,11 +1,14 @@
-#include "IRanger.h";
+#include "IRanger.h"
 
-class CharacterDecorator : public IRanger {
+class CharacterDecorator : public IRanger{
 	
-	protected: IRanger rangerCharacterDecorator;
+	protected: IRanger* rangerCharacterDecorator;
 
-	public: CharacterDecorator(IRanger rangerCharacterDecorator) {
-		super();
-		this.rangerCharacterDecorator = rangerCharacterDecorator;
+	public: 
+		   void super(IRanger* rangerCharacterDecorator){};
+		   CharacterDecorator(IRanger* rangerCharacterDecorator){
+		//void super();
+		this->rangerCharacterDecorator = rangerCharacterDecorator;
 	}
+	CharacterDecorator(){};
 };

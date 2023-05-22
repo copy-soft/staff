@@ -1,16 +1,20 @@
-#include <cstddef>
-#include "Clothings.h"
+#include "Charisma.h"
 #include "IRanger.h"
-#include <string>
+#include "CharacterDecorator.h"
 #include <iostream>
+#include <string>
+#include <cstddef>
 #define null NULL
-//using namespace std;
-class ClothingsDecorator : public CharacterDecorator{
-	protected: Clothings clothings;
+using namespace std;
+class CharismaDecorator : public CharacterDecorator{
+	protected: Charisma charisma;
 
-	public: ClothingsDecorator(IRanger* rangerCharacterDecorator, Clothings clothings){
-		//super(rangerCharacterDecorator);
-		this->clothings = clothings;
+	public: 
+	//typedef CharacterDecorator super;
+
+	CharismaDecorator(IRanger* rangerCharacterDecorator, Charisma charisma){
+		super(rangerCharacterDecorator);
+		this->charisma = charisma;
 	}
 
 	//@Override
@@ -46,14 +50,14 @@ class ClothingsDecorator : public CharacterDecorator{
 	//@Override
 	string getCharisma() {
 		rangerCharacterDecorator->getCharisma();
-		return null;
+		cout<<"XYR Character Charisma Option: " + charisma<<endl;
+		return "XYR Character Charisma Option: " + charisma;
 	}
 
 	//@Override
 	string getClothings() {
 		rangerCharacterDecorator->getClothings();
-		cout<<"XYR Character Clothings Option: " + clothings<<endl;
-		return "XYR Character Clothings Option: " + clothings;
+		return null;
 	}
 
 };
