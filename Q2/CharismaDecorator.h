@@ -7,11 +7,13 @@
 #define null NULL
 using namespace std;
 class CharismaDecorator : public CharacterDecorator{
-	protected: Charisma charisma;
+	protected: Charisma charisma;//поле charisma типа Charisma
 
 	public: 
+	//Конструкотр(вызывается при создании обьекта оператором ()(где new) )с двумя параметрами: rangerCharacterDecorator и charisma
 	CharismaDecorator(IRanger* rangerCharacterDecorator, Charisma charisma)	{	
-		CharacterDecorator::CharacterDecorator(this);
+		//CharacterDecorator::CharacterDecorator(this);
+		//полю charisma присваивается переменная(второй параметр конструктора)
 		this->charisma = charisma;
 		//cout<<rangerCharacterDecorator->getCharisma()<<endl;	
 		//this->getCharisma();

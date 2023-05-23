@@ -39,15 +39,16 @@ int main() {
 		//rangerCharacter->getIntelligence();
 		//rangerCharacter->getStrength();
 		//rangerCharacter->getWisdom();
-		
-		//object RangerCharacter kak vishe tolko razlogen	
+//------------------------------------------------------------------
+		//обьект RangerCharacter как выше только по шагам	
 		RangerCharacter* c = new RangerCharacter();
-		//teper` c sodergit noviy RangerCharacter
-		//ClothingDecorator object s parametrom c(RangerCharacter) i Closing::armour(0)
+		//теперь переменная c содержит RangerCharacter и после етой строчки вызывается конструктор
+		//ClothingDecorator обьект с параметрами(RangerCharacter) и Closing::armour(0)
 		ClothingsDecorator* cd = new ClothingsDecorator(c, Clothings::armour);		
-		//vizov getClosings() ob`ektom cd(ClosingsDecorator)
+		//вызов getClosings() обьектом cd(ClosingsDecorator) из файла ClosingsDecorator.h
                 cd->getClothings();
-		//vivod XYR Character Clothings Option: 0   0 - Clothings::armour iz Closings.h  perviy 
+		//вывод XYR Character Clothings Option: 0   0 - Clothings::armour из Closings.h  первый элемент из enum 
+	//----------------------------------------------------------	
 		/*
 		WisdomDecorator* wd = new WisdomDecorator(cd, Wisdom::foolish);
 		StrengthDecorator* sd = new StrengthDecorator(wd, Strength::burly);

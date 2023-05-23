@@ -6,10 +6,11 @@
 #define null NULL
 using namespace std;
 class ClothingsDecorator : public CharacterDecorator{
-	protected: Clothings clothings;
-
-	public: ClothingsDecorator(IRanger* rangerCharacterDecorator, Clothings clothings):CharacterDecorator(rangerCharacterDecorator)
+	protected: Clothings clothings;//поле clothings типа Clothings
+	//Конструктор с параметрами ranger....  и clothings
+	public: ClothingsDecorator(IRanger* rangerCharacterDecorator, Clothings clothings)
 		{
+		//полю clothings присваивается параметр clothings
 		this->clothings = clothings;
 		}
 
