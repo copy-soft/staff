@@ -1,5 +1,5 @@
 all:
-	g++ ICharismaCharacter.cpp -fpermissive	
+	g++ perem.cpp 
 	#output: 
 	./a.out
 	

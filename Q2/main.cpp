@@ -40,18 +40,6 @@ int main() {
 		//rangerCharacter->getStrength();
 		//rangerCharacter->getWisdom();
 //------------------------------------------------------------------
-		int i{5};
-		cout<< i <<endl;
-		int j = 5;
-		cout << j <<endl;
-		int k;
-		cout<< k << "\n";
-		k=5;
-		cout << k << endl;
-		int* l {new int(6)};
-		cout << l <<endl;
-		cout << *l <<endl;
-		int *p;
 		//обьект RangerCharacter как выше только по шагам	
 		RangerCharacter* c = new RangerCharacter();
 		//теперь переменная c содержит RangerCharacter и после етой строчки вызывается конструктор
