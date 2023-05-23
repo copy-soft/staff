@@ -9,11 +9,11 @@ class ICharacter{
         ICharacter(ICharacter* rangerCharacterDecorator){
 	};
 	ICharacter(){};
-	string getStrength(){};
+	string getStrength(){return "str";};
 	string getDexterity(){return "dex";};
 	string getConstitution(){return "constitution ICharacter";};
-	string getIntelligence(){};
-	string getWisdom(){};
+	string getIntelligence(){return "int";};
+	string getWisdom(){return "wis";};
 	string getCharisma(){return "test";};
 	string getClothings(){return "clothis ICharacter";};
 };

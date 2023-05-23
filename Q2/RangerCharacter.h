@@ -3,7 +3,7 @@
 using namespace std;
 class RangerCharacter : public IRanger{
 
-	public: RangerCharacter(IRanger* rangerCharacterDecorator):IRanger(rangerCharacterDecorator){};
+	public: RangerCharacter(IRanger* rangerCharacterDecorator){};
 	RangerCharacter(){};
 	//@Override
 	public: string getStrength() {
@@ -33,6 +33,7 @@ class RangerCharacter : public IRanger{
 
 	//@Override
 	string getCharisma() {
+		cout<<rangerCharacterDecorator->getCharisma()<<endl;
 		return "Ranger: Get Charisma Ability of the Character";
 	}
 

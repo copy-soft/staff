@@ -7,10 +7,11 @@ class CharacterDecorator : public IRanger{
 	public: IRanger* rangerCharacterDecorator;
 
 	public: 
-	CharacterDecorator(IRanger* rangerCharacterDecorator1):IRanger(rangerCharacterDecorator1)
+	CharacterDecorator(IRanger* rangerCharacterDecorator):rangerCharacterDecorator(rangerCharacterDecorator)	
 	{
-	rangerCharacterDecorator = rangerCharacterDecorator1;
-	//cout<<rangerCharacterDecorator->getCharisma()<<endl;
+	IRanger::IRanger(rangerCharacterDecorator);
+	//= rangerCharacterDecorator1;
+//cout<<rangerCharacterDecorator->getCharisma()<<endl;
 	}
 	CharacterDecorator(){};
 };

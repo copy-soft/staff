@@ -10,13 +10,12 @@ class CharismaDecorator : public CharacterDecorator{
 	protected: Charisma charisma;
 
 	public: 
-
-	CharismaDecorator(IRanger* rangerCharacterDecorator, Charisma charisma):
-        CharacterDecorator(rangerCharacterDecorator){
+	CharismaDecorator(IRanger* rangerCharacterDecorator, Charisma charisma)	{	
+	CharacterDecorator::CharacterDecorator(rangerCharacterDecorator);
 		this->charisma = charisma;
 		//cout<<rangerCharacterDecorator->getCharisma()<<endl;	
 		this->getCharisma();
-	}
+	};
 
 	//@Override
 	string getStrength() {

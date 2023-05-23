@@ -32,7 +32,7 @@ int main() {
 		
 		IRanger* rangerCharacter = new CharismaDecorator(new ConstitutionDecorator(new DexterityDecorator(new IntelligenceDecorator(new StrengthDecorator(new WisdomDecorator(new ClothingsDecorator(new RangerCharacter(),Clothings::armour), Wisdom::empathy),Strength::plump), Intelligence::simple),Dexterity::akward), Constitution::healthy),Charisma::leadership);
 		//cout<<(rangerCharacter)->getClothings()<<endl;
-		//cout<<((RangerCharacter*)(rangerCharacter))->getCharisma()<<endl;
+		cout<<((rangerCharacter))->getCharisma()<<endl;
 		//rangerCharacter->getConstitution();
 		//rangerCharacter->getDexterity();
 		//rangerCharacter->getIntelligence();
@@ -63,7 +63,7 @@ int main() {
 		//ICharacter Character = new ClothingsDecorator(c, clothes);
 		//Character.getClothings();
 		//cout<<(Character.getClothings())<<endl; 
-		}
+}
 		
 	
 

@@ -5,7 +5,9 @@
 using namespace std;
 class IRanger : public ICharacter {
 	public:
-	IRanger(IRanger* rangerCharacterDecorator):ICharacter(rangerCharacterDecorator){
+	IRanger* rangerCharacterDecorator;
+	IRanger(IRanger* rangerCharacterDecorator){
+	rangerCharacterDecorator=rangerCharacterDecorator;
 	//cout<<rangerCharacterDecorator->getCharisma()<<endl;
 	};
 	IRanger(){};
