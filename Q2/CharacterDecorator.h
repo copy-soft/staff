@@ -4,10 +4,10 @@
 #include <iostream>
 class CharacterDecorator : public IRanger{
 	
-	public: IRanger* rangerCharacterDecorator;
+	//public: IRanger* rangerCharacterDecorator;
 
 	public: 
-	CharacterDecorator(IRanger* rangerCharacterDecorator):rangerCharacterDecorator(rangerCharacterDecorator)	
+	CharacterDecorator(IRanger* rangerCharacterDecorator)	
 	{
 	IRanger::IRanger(rangerCharacterDecorator);
 	//= rangerCharacterDecorator1;

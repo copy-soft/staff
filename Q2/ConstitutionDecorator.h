@@ -12,7 +12,7 @@ class ConstitutionDecorator : public CharacterDecorator{
 	public: 
 		ConstitutionDecorator(IRanger* rangerCharacterDecorator, Constitution constitution):CharacterDecorator(rangerCharacterDecorator){
 		this->constitution = constitution;
-		this->getConstitution();
+		//this->getConstitution();
 		}
 
 	//@Override

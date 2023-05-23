@@ -52,7 +52,7 @@ class ClothingsDecorator : public CharacterDecorator{
 	//@Override
 	string getClothings() {
 		cout<<rangerCharacterDecorator->getClothings()<<endl;
-		cout<<"XYR Character Clothings Option: " /*<< &clothings*/<<endl;
+		cout<<"XYR Character Clothings Option: " << clothings <<endl;
 		return "XYR Character Clothings Option: ";// + clothings;
 	}
 

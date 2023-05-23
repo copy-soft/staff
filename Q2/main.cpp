@@ -30,18 +30,25 @@ int main() {
 		//cout<<Character->getClothings()<<endl; 
 		//}
 		
-		IRanger* rangerCharacter = new CharismaDecorator(new ConstitutionDecorator(new DexterityDecorator(new IntelligenceDecorator(new StrengthDecorator(new WisdomDecorator(new ClothingsDecorator(new RangerCharacter(),Clothings::armour), Wisdom::empathy),Strength::plump), Intelligence::simple),Dexterity::akward), Constitution::healthy),Charisma::leadership);
+		//IRanger* rangerCharacter = new CharismaDecorator(new ConstitutionDecorator(new DexterityDecorator(new IntelligenceDecorator(new StrengthDecorator(new WisdomDecorator(new ClothingsDecorator(new RangerCharacter(),Clothings::armour), Wisdom::empathy),Strength::plump), Intelligence::simple),Dexterity::akward), Constitution::healthy),Charisma::leadership);
+		//IRanger* rangerCharacter = new CharismaDecorator(new RangerCharacter(), Charisma::leadership);
 		//cout<<(rangerCharacter)->getClothings()<<endl;
-		cout<<((rangerCharacter))->getCharisma()<<endl;
+		//cout<<((RangerCharacter*)(rangerCharacter))->getCharisma()<<endl;
 		//rangerCharacter->getConstitution();
 		//rangerCharacter->getDexterity();
 		//rangerCharacter->getIntelligence();
 		//rangerCharacter->getStrength();
 		//rangerCharacter->getWisdom();
 		
-	/*	
+		//object RangerCharacter kak vishe tolko razlogen	
 		RangerCharacter* c = new RangerCharacter();
-		ClothingsDecorator* cd = new ClothingsDecorator(c, Clothings::armour);
+		//teper` c sodergit noviy RangerCharacter
+		//ClothingDecorator object s parametrom c(RangerCharacter) i Closing::armour(0)
+		ClothingsDecorator* cd = new ClothingsDecorator(c, Clothings::armour);		
+		//vizov getClosings() ob`ektom cd(ClosingsDecorator)
+                cd->getClothings();
+		//vivod XYR Character Clothings Option: 0   0 - Clothings::armour iz Closings.h  perviy 
+		/*
 		WisdomDecorator* wd = new WisdomDecorator(cd, Wisdom::foolish);
 		StrengthDecorator* sd = new StrengthDecorator(wd, Strength::burly);
 		IntelligenceDecorator* id = new IntelligenceDecorator(sd, Intelligence::inquisitive);

@@ -10,7 +10,7 @@ class DexterityDecorator : public CharacterDecorator{
 	public: DexterityDecorator(IRanger* rangerCharacterDecorator, Dexterity dexterity):CharacterDecorator(rangerCharacterDecorator){
 		//super(rangerCharacterDecorator);
 		this->dexterity = dexterity;
-		this->getDexterity();
+		//this->getDexterity();
 		}
 
 	//@Override

@@ -14,7 +14,7 @@ class ICharacter{
 	string getConstitution(){return "constitution ICharacter";};
 	string getIntelligence(){return "int";};
 	string getWisdom(){return "wis";};
-	string getCharisma(){return "test";};
+	string getCharisma(){return "ICharacter charisma";};
 	string getClothings(){return "clothis ICharacter";};
 };
 #endif
