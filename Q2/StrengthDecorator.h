@@ -8,7 +8,7 @@ class StrengthDecorator : public CharacterDecorator{
 	
 	protected: Strength strength;
 
-	public: StrengthDecorator(IRanger* rangerCharacterDecorator, Strength strength){
+	public: StrengthDecorator(IRanger* rangerCharacterDecorator, Strength strength):CharacterDecorator(rangerCharacterDecorator){
 		//super(rangerCharacterDecorator);
 		this->strength = strength;
 	}

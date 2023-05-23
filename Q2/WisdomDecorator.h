@@ -8,8 +8,8 @@ class WisdomDecorator : public CharacterDecorator{
 	
 	protected: Wisdom wisdom;
 
-	public: WisdomDecorator(IRanger* rangerCharacterDecorator, Wisdom wisdom){
-	CharacterDecorator((IRanger*)rangerCharacterDecorator);
+	public: WisdomDecorator(IRanger* rangerCharacterDecorator, Wisdom wisdom):CharacterDecorator(rangerCharacterDecorator){
+	//CharacterDecorator((IRanger*)rangerCharacterDecorator);
 		this->wisdom = wisdom;
 	}
 

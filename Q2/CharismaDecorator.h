@@ -14,7 +14,8 @@ class CharismaDecorator : public CharacterDecorator{
 	CharismaDecorator(IRanger* rangerCharacterDecorator, Charisma charisma):
         CharacterDecorator(rangerCharacterDecorator){
 		this->charisma = charisma;
-	cout<<this->getCharisma()<<endl;	
+		//cout<<rangerCharacterDecorator->getCharisma()<<endl;	
+		this->getCharisma();
 	}
 
 	//@Override

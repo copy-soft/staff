@@ -8,7 +8,7 @@ class IntelligenceDecorator : public CharacterDecorator{
 	
 	protected: Intelligence intelligence;
 
-	public: IntelligenceDecorator(IRanger* rangerCharacterDecorator, Intelligence intelligence){
+	public: IntelligenceDecorator(IRanger* rangerCharacterDecorator, Intelligence intelligence):CharacterDecorator(rangerCharacterDecorator){
 		//super(rangerCharacterDecorator);
 		this->intelligence = intelligence;
 

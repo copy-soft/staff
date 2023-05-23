@@ -7,22 +7,23 @@ using namespace std;
 class DexterityDecorator : public CharacterDecorator{
 	protected: Dexterity dexterity;
 
-	public: DexterityDecorator(IRanger* rangerCharacterDecorator, Dexterity dexterity){
+	public: DexterityDecorator(IRanger* rangerCharacterDecorator, Dexterity dexterity):CharacterDecorator(rangerCharacterDecorator){
 		//super(rangerCharacterDecorator);
 		this->dexterity = dexterity;
-	}
+		this->getDexterity();
+		}
 
 	//@Override
 	string getStrength() {
 		rangerCharacterDecorator->getStrength();
-		return null;
+		return "test";
 	}
 
 	//@Override
 	string getDexterity() {
 		rangerCharacterDecorator->getDexterity();
-		cout<<"XYR Character's Dexterity Option: " + dexterity<<endl;
-		return null;
+		cout<<"XYR Character's Dexterity Option: "<<dexterity<<endl;
+		return "test";
 	}
 
 	//@Override

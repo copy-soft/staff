@@ -1,15 +1,19 @@
 #include "Constitution.h"
 #include "IRanger.h"
+#include "CharacterDecorator.h"
 #include <string>
+#include <iostream>
+#include <cstddef>
 #define null NULL
 using namespace std;
 class ConstitutionDecorator : public CharacterDecorator{
 	protected: Constitution constitution;
 
-	public: ConstitutionDecorator(IRanger* rangerCharacterDecorator, Constitution constitution){
-		//super(rangerCharacterDecorator);
+	public: 
+		ConstitutionDecorator(IRanger* rangerCharacterDecorator, Constitution constitution):CharacterDecorator(rangerCharacterDecorator){
 		this->constitution = constitution;
-	}
+		this->getConstitution();
+		}
 
 	//@Override
 	string getStrength() {
@@ -26,8 +30,8 @@ class ConstitutionDecorator : public CharacterDecorator{
 	//@Override
 	string getConstitution() {
 		rangerCharacterDecorator->getConstitution();
-		cout<<("XYR Character Constitution Option: " + constitution)<<endl;
-		return null;
+		cout<<"XYR Character Constitution Option: " << constitution<<endl;
+		return "test";
 	}
 
 	//@Override

@@ -6,13 +6,15 @@
 using namespace std;
 class ICharacter{
 	public:
-        ICharacter(){};
+        ICharacter(ICharacter* rangerCharacterDecorator){
+	};
+	ICharacter(){};
 	string getStrength(){};
-	string getDexterity(){};
-	string getConstitution(){};
+	string getDexterity(){return "dex";};
+	string getConstitution(){return "constitution ICharacter";};
 	string getIntelligence(){};
 	string getWisdom(){};
-	string getCharisma(){return "charisma ICharacter";};
+	string getCharisma(){return "test";};
 	string getClothings(){return "clothis ICharacter";};
 };
 #endif
