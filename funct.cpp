@@ -1,15 +1,15 @@
 #include <iostream>
 #include <string>
-std::string fun(){
+std::string fun(std::string text){
 
-	return "recive from fun!";
+	return text;
 
 }
 
 
 int main(){
 
-	std::cout<<fun()<<std::endl;
+	std::cout<<fun("recive from function!")<<std::endl;
 
 
 return 0;
