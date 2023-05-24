@@ -1,5 +1,5 @@
 all:
-	g++ perem.cpp 
+	g++ funct.cpp 
 	#output: 
 	./a.out
 	
