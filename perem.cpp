@@ -3,7 +3,7 @@ using namespace std;
 class MyClass{};
 class MyClass1{
 	public:
-	char* data;
+	const char* data;
 };
 int main(){
 MyClass myclass;
