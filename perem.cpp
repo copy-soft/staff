@@ -1,17 +1,14 @@
 #include <iostream>
 using namespace std;
-int i{5};
-int j = 5;
-int k;
-int* l {new int(6)};
-int *p;
+class MyClass{};
+class MyClass1{
+	public:
+	int data;
+};
 int main(){
-                cout<< i <<endl;
-                cout << j <<endl;
-                cout<< k << "\n";
-                k=5;
-                cout << k << endl;
-                cout << l <<endl;
-                cout << *l <<endl;
+MyClass myclass;
+MyClass1 myclass1;
+myclass1.data=5;
+cout<<myclass1.data<<endl;
 return 0;
 }
