@@ -3,11 +3,27 @@ using namespace std;
 //#define derived static_cast<T*>(this)
 
 //template<class T> // CRTP
-class MyClass1
+class MyClass0{
+	public:
+	MyClass0(){};
+MyClass0(const MyClass0* j){};
+
+
+
+
+
+
+};
+
+
+
+
+class MyClass1:public MyClass0
 {
 public:
   	const char* data;
-   MyClass1(const char* i):data(i)
+	MyClass0 o;
+   MyClass1(MyClass0* ob, const char* i):data(i), o(ob)
   {
     //static_cast<T*>(this)->init();
   }
@@ -20,7 +36,7 @@ public:
 class MyClass2 : public MyClass1//<MyClass2>
 {
 public:
-	MyClass2(const char* j):MyClass1(j){
+	MyClass2(MyClass0* ob, const char* j):MyClass1(ob, j){
 
 
 	}  
@@ -32,7 +48,8 @@ void init()
 
 int main()
 {
-  MyClass2 *obj2 = new MyClass2("test");
-	obj2->init();  
+	MyClass0* obj0= new MyClass0();
+  MyClass2* obj2 = new MyClass2(obj0, "test");
+obj2->init();  
   return 0;
 }
