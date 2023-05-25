@@ -1,21 +1,39 @@
 #include <iostream>
-class Base    // базовый класс
+using namespace std;
+//#define derived static_cast<T*>(this)
+
+//template<class T> // CRTP
+class MyClass1
 {
 public:
-    Base() { }
-    Base(int input) {std::cout<< "base"<<input<<std::endl;}
+  	const char* data;
+   MyClass1(const char* i)
+  {
+	  data=i;
+    //static_cast<T*>(this)->init();
+  }
+  void init()
+  {
+    printf("MyClass1 init\n");
+  }
 };
 
-class Derived : public Base  // производный класс
+class MyClass2 : public MyClass1//<MyClass2>
 {
 public:
-    Derived() : Base () { }  // конструктор производного класса вызывает конструктор базового
+	MyClass2(const char* j):MyClass1(j){
 
-    Derived(int inputD) : Base(inputD) {std::cout<<"derived"<< inputD<<std::endl; } // inputD передается в конструктор с параметром класса Base
+
+	}  
+void init()
+  {
+    cout<<data<<endl;
+  }
 };
 
 int main()
 {
-    Base base(3);     // объект базового класса
-    Derived der(4);   // объект производного класса
+  MyClass2 *obj2 = new MyClass2("test");
+	obj2->init();  
+  return 0;
 }
