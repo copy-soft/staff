@@ -7,9 +7,8 @@ class MyClass1
 {
 public:
   	const char* data;
-   MyClass1(const char* i)
+   MyClass1(const char* i):data(i)
   {
-	  data=i;
     //static_cast<T*>(this)->init();
   }
   void init()
