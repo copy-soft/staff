@@ -9,15 +9,15 @@ class MyClass0{
 MyClass0(const MyClass0* j){};
 
 };
-
+template<class T>
 class MyClass1:public MyClass0
 {
 public:
   	const char* data;
-	MyClass0 o;
-   MyClass1(MyClass0* ob, const char* i):data(i), o(ob)
+	T* o;
+   MyClass1(MyClass0* ob, const char* i):data(i)//, o(ob)
   {
-    //static_cast<T*>(this)->init();
+     o = static_cast<T*>(ob);
   }
   void init()
   {
@@ -25,7 +25,7 @@ public:
   }
 };
 
-class MyClass2 : public MyClass1//<MyClass2>
+class MyClass2 : public MyClass1<MyClass2>
 {
 public:
 	MyClass2(MyClass0* ob, const char* j):MyClass1(ob, j){
@@ -37,25 +37,63 @@ void init2()
     cout<<data<<endl;
   }
 };
-class MyClass3 : public MyClass1//<MyClass2>
+class MyClass3 : public MyClass1<MyClass3>
 {
 public:
         MyClass3(MyClass0* ob, const char* j):MyClass1(ob, j){
 
 
         }  
+void init2()
+  {
+    cout<<(o)->data<<endl;
+  }
+
+
 void init3()
   {
     cout<<data<<endl;
   }
 };
+class MyClass4 : public MyClass1<MyClass4>
+{
+public:
+        MyClass4(MyClass0* ob, const char* j):MyClass1(ob, j){
+
+
+        }  
+void init2()
+  {
+    cout<<(o)->data<<endl;
+  }
+
+
+void init3()
+  {
+    cout<<data<<endl;
+  }
+
+void init4()
+  {
+    cout<<data<<endl;
+  }
+
+
+};
 
 int main()
 {
 	MyClass0* obj0= new MyClass0();
-  MyClass2* obj2 = new MyClass2(obj0, "test");
-  MyClass3* obj3 = new MyClass3(obj2, "test2");
+  MyClass2* obj2 = new MyClass2(obj0, "test2");
+  MyClass3* obj3 = new MyClass3(obj2, "test3");
+  MyClass4* obj4 = new MyClass4(obj3, "test4");
   obj2->init2();  
   obj3->init3();
+  obj3->init2();
+  obj4->init2();  
+  obj4->init3();
+  obj4->init4();
+
+
   return 0;
 }
