@@ -1,5 +1,5 @@
 all:
-	g++ der.cpp 
+	g++ der.cpp -g
 	#output: 
 	./a.out
 all1:
