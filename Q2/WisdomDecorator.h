@@ -1,15 +1,18 @@
 #include "Wisdom.h"
 #include "IRanger.h"
+#include "CharacterDecorator.h"
 #include <string>
 #include <iostream>
 #define null NULL
 using namespace std;
-class WisdomDecorator : public CharacterDecorator{
+class WisdomDecorator : public CharacterDecorator<WisdomDecorator>{
 	
 	protected: Wisdom wisdom;
-
-	public: WisdomDecorator(IRanger* rangerCharacterDecorator, Wisdom wisdom):CharacterDecorator(rangerCharacterDecorator){
-	//CharacterDecorator((IRanger*)rangerCharacterDecorator);
+	//IRanger* rangerCharacterDecorator;
+	public: WisdomDecorator(IRanger* rangerCharacterDecorator, Wisdom wisdom){
+		this->rangerCharacterDecorator=rangerCharacterDecorator;
+			
+		//CharacterDecorator::CharacterDecorator(rangerCharacterDecorator);
 		this->wisdom = wisdom;
 	}
 
@@ -39,9 +42,10 @@ class WisdomDecorator : public CharacterDecorator{
 
 	//@Override
 	string getWisdom() {
-		rangerCharacterDecorator->getWisdom();
-		cout<<"XYR Character Wisdom Option: " + wisdom<<endl;
-		return null;
+		cout<<rangerCharacterDecorator->getWisdom()<<endl;
+		cout<<"XYR Character Wisdom Option: " << wisdom<<endl;
+		return "XYR Character Wisdom Option: " ;
+;
 	}
 
 	//@Override
@@ -52,8 +56,8 @@ class WisdomDecorator : public CharacterDecorator{
 
 	//@Override
 	string getClothings() {
-		rangerCharacterDecorator->getClothings();
-		return null;
+		cout<<rangerCharacterDecorator->getClothings()<<endl;
+		return "call clothings of wisdom";
 	}
 
 };

@@ -33,7 +33,7 @@ class RangerCharacter : public IRanger{
 
 	//@Override
 	string getCharisma() {
-		cout<<rangerCharacterDecorator->getCharisma()<<endl;
+		//cout<<rangerCharacterDecorator->getCharisma()<<endl;
 		return "Ranger: Get Charisma Ability of the Character";
 	}
 

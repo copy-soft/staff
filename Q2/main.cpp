@@ -32,9 +32,9 @@ int main() {
 		
 		//IRanger* rangerCharacter = new CharismaDecorator(new ConstitutionDecorator(new DexterityDecorator(new IntelligenceDecorator(new StrengthDecorator(new WisdomDecorator(new ClothingsDecorator(new RangerCharacter(),Clothings::armour), Wisdom::empathy),Strength::plump), Intelligence::simple),Dexterity::akward), Constitution::healthy),Charisma::leadership);
 		//IRanger* rangerCharacter = new CharismaDecorator(new RangerCharacter(), Charisma::leadership);
-		//cout<<(rangerCharacter)->getClothings()<<endl;
-		//cout<<((RangerCharacter*)(rangerCharacter))->getCharisma()<<endl;
-		//rangerCharacter->getConstitution();
+		//((ClothingsDecorator*)(rangerCharacter))->getClothings();
+		//cout<<(rangerCharacter)->getCharisma();
+		//((ConstitutionDecorator*)(rangerCharacter))->getConstitution();
 		//rangerCharacter->getDexterity();
 		//rangerCharacter->getIntelligence();
 		//rangerCharacter->getStrength();
@@ -49,8 +49,11 @@ int main() {
                 cd->getClothings();
 		//вывод XYR Character Clothings Option: 0   0 - Clothings::armour из Closings.h  первый элемент из enum 
 	//----------------------------------------------------------	
-		/*
 		WisdomDecorator* wd = new WisdomDecorator(cd, Wisdom::foolish);
+		wd->getClothings();
+		wd->getWisdom();
+
+		/*
 		StrengthDecorator* sd = new StrengthDecorator(wd, Strength::burly);
 		IntelligenceDecorator* id = new IntelligenceDecorator(sd, Intelligence::inquisitive);
 		DexterityDecorator* dd = new DexterityDecorator(id, Dexterity::sneaky);

@@ -5,11 +5,11 @@
 using namespace std;
 class IRanger : public ICharacter {
 	public:
-	IRanger* rangerCharacterDecorator;
-	IRanger(IRanger* rangerCharacterDecorator1){
-	rangerCharacterDecorator=rangerCharacterDecorator1;
+	//IRanger* rangerCharacterDecorator;
+	//IRanger(IRanger* rangerCharacterDecorator1){
+	//rangerCharacterDecorator=rangerCharacterDecorator1;
 	//cout<<rangerCharacterDecorator->getCharisma()<<endl;
-	};
+	//};
 	IRanger(){};
 	
 };

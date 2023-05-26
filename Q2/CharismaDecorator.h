@@ -6,7 +6,7 @@
 #include <cstddef>
 #define null NULL
 using namespace std;
-class CharismaDecorator : public CharacterDecorator{
+class CharismaDecorator : public CharacterDecorator<CharismaDecorator>{
 	protected: Charisma charisma;//поле charisma типа Charisma
 
 	public: 

@@ -5,11 +5,12 @@
 #include <iostream>
 #define null NULL
 using namespace std;
-class ClothingsDecorator : public CharacterDecorator{
+class ClothingsDecorator : public CharacterDecorator<ClothingsDecorator>{
 	protected: Clothings clothings;//поле clothings типа Clothings
 	//Конструктор с параметрами ranger....  и clothings
 	public: ClothingsDecorator(IRanger* rangerCharacterDecorator, Clothings clothings)
 		{
+		//CharacterDecorator(rangerCharacterDecorator);//=rangerCharacterDecorator;
 		//полю clothings присваивается параметр clothings
 		this->clothings = clothings;
 		}

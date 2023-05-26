@@ -4,11 +4,12 @@
 #include <string>
 #define null NULL
 using namespace std;
-class StrengthDecorator : public CharacterDecorator{
+class StrengthDecorator : public CharacterDecorator<StrengthDecorator>{
 	
 	protected: Strength strength;
 
-	public: StrengthDecorator(IRanger* rangerCharacterDecorator, Strength strength):CharacterDecorator(rangerCharacterDecorator){
+	public: StrengthDecorator(IRanger* rangerCharacterDecorator, Strength strength)//:CharacterDecorator(rangerCharacterDecorator)
+	{
 		//super(rangerCharacterDecorator);
 		this->strength = strength;
 	}
