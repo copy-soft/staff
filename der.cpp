@@ -8,15 +8,7 @@ class MyClass0{
 	MyClass0(){};
 MyClass0(const MyClass0* j){};
 
-
-
-
-
-
 };
-
-
-
 
 class MyClass1:public MyClass0
 {
@@ -40,7 +32,19 @@ public:
 
 
 	}  
-void init()
+void init2()
+  {
+    cout<<data<<endl;
+  }
+};
+class MyClass3 : public MyClass1//<MyClass2>
+{
+public:
+        MyClass3(MyClass0* ob, const char* j):MyClass1(ob, j){
+
+
+        }  
+void init3()
   {
     cout<<data<<endl;
   }
@@ -50,6 +54,8 @@ int main()
 {
 	MyClass0* obj0= new MyClass0();
   MyClass2* obj2 = new MyClass2(obj0, "test");
-obj2->init();  
+  MyClass3* obj3 = new MyClass3(obj2, "test2");
+  obj2->init2();  
+  obj3->init3();
   return 0;
 }
