@@ -4,7 +4,7 @@ using namespace std;
 
 class MyClass{
 	public:
-void init2(){cout<<"init2 output"<<endl;};
+virtual void init2(){};
 virtual void init3(){};
 };
 
@@ -56,7 +56,7 @@ public:
 
 
 	}  
-void init2()
+void init2() override
   {
     cout<<data<<endl;
   }
@@ -69,7 +69,7 @@ public:
 
 
         }  
-void init2()
+void init2() override
   {
     (o)->init2();
   }
