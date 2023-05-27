@@ -11,6 +11,6 @@ int main(){
 list<Task> job;
 job.push_back(Task{"1",1});
 
-cout<<job.first.name<<endl;
+cout<<job.begin()->name<<endl;
 return 0;
 }
