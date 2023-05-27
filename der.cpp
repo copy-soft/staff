@@ -4,7 +4,7 @@ using namespace std;
 
 class MyClass{
 	public:
-void init2(){};
+void init2(){cout<<"init2 output"<<endl;};
 virtual void init3(){};
 };
 
@@ -116,9 +116,10 @@ int main()
   MyClass2* obj2 = new MyClass2(obj0, "test2");
   MyClass3* obj3 = new MyClass3(obj2, "test3");
   MyClass4* obj4 = new MyClass4(obj3, "test4");
-  obj2->init2();  
-  obj3->init3();
-  obj3->init2();
+  //obj2->init2();  
+  //obj3->init3();
+  //obj3->init2();
+  obj4->init2();
   obj4->init3();
   return 0;
 }
