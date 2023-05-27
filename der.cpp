@@ -122,5 +122,6 @@ int main()
   obj4->init2();
   obj4->init3();
   obj4->init4();
+  //вывод test2 test3 test3 где test2 был задан в obj2 test3 в obj3 и т.д.
   return 0;
 }
