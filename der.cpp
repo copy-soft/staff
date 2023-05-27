@@ -121,5 +121,6 @@ int main()
   //obj3->init2();
   obj4->init2();
   obj4->init3();
+  obj4->init4();
   return 0;
 }
