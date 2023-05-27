@@ -9,7 +9,7 @@ class Task{
 int main(){
 
 list<Task> job;
-job.push_back(Task{"1",1});
+job.push_back(Task{,});
 
 cout<<job.begin()->name<<endl;
 return 0;
