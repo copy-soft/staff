@@ -1,5 +1,6 @@
 all:
-	g++ point.cpp
+	g++ bubblesort.c
+	#g++ point.cpp
 	#g++ job.cpp
 	#g++ der.cpp -g
 	#output: 
