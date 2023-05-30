@@ -40,9 +40,9 @@ class ClothingsDecorator : public CharacterDecorator<ClothingsDecorator>{
 	}
 
 	//@Override
-	string getWisdom() {
+	string getWisdom() override{
 		rangerCharacterDecorator->getWisdom();
-		return null;
+		return "string";
 	}
 
 	//@Override

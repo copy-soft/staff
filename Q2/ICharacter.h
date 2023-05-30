@@ -13,8 +13,8 @@ class ICharacter{
 	string getDexterity(){return "dex";};
 	string getConstitution(){return "ICharacter constitution";};
 	string getIntelligence(){return "int";};
-	string getWisdom(){return "ICharacter Wisdom";};
+	virtual string getWisdom(){return "ICharacter Wisdom";};
 	string getCharisma(){return "ICharacter Charisma";};
-	virtual string getClothings(){/*return "ICharacter Clothings";*/};
+	virtual string getClothings(){return "ICharacter Clothings";};
 };
 #endif

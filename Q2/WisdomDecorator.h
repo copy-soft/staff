@@ -9,7 +9,8 @@ class WisdomDecorator : public CharacterDecorator<WisdomDecorator>{
 	
 	protected: Wisdom wisdom;
 	//IRanger* rangerCharacterDecorator;
-	public: WisdomDecorator(IRanger* rangerCharacterDecorator, Wisdom wisdom){
+	public: WisdomDecorator(IRanger* rangerCharacterDecorator, Wisdom wisdom):CharacterDecorator(rangerCharacterDecorator)
+		{
 		this->rangerCharacterDecorator=rangerCharacterDecorator;
 			
 		//CharacterDecorator::CharacterDecorator(rangerCharacterDecorator);
@@ -41,8 +42,8 @@ class WisdomDecorator : public CharacterDecorator<WisdomDecorator>{
 	}
 
 	//@Override
-	string getWisdom() {
-		cout<<rangerCharacterDecorator->getWisdom()<<endl;
+	string getWisdom() override{
+		rangerCharacterDecorator->getWisdom();
 		cout<<"XYR Character Wisdom Option: " << wisdom<<endl;
 		return "XYR Character Wisdom Option: " ;
 ;
