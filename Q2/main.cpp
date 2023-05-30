@@ -46,7 +46,7 @@ int main() {
 		//ClothingDecorator обьект с параметрами(RangerCharacter) и Closing::armour(0)
 		ClothingsDecorator* cd = new ClothingsDecorator(c, Clothings::armour);		
 		//вызов getClosings() обьектом cd(ClosingsDecorator) из файла ClosingsDecorator.h
-                cd->getClothings();
+                //cd->getClothings();
 		//вывод XYR Character Clothings Option: 0   0 - Clothings::armour из Closings.h  первый элемент из enum 
 	//----------------------------------------------------------	
 		WisdomDecorator* wd = new WisdomDecorator(cd, Wisdom::foolish);

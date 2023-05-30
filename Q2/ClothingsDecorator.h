@@ -8,8 +8,8 @@ using namespace std;
 class ClothingsDecorator : public CharacterDecorator<ClothingsDecorator>{
 	protected: Clothings clothings;//поле clothings типа Clothings
 	//Конструктор с параметрами ranger....  и clothings
-	public: ClothingsDecorator(IRanger* rangerCharacterDecorator, Clothings clothings)
-		{
+	public: ClothingsDecorator(IRanger* rangerCharacterDecorator, Clothings clothings):CharacterDecorator(rangerCharacterDecorator){
+		
 		//CharacterDecorator(rangerCharacterDecorator);//=rangerCharacterDecorator;
 		//полю clothings присваивается параметр clothings
 		this->clothings = clothings;
@@ -52,8 +52,8 @@ class ClothingsDecorator : public CharacterDecorator<ClothingsDecorator>{
 	}
 
 	//@Override
-	string getClothings() {
-		cout<<rangerCharacterDecorator->getClothings()<<endl;
+	string getClothings() override {
+		rangerCharacterDecorator->getClothings();
 		cout<<"XYR Character Clothings Option: " << clothings <<endl;
 		return "XYR Character Clothings Option: ";// + clothings;
 	}

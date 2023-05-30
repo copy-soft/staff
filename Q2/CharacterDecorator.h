@@ -5,7 +5,7 @@
 template <class T>
 class CharacterDecorator : public IRanger{
 	
-	public: IRanger* rangerCharacterDecorator;
+	public: T* rangerCharacterDecorator;
 
 	public: 
 	CharacterDecorator(IRanger* rangerCharacterDecorator)	
@@ -13,7 +13,7 @@ class CharacterDecorator : public IRanger{
         //cout<<static_cast<T*>(this)->getClothings();
 
 	//IRanger::IRanger(rangerCharacterDecorator);
-	this->rangerCharacterDecorator = rangerCharacterDecorator;
+	this->rangerCharacterDecorator = (T*)rangerCharacterDecorator;
 //cout<<rangerCharacterDecorator->getCharisma()<<endl;
 	}
 	CharacterDecorator(){};

@@ -55,8 +55,8 @@ class WisdomDecorator : public CharacterDecorator<WisdomDecorator>{
 	}
 
 	//@Override
-	string getClothings() {
-		cout<<rangerCharacterDecorator->getClothings()<<endl;
+	string getClothings() override{
+		rangerCharacterDecorator->getClothings();
 		return "call clothings of wisdom";
 	}
 

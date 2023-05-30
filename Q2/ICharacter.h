@@ -11,10 +11,10 @@ class ICharacter{
 	ICharacter(){};
 	string getStrength(){return "str";};
 	string getDexterity(){return "dex";};
-	string getConstitution(){return "constitution ICharacter";};
+	string getConstitution(){return "ICharacter constitution";};
 	string getIntelligence(){return "int";};
 	string getWisdom(){return "ICharacter Wisdom";};
 	string getCharisma(){return "ICharacter Charisma";};
-	string getClothings(){return "ICharacter Clothings";};
+	virtual string getClothings(){/*return "ICharacter Clothings";*/};
 };
 #endif
