@@ -1,5 +1,6 @@
 all:
-	g++ point.cpp
+	#g++ enum.cpp
+	g++ point.cpp -g
 	#g++ job.cpp
 	#g++ der.cpp -g
 	#output: 
