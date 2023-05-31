@@ -2,12 +2,9 @@
 #define IChar
 #include <string>
 #include <iostream>
-//#include "IRanger.h"
 using namespace std;
 class ICharacter{
 	public:
-        //ICharacter(ICharacter* rangerCharacterDecorator){
-	//};
 	ICharacter(){};
 	string getStrength(){return "str";};
 	string getDexterity(){return "dex";};

@@ -19,16 +19,16 @@
 #include <string>
 using namespace std;
 int main() {
-		//RangerCharacter* ranger= new RangerCharacter(); 
-		//cout<<(ranger->getClothings())<<endl;
-		//RangerCharacter* cloths = new RangerCharacter();
+		RangerCharacter* ranger= new RangerCharacter(); 
+		cout<<(ranger->getClothings())<<endl;
+		RangerCharacter* cloths = new RangerCharacter();
 		//cout<<Charisma::leadership<<endl;
 		//for (Clothings clothes : Clothings.values()){
 		//typedef Iterator<Clothings, Clothings::armour, Clothings::cloaks> CIterator;
-		//for (int i=0; i<cloaks; i++ ){
-		//ICharacter* Character = new ClothingsDecorator(cloths, (Clothings)i);
-		//cout<<Character->getClothings()<<endl; 
-		//}
+		for (int i=0; i<cloaks; i++ ){
+		ICharacter* Character = new ClothingsDecorator(cloths, (Clothings)i);
+		cout<<Character->getClothings()<<endl; 
+		}
 		
 		//IRanger* rangerCharacter = new CharismaDecorator(new ConstitutionDecorator(new DexterityDecorator(new IntelligenceDecorator(new StrengthDecorator(new WisdomDecorator(new ClothingsDecorator(new RangerCharacter(),Clothings::armour), Wisdom::empathy),Strength::plump), Intelligence::simple),Dexterity::akward), Constitution::healthy),Charisma::leadership);
 		//IRanger* rangerCharacter = new CharismaDecorator(new RangerCharacter(), Charisma::leadership);

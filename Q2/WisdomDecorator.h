@@ -8,10 +8,9 @@ using namespace std;
 class WisdomDecorator : public CharacterDecorator<WisdomDecorator>{
 	
 	protected: Wisdom wisdom;
-	//IRanger* rangerCharacterDecorator;
 	public: WisdomDecorator(IRanger* rangerCharacterDecorator, Wisdom wisdom):CharacterDecorator(rangerCharacterDecorator)
 		{
-		this->rangerCharacterDecorator=rangerCharacterDecorator;
+		//this->rangerCharacterDecorator=rangerCharacterDecorator;
 			
 		//CharacterDecorator::CharacterDecorator(rangerCharacterDecorator);
 		this->wisdom = wisdom;
