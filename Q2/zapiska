@@ -1,0 +1,1 @@
+Класс CharacterDecorator наследуется классами статов и одежды и IRangerCharacter - заглушкой. Он наследует IRanger в котором хранится rangerCharacterDecorator.
