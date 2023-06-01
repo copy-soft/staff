@@ -118,8 +118,14 @@ class MagicDecorator : public Item{
         public:
         MagicDecorator(Item* item, int mod): item_(item), magic_modifier_(mod){
 	}
-	std::string GetName() const{return WhatIsItemTypeString(item_);}
-        //int GetDamage() const {return damage+magic_damage;};
+	std::string GetName() const{
+		std::string namestring = item_->GetName();
+		namestring+=" | " + GetItemTypeString();
+	return namestring;
+	}
+	std::string GetItemTypeString() const {
+		return WhatIsItemTypeString(item_);
+	};
         int GetMagicMod(){return magic_modifier_;}
 	protected:
         Item* item_;
