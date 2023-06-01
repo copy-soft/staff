@@ -12,7 +12,7 @@ class Item{
 class Weapon:public Item{
 	public:
 	Weapon(std::string n, int d):Item(n),damage(d){}
-	std::string GetName()const {return name;}
+	std::string GetName()const override {return name;}
 	int GetDamage() const {return damage;}
 	protected:
 	int damage;
