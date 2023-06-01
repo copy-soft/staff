@@ -19,3 +19,15 @@ class Weapon:public Item{
 
 
 };
+class MagicWeapon : public Weapon{
+	public:
+	MagicWeapon(std::string n, int d, int md): Weapon(n, d), magic_damage(md){};
+	int GetDamage() const {return damage+magic_damage;};
+	protected:
+	int magic_damage;
+
+};
+
+
+
+
