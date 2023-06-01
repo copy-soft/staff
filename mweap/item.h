@@ -69,39 +69,14 @@ std::string WhatIsItemTypeString(Item* item){
 
 auto* the_cast_to_armor = dynamic_cast<ConcreteArmor*>(item);
 if (the_cast_to_armor)
-        return "ARMOR";
+        return "броня";
 auto* the_cast_to_weapon = dynamic_cast<ConcreteWeapon*>(item);
 if (the_cast_to_weapon)
-	return "WEAPON";
+	return "оружие";
 
-        return "UNKNOWN";
+        return "неизвестно";
 }
 
-
-
-
-
-
-
-
-/*
-std::string WhatIsItemTypeString(Item* item){
-auto* this_item_type;
-        switch(this_item_type){
-                case ITEMTYPE::ARMOR:
-                return "Armor";
-                break;
-                case ITEMTYPE::WEAPON:
-                return "Weapon";
-                break;
-                case ITEMTYPE::UNKNOWN:
-                break "Unknown";
-                case default:
-                return "Unhandled";
-                break;
-        }
-        };
-*/
 
 
 class Magic : public Item{
