@@ -43,7 +43,7 @@ class WisdomDecorator : public CharacterDecorator<WisdomDecorator>{
 	//@Override
 	string getWisdom() override{
 		rangerCharacterDecorator->getWisdom();
-		cout<<"XYR Character Wisdom Option: " << wisdom<<endl;
+		cout<<"XYR Character Wisdom Option: " << wis[wisdom]<<endl;
 		return "XYR Character Wisdom Option: " ;
 ;
 	}

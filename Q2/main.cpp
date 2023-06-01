@@ -25,11 +25,11 @@ int main() {
 		//cout<<Charisma::leadership<<endl;
 		//for (Clothings clothes : Clothings.values()){
 		//typedef Iterator<Clothings, Clothings::armour, Clothings::cloaks> CIterator;
-		for (int i=0; i<=cloaks; i++ ){
+		//for (int i=0; i<=cloaks; i++ ){
 		//ICharacter* Character = new ClothingsDecorator(cloths, (Clothings)i);
-		cout<<cloth[i]<<endl;
+		//cout<<cloth[i]<<endl;
 		//cout<<Character->getClothings()<<endl; 
-		}
+		//}
 		
 		//IRanger* rangerCharacter = new CharismaDecorator(new ConstitutionDecorator(new DexterityDecorator(new IntelligenceDecorator(new StrengthDecorator(new WisdomDecorator(new ClothingsDecorator(new RangerCharacter(),Clothings::armour), Wisdom::empathy),Strength::plump), Intelligence::simple),Dexterity::akward), Constitution::healthy),Charisma::leadership);
 		//IRanger* rangerCharacter = new CharismaDecorator(new RangerCharacter(), Charisma::leadership);
