@@ -4,6 +4,7 @@ class Item{
 	Item()=default;
 	virtual ~Item()=default;
 	virtual std::string GetName()const = 0 ;
+	virtual void SetName(const std::string& new_name){name= new_name;};
 	private:
 	protected:
 	Item(std::string n):name(n){}
@@ -93,9 +94,16 @@ class MagicDecorator : public Item{
         public:
         MagicDecorator(Item* item, int mod): item_(item), magic_modifier_(mod){
 	}
-	std::string GetName() const{
+	virtual void SetName(const std::string& new_name) override {
+		item_->SetName(new_name);
+	}
+	virtual std::string GetName() const override{
 		std::string namestring = item_->GetName();
-		namestring+=" | " + GetItemTypeString();
+		namestring+=" | магическое ";
+		if (magic_modifier_!=0)
+			namestring+=(magic_modifier_<0) ? "-" : "+";
+		namestring+=std::to_string(magic_modifier_)+" ";
+		namestring+= GetItemTypeString();
 	return namestring;
 	}
 	std::string GetItemTypeString() const {
