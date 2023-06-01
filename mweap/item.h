@@ -95,10 +95,11 @@ class MagicDecorator : public Item{
         MagicDecorator(Item* item, int mod): item_(item), magic_modifier_(mod){
 	}
 	virtual void SetName(const std::string& new_name) override {
-		item_->SetName(new_name);
+		magic_name_=new_name;
 	}
 	virtual std::string GetName() const override{
-		std::string namestring = item_->GetName();
+		std::string namestring = magic_name_+" | ";
+		namestring+=item_->GetName();
 		namestring+=" | магическое ";
 		if (magic_modifier_!=0)
 			namestring+=(magic_modifier_<0) ? "-" : "+";
@@ -112,7 +113,8 @@ class MagicDecorator : public Item{
         int GetMagicMod(){return magic_modifier_;}
 	protected:
         Item* item_;
-        int magic_modifier_;
+	std::string magic_name_;
+	int magic_modifier_;
 
 };
 
