@@ -2,7 +2,7 @@
 class Item{
 	public:
 	virtual ~Item()=default;
-	virtual std::string GetName(){return "";};
+	virtual std::string GetName()const = 0 ;
 	private:
 	protected:
 	Item(std::string n):name(n){}
