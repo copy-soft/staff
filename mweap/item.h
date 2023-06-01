@@ -71,7 +71,7 @@ auto* the_cast_to_armor = dynamic_cast<ConcreteArmor*>(item);
 if (the_cast_to_armor)
         return "ARMOR";
 auto* the_cast_to_weapon = dynamic_cast<ConcreteWeapon*>(item);
-if (the_cast_to_armor)
+if (the_cast_to_weapon)
 	return "WEAPON";
 
         return "UNKNOWN";
@@ -119,22 +119,6 @@ class MagicDecorator : public Item{
         MagicDecorator(Item* item, int mod): item_(item), magic_modifier_(mod){
 	}
 	std::string GetName() const{return WhatIsItemTypeString(item_);}
-
-	//WhatIsItemTypeString(item_);
-	/*switch(this_item_type){
-		case ITEMTYPE::ARMOR:
-		return "Armor";
-		break;
-		case ITEMTYPE::WEAPON:
-		return "Weapon";
-		break;
-		case ITEMTYPE::UNKNOWN:
-		break "Unknown";
-		case default:
-		return "Unhandled";
-		break;
-	}*/
-	//};
         //int GetDamage() const {return damage+magic_damage;};
         int GetMagicMod(){return magic_modifier_;}
 	protected:
