@@ -2,14 +2,13 @@
 #define CharD
 #include "IRanger.h"
 #include <iostream>
-template <class T>
 class CharacterDecorator : public IRanger{
 	
 	protected: 
-	T* rangerCharacterDecorator;
+	IRanger* rangerCharacterDecorator;
 
 	public: 
-	CharacterDecorator(IRanger* rangerCharacterDecorator):rangerCharacterDecorator((T*)rangerCharacterDecorator){}
+	CharacterDecorator(IRanger* rangerCharacterDecorator):rangerCharacterDecorator(rangerCharacterDecorator){}
 	CharacterDecorator(){}
 };
 #endif

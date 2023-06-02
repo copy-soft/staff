@@ -5,7 +5,7 @@
 #include <iostream>
 #define null NULL
 using namespace std;
-class ClothingsDecorator : public CharacterDecorator<ClothingsDecorator>{
+class ClothingsDecorator : public CharacterDecorator{
 	protected: Clothings clothings;//поле clothings типа Clothings
 	//Конструктор с параметрами ranger....  и clothings
 	public: ClothingsDecorator(IRanger* rangerCharacterDecorator, Clothings clothings):CharacterDecorator(rangerCharacterDecorator){

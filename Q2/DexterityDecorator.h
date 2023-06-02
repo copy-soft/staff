@@ -4,7 +4,7 @@
 #include <string>
 #define null NULL
 using namespace std;
-class DexterityDecorator : public CharacterDecorator<DexterityDecorator>{
+class DexterityDecorator : public CharacterDecorator{
 	protected: Dexterity dexterity;
 
 	public: DexterityDecorator(IRanger* rangerCharacterDecorator, Dexterity dexterity):CharacterDecorator(rangerCharacterDecorator){

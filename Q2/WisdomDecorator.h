@@ -5,7 +5,7 @@
 #include <iostream>
 #define null NULL
 using namespace std;
-class WisdomDecorator : public CharacterDecorator<WisdomDecorator>{
+class WisdomDecorator : public CharacterDecorator{
 	
 	protected: Wisdom wisdom;
 	public: WisdomDecorator(IRanger* rangerCharacterDecorator, Wisdom wisdom):CharacterDecorator(rangerCharacterDecorator)

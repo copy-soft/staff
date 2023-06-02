@@ -4,7 +4,7 @@
 #include <string>
 #define null NULL
 using namespace std;
-class IntelligenceDecorator : public CharacterDecorator<IntelligenceDecorator>{
+class IntelligenceDecorator : public CharacterDecorator{
 	
 	protected: Intelligence intelligence;
 

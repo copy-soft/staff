@@ -6,7 +6,7 @@
 #include <cstddef>
 #define null NULL
 using namespace std;
-class ConstitutionDecorator : public CharacterDecorator<ConstitutionDecorator>{
+class ConstitutionDecorator : public CharacterDecorator{
 	protected: Constitution constitution;
 
 	public: 
