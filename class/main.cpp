@@ -11,7 +11,7 @@ class Big{
 };
 
 int main (){
-Big big("string");
+Big big("big");
 big.ShowV();
 
 return 0;
