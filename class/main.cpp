@@ -1,13 +1,14 @@
 #include <iostream>
 #include <string>
+using namespace std;
 class Big{
 	public:
 	Big();
-	Big(std::string v):V(v){};
-	std::string GetV(){return V;};
+	Big(string V):_V(V){};
+	string GetV(){return _V;};
 	void ShowV(){std::cout<<GetV()<<std::endl;};
 	private:
-	std::string V;
+	string _V;
 };
 
 int main (){
