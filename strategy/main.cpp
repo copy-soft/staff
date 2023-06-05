@@ -1,5 +1,23 @@
 enum State{FIGHT, ESCAPE, IDLE, PATROL};
 class point{};
+class strategy{
+        public:
+                virtual int recalc_strategy(point, float)=0;
+        protected:
+                strategy(){};
+};
+class fightstrategy:public strategy{
+        public:
+                //strategy();
+                virtual int recalc_strategy(point, float){};
+
+};
+class idlestrategy: public strategy{
+        public:
+                idlestrategy(){};
+                virtual int recalc_strategy(point, float){};
+
+};
 
 void recalc_fight(){};
 void recalc_escape(){};
@@ -20,21 +38,21 @@ void recalc_AI(State state)
 }
 class soldier{
 	public:
-	soldier(strategy);
+	soldier(strategy *);
 	void recalc_AI();
-	void change_strategy(strategy*);
+	void change_strategy(strategy *);
 	private:
 	point pos;
 	float yaw;
 	strategy* thestrategy;
 };
-solder::solder(strategy* stra)
+soldier::soldier(strategy* stra)
 {thestrategy=stra;}
 void soldier::recalc_AI()
-{thestrategy->recalcstrategy(pos, yaw);}
-void soldier::changestrategy(strategy *stra)
+{thestrategy->recalc_strategy(pos, yaw);}
+void soldier::change_strategy(strategy *stra)
 {thestrategy=stra;}
-class strategy{
+/*class strategy{
 	public:
 		virtual int recalc_strategy(point, float)=0;
 	protected:
@@ -43,15 +61,15 @@ class strategy{
 class fightstrategy:public strategy{
 	public:
 		strategy();
-		virtual int recalcstrategy(point, float){};
+		virtual int recalc_strategy(point, float){};
 
 };
 class idlestrategy: public strategy{
 	public:
 		strategy();
-		virtual int recalcstrategy(point, float){};
+		virtual int recalc_strategy(point, float){};
 
-};
+};*/
 int main(){
 
 
