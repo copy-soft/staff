@@ -1,3 +1,40 @@
+difference
+
+(definition)
+
+Definition: The difference of set A minus set B is a set having all the members which are in A, but not in B.
+
+See also complement, union, intersection, symmetric set difference.
+
+Note: For example, {2, 3, 5} - {7, 5} = {2, 3}.
+
+Author: PEB
+
+Go to the Dictionary of Algorithms and Data Structures home page.
+If you have suggestions, corrections, or comments, please get in touch with Paul Black.
+
+Entry modified 17 December 2004.
+HTML page formatted Wed Mar 13 12:42:45 2019.
+
+Cite this as:
+Paul E. Black, "difference", in Dictionary of Algorithms and Data Structures [online], Paul E. Black, ed. 17 December 2004. (accessed TODAY) Available from: https://www.nist.gov/dads/HTML/difference.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 https://www.google.ru/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjAo_GZmsL-AhXRBhAIHZpdASUQFnoECAgQAQ&url=https%3A%2F%2Fproglib.io%2Fp%2Fosnovy-move-semantics-v-c-2021-09-21&usg=AOvVaw2NYZJAJWPun-21n3fDStGG
 
 https://www.google.ru/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiw4eCi08L-AhWn-ioKHT12APYQFnoECA4QAQ&url=https%3A%2F%2Fhabr.com%2Fru%2Farticles%2F587644%2F&usg=AOvVaw3A8gmq9z8_LbkpQPLO8Cv8
@@ -22,4 +59,4 @@ https://www.google.ru/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved
 https://arl.human.cornell.edu/linked%20docs/Alexander_A_Pattern_Language.pdf
 https://vk.com/doc365254067_455339469?hash=pBUplnaTRzdhNzjndQpzB0u3yZN8XeoRNjRhleuJaHo
 
-
+http://www.nist.gov/dads
