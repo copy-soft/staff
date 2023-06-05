@@ -1,16 +1,17 @@
 #include <iostream>
+#include <string>
 class Big{
 	public:
-	Big(int v):V(v){};
-	int GetV(){return V;};
+	Big();
+	Big(std::string v):V(v){};
+	std::string GetV(){return V;};
 	void ShowV(){std::cout<<GetV()<<std::endl;};
 	private:
-	int V;
-	int l;
+	std::string V;
 };
 
 int main (){
-Big big(3);
+Big big("string");
 big.ShowV();
 
 return 0;
