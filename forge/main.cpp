@@ -8,7 +8,7 @@ std::cout<<weapon2.GetName()<< " повреждение: "<< weapon2.GetDamage()
 
 MagicDecorator magic_weapon1(&weapon1, 2);
 //MagicDecorator x2_magic_weapon1(&magic_weapon1, 2);
-
+Weapon weap1("test",1);
 
 magic_weapon1.SetName("Армагеддон");
 std::cout<<magic_weapon1.GetName()<< " повреждение: "<< weapon1.GetDamage()+magic_weapon1.GetMagicMod()<<std::endl;

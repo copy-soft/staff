@@ -1,0 +1,6 @@
+void accept(Visitor visitor) {
+    visitor.visitMyTypeOfNode(this);
+    for each child {
+        child.accept(visitor);
+    }
+}

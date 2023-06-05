@@ -1,7 +1,6 @@
 #include <iostream>
 #include <memory>
-#include "abs1.h"
-#include "abs1.h"
+#include "absinface.h"
 #include "concr1.h"
 #include "concr2.h"
 
