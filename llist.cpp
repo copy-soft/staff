@@ -4,7 +4,7 @@
 #include "logdur.h"
 int main(){
 
-	std::vector<int> v = {7, 5, 16, 8};
+	std::list<int> v = {7, 5, 16, 8};
  
     	LogDuration id("vector");
 	{
