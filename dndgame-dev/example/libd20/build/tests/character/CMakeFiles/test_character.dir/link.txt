@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -pedantic -Wextra -std=c++11  -rdynamic CMakeFiles/test_character.dir/test_character.cpp.o  -o test_character -Wl,-rpath,/root/c/libd20/build ../../libd20.so 

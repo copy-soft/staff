@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -pedantic -Wextra -std=c++11  -rdynamic CMakeFiles/test_equip_weapon_and_shield.dir/test_equip_weapon_and_shield.cpp.o  -o test_equip_weapon_and_shield -Wl,-rpath,/root/c/libd20/build ../../libd20.so 

@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -pedantic -Wextra -std=c++11  -rdynamic CMakeFiles/test_ab_ranged.dir/test_ab_ranged.cpp.o  -o test_ab_ranged -Wl,-rpath,/root/c/libd20/build ../../libd20.so 

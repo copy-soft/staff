@@ -1,0 +1,55 @@
+  moving from gistfile1.cpp
+V abilities point of game mechanics
+V make abilities <>10
+  combat system
+V remove licence
+V rename namespace eztp
+V Makefile target
+V not use get/setAC()
+V race class(profession)
+  background
+V defence();
+V hindrance AC(use getAC)
+V combat code(Polymorphism)(cp dp   cg dg )
+  levelUp() funct    proBonus,clevel,hp,hpmax,cclass
+
+  class Item
+  {
+  public:
+      enum types
+          {
+          whole lot of types go here.
+          They are fairly broad categories, like knife, sword, two handed sword,
+          healing potion, wand, etc.
+           };
+            types getType()
+           {
+           return type;
+           }
+          virtual bool use(Entity * target) = 0;
+         private:
+         types type;
+
+        };
+
+     class Hero: public Entity{
+
+      public:
+   Hero(std::set<Item::type> & usable): usableItems(usable)
+   ~Hero();
+     bool use(Item* item,
+      Entity * target)
+       {
+   // this is the magic. If the item's type is in the list of usable items,
+  // the item is used on the target. They exact type of item or target
+     // is not known. Polymorphism will take care of everything from here
+    if (usableItems.find(item->getType()) != usableItems.end())
+       {
+       return item->use(target);
+      }
+       return false;
+      }
+    private:
+   std::set<Item::type> & usableItems;
+   };
+for commit

@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -pedantic -Wextra -std=c++11  -rdynamic CMakeFiles/test_ab_melee.dir/test_ab_melee.cpp.o  -o test_ab_melee -Wl,-rpath,/root/c/libd20/build ../../libd20.so 
