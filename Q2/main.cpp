@@ -18,22 +18,16 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
 int main() {
 		RangerCharacter* ranger= new RangerCharacter(); 
 		cout<<(ranger->getClothings())<<endl;
 		RangerCharacter* cloths = new RangerCharacter();
-		//for (auto i : cloth)std::cout << i << endl;
-		for(int it=Clothings::START+1;it<Clothings::END;it++){ 
-                ICharacter* Character = new ClothingsDecorator(cloths, it);
+		for(auto const& it:cloth){
+		ICharacter* Character = new ClothingsDecorator(cloths, it.first);
                 Character->getClothings(); 
 		}
 		cout<<endl;
-		//for (Clothings clothes : cloths){
-		//typedef Iterator<Clothings, Clothings::armour, Clothings::cloaks> CIterator;
-		//for (int i=0; i<=cloaks; i++ ){
-		//ICharacter* Character = new ClothingsDecorator(cloths, (Clothings)i);
-		//cout<<cloth[i]<<endl;
-		//cout<<Character->getClothings()<<endl; 
 		//IRanger* rangerCharacter = new CharismaDecorator(new ConstitutionDecorator(new DexterityDecorator(new IntelligenceDecorator(new StrengthDecorator(new WisdomDecorator(new ClothingsDecorator(new RangerCharacter(),Clothings::armour), Wisdom::empathy),Strength::plump), Intelligence::simple),Dexterity::akward), Constitution::healthy),Charisma::leadership);
 		//IRanger* rangerCharacter = new CharismaDecorator(new RangerCharacter(), Charisma::leadership);
 		//((ClothingsDecorator*)(rangerCharacter))->getClothings();

@@ -1,10 +1,8 @@
 #ifndef Cloth
 #define Cloth
-#include <vector>
+#include <map>
 #include <string>
-enum Clothings{
-	START,armor, boots, hats, helmets, cloaks, END
-};
-std::vector<std::string> cloth = {"START", "armor", "boots", "hats", "helmets", "cloaks", "END"};
+enum Clothings{armor, boots, hats, helmets, cloaks};
+std::map<Clothings,std::string> cloth={{armor, "armor"},{boots, "boots"}, {hats, "hats"}, {helmets, "helmets"}, {cloaks, "cloaks"}};
 
 #endif
