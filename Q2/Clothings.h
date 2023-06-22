@@ -3,9 +3,8 @@
 #include <vector>
 #include <string>
 enum Clothings{
-	armour, boots, hats, helmets, cloaks
+	START,armor, boots, hats, helmets, cloaks, END
 };
-std::vector<std::string> cloth = {"armour", "boots", "hats", "helmets", "cloaks"
-};
+std::vector<std::string> cloth = {"START", "armor", "boots", "hats", "helmets", "cloaks", "END"};
 
 #endif
