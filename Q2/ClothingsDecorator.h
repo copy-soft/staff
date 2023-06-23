@@ -3,7 +3,7 @@
 #include "IRanger.h"
 #include <string>
 #include <iostream>
-#define null NULL
+#define null "" 
 using namespace std;
 class ClothingsDecorator : public CharacterDecorator{
 	protected: Clothings clothings;//поле clothings типа Clothings
@@ -46,9 +46,9 @@ class ClothingsDecorator : public CharacterDecorator{
 	}
 
 	//@Override
-	string getCharisma() {
+	string getCharisma() override{
 		rangerCharacterDecorator->getCharisma();
-		return null;
+		return "";
 	}
 
 	//@Override

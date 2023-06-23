@@ -2,7 +2,7 @@
 #include "IRanger.h"
 #include <iostream>
 #include <string>
-#define null NULL
+#define null "" 
 using namespace std;
 class DexterityDecorator : public CharacterDecorator{
 	protected: Dexterity dexterity;
@@ -20,7 +20,7 @@ class DexterityDecorator : public CharacterDecorator{
 	}
 
 	//@Override
-	string getDexterity() {
+	string getDexterity() override{
 		rangerCharacterDecorator->getDexterity();
 		cout<<"XYR Character's Dexterity Option: "<<dexterity<<endl;
 		return "test";
@@ -41,20 +41,20 @@ class DexterityDecorator : public CharacterDecorator{
 	//@Override
 	string getWisdom() {
 		rangerCharacterDecorator->getWisdom();
-		return null;
+		return "";
 	}
 
 	//@Override
 	string getCharisma() {
 		rangerCharacterDecorator->getCharisma();
 		
-		return null;
+		return "";
 	}
 
 	//@Override
 	string getClothings(){
 		rangerCharacterDecorator->getClothings();
-		return null;
+		return "";
 	}
 
 };

@@ -4,14 +4,14 @@
 #include <iostream>
 #include <string>
 #include <cstddef>
-#define null NULL
+#define null "" 
 using namespace std;
 class CharismaDecorator : public CharacterDecorator{
 	protected: Charisma charisma;//поле charisma типа Charisma
 
 	public: 
 	//Конструкотр(вызывается при создании обьекта оператором ()(где new) )с двумя параметрами: rangerCharacterDecorator и charisma
-	CharismaDecorator(IRanger* rangerCharacterDecorator, Charisma charisma)	{	
+	CharismaDecorator(IRanger* rangerCharacterDecorator, Charisma charisma):CharacterDecorator(rangerCharacterDecorator)	{	
 		//CharacterDecorator::CharacterDecorator(this);
 		//полю charisma присваивается переменная(второй параметр конструктора)
 		this->charisma = charisma;
@@ -47,20 +47,20 @@ class CharismaDecorator : public CharacterDecorator{
 	//@Override
 	string getWisdom() {
 		rangerCharacterDecorator->getWisdom();
-		return null;
+		return "";
 	}
 
 	//@Override
-	string getCharisma() {
+	string getCharisma() override {
 		rangerCharacterDecorator->getCharisma();
-		cout<<"XYR Character Charisma Option: " << charisma<<endl;
+		cout<<"XYR Character Charisma Option: " << cha[charisma]<<endl;
 		return "XYR Character Charisma Option: " + charisma;
 	}
 
 	//@Override
 	string getClothings(){
 		rangerCharacterDecorator->getClothings();
-		return null;
+		return "";
 	}
 
 };

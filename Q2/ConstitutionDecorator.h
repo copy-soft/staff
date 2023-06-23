@@ -4,7 +4,7 @@
 #include <string>
 #include <iostream>
 #include <cstddef>
-#define null NULL
+#define null "" 
 using namespace std;
 class ConstitutionDecorator : public CharacterDecorator{
 	protected: Constitution constitution;
@@ -28,7 +28,7 @@ class ConstitutionDecorator : public CharacterDecorator{
 	}
 
 	//@Override
-	string getConstitution() {
+	string getConstitution() override{
 		rangerCharacterDecorator->getConstitution();
 		cout<<"XYR Character Constitution Option: " << constitution<<endl;
 		return "test";
@@ -43,20 +43,20 @@ class ConstitutionDecorator : public CharacterDecorator{
 	//@Override
 	string getWisdom() {
 		rangerCharacterDecorator->getWisdom();
-		return null;
+		return "";
 	}
 
 	//@Override
 	string getCharisma() {
 		rangerCharacterDecorator->getCharisma();
 		
-		return null;
+		return "";
 	}
 
 	//@Override
 	string getClothings(){
 		rangerCharacterDecorator->getClothings();
-		return null;
+		return "";
 	}
 
 };

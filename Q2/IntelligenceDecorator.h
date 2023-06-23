@@ -2,7 +2,7 @@
 #include "IRanger.h"
 #include <iostream>
 #include <string>
-#define null NULL
+#define null "" 
 using namespace std;
 class IntelligenceDecorator : public CharacterDecorator{
 	
@@ -33,29 +33,29 @@ class IntelligenceDecorator : public CharacterDecorator{
 	}
 
 	//@Override
-	string getIntelligence() {
+	string getIntelligence() override{
 		rangerCharacterDecorator->getIntelligence();
-		cout<<"XYR Character Intelligence Option: " + intelligence<<endl;
-		return null;
+		cout<<"XYR Character Intelligence Option: " << intelligence<<endl;
+		return "";
 	}
 
 	//@Override
 	string getWisdom() {
 		rangerCharacterDecorator->getWisdom();
-		return null;
+		return "";
 	}
 
 	//@Override
 	string getCharisma() {
 		rangerCharacterDecorator->getCharisma();
 		
-		return null;
+		return "";
 	}
 
 	//@Override
 	string getClothings(){
 		rangerCharacterDecorator->getClothings();
-		return null;
+		return "";
 	}
 
 };

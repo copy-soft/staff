@@ -3,7 +3,7 @@
 #include "CharacterDecorator.h"
 #include <string>
 #include <iostream>
-#define null NULL
+#define null "" 
 using namespace std;
 class WisdomDecorator : public CharacterDecorator{
 	
@@ -51,7 +51,7 @@ class WisdomDecorator : public CharacterDecorator{
 	//@Override
 	string getCharisma() {
 		rangerCharacterDecorator->getCharisma();
-		return null;
+		return "";
 	}
 
 	//@Override

@@ -6,12 +6,12 @@ using namespace std;
 class ICharacter{
 	public:
 	ICharacter(){};
-	string getStrength(){return "str";};
-	string getDexterity(){return "dex";};
-	string getConstitution(){return "ICharacter constitution";};
-	string getIntelligence(){return "int";};
+	virtual string getStrength(){return "ICharacter Strength";};
+	virtual string getDexterity(){return "ICharacter Dexterity";};
+	virtual string getConstitution(){return "ICharacter Constitution";};
+	virtual string getIntelligence(){return "ICharacter Intelligence";};
 	virtual string getWisdom(){return "ICharacter Wisdom";};
-	string getCharisma(){return "ICharacter Charisma";};
+	virtual string getCharisma(){return "ICharacter Charisma";};
 	virtual string getClothings(){return "ICharacter Clothings";};
 };
 #endif

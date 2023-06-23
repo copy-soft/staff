@@ -2,22 +2,22 @@
 #include "IRanger.h"
 #include <iostream>
 #include <string>
-#define null NULL
+#define null "" 
 using namespace std;
 class StrengthDecorator : public CharacterDecorator{
 	
 	protected: Strength strength;
 
-	public: StrengthDecorator(IRanger* rangerCharacterDecorator, Strength strength)//:CharacterDecorator(rangerCharacterDecorator)
+	public: StrengthDecorator(IRanger* rangerCharacterDecorator, Strength strength):CharacterDecorator(rangerCharacterDecorator)
 	{
 		//super(rangerCharacterDecorator);
 		this->strength = strength;
 	}
 
 	//@Override
-	string getStrength() {
+	string getStrength() override{
 		rangerCharacterDecorator->getStrength();
-		cout<<"XYR Character Strength Option: " + strength<<endl;
+		cout<<"XYR Character Strength Option: " << strength<<endl;
 		return "XYR Character Strength Option: " + strength;
 	}
 
@@ -42,20 +42,20 @@ class StrengthDecorator : public CharacterDecorator{
 	//@Override
 	string getWisdom() {
 		rangerCharacterDecorator->getWisdom();
-		return null;
+		return "";
 	}
 
 	//@Override
 	string getCharisma() {
 		rangerCharacterDecorator->getCharisma();
 		
-		return null;
+		return "";
 	}
 
 	//@Override
 	string getClothings(){
 		rangerCharacterDecorator->getClothings();
-		return null;
+		return "";
 	}
 
 };
