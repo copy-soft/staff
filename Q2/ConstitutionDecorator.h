@@ -30,7 +30,7 @@ class ConstitutionDecorator : public CharacterDecorator{
 	//@Override
 	string getConstitution() override{
 		rangerCharacterDecorator->getConstitution();
-		cout<<"XYR Character Constitution Option: " << constitution<<endl;
+		cout<<"XYR Character Constitution Option: " << con[constitution]<<endl;
 		return "test";
 	}
 

@@ -17,7 +17,7 @@ class StrengthDecorator : public CharacterDecorator{
 	//@Override
 	string getStrength() override{
 		rangerCharacterDecorator->getStrength();
-		cout<<"XYR Character Strength Option: " << strength<<endl;
+		cout<<"XYR Character Strength Option: " << str[strength]<<endl;
 		return "XYR Character Strength Option: " + strength;
 	}
 

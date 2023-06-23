@@ -22,7 +22,7 @@ class DexterityDecorator : public CharacterDecorator{
 	//@Override
 	string getDexterity() override{
 		rangerCharacterDecorator->getDexterity();
-		cout<<"XYR Character's Dexterity Option: "<<dexterity<<endl;
+		cout<<"XYR Character Dexterity Option: "<<dex[dexterity]<<endl;
 		return "test";
 	}
 

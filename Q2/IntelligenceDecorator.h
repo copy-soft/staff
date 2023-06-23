@@ -35,7 +35,7 @@ class IntelligenceDecorator : public CharacterDecorator{
 	//@Override
 	string getIntelligence() override{
 		rangerCharacterDecorator->getIntelligence();
-		cout<<"XYR Character Intelligence Option: " << intelligence<<endl;
+		cout<<"XYR Character Intelligence Option: " << intl[intelligence]<<endl;
 		return "";
 	}
 
