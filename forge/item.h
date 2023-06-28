@@ -79,7 +79,7 @@ if (the_cast_to_weapon)
 }
 
 
-
+/*
 class Magic : public Item{
         public:
         Magic(Item* item, int mod): item_(item), magic_modifier_(mod){};
@@ -89,7 +89,7 @@ class Magic : public Item{
         int magic_modifier_;
 
 };
-
+*/
 class MagicDecorator : public Item{
         public:
         MagicDecorator(Item* item, int mod): item_(item), magic_modifier_(mod){
