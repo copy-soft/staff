@@ -25,7 +25,7 @@ int main() {
 		RangerCharacter* cloths = new RangerCharacter();
 		for(auto const& it:cloth){
 		ICharacter* Character = new ClothingsDecorator(cloths, it.first);
-                Character->getClothings(); 
+                //Character->getClothings(); 
 		}
 		cout<<endl;
 		IRanger* rangerCharacter = new CharismaDecorator(new ConstitutionDecorator(new DexterityDecorator(new IntelligenceDecorator(new StrengthDecorator(new WisdomDecorator(new ClothingsDecorator(new RangerCharacter(),Clothings::armor), Wisdom::empathy),Strength::plump), Intelligence::simple),Dexterity::akward), Constitution::healthy),Charisma::leadership);
@@ -36,6 +36,7 @@ int main() {
 		rangerCharacter->getIntelligence();
 		rangerCharacter->getStrength();
 		rangerCharacter->getWisdom();
+		cout<<endl;
 //------------------------------------------------------------------
 		//обьект RangerCharacter как выше только по шагам	
 		RangerCharacter* c = new RangerCharacter();
@@ -50,27 +51,22 @@ int main() {
 		//wd->getClothings();
 		//wd->getWisdom();
 
-		/*
+		
 		StrengthDecorator* sd = new StrengthDecorator(wd, Strength::burly);
 		IntelligenceDecorator* id = new IntelligenceDecorator(sd, Intelligence::inquisitive);
 		DexterityDecorator* dd = new DexterityDecorator(id, Dexterity::sneaky);
 		ConstitutionDecorator* cnd = new ConstitutionDecorator(dd, Constitution::strong);
 		CharismaDecorator* cd1 = new CharismaDecorator(cnd, Charisma::confidence);
-		*/
-		//ICharacter BarbarianCharacter = cd1;
-		//BarbarianCharacter.getClothings(); 
-		//BarbarianCharacter.getCharisma();
-		//BarbarianCharacter.getConstitution();
-		//BarbarianCharacter.getDexterity();
-		//BarbarianCharacter.getIntelligence();
-		//BarbarianCharacter.getStrength();
-		//BarbarianCharacter.getWisdom();
 		
-		//cout<<(ranger.getClothings())<<endl;
-		//for (Clothings clothes : Clothings.values()) {
-		//ICharacter Character = new ClothingsDecorator(c, clothes);
-		//Character.getClothings();
-		//cout<<(Character.getClothings())<<endl; 
+		ICharacter* BarbarianCharacter = cd1;
+		BarbarianCharacter->getClothings(); 
+		BarbarianCharacter->getCharisma();
+		BarbarianCharacter->getConstitution();
+		BarbarianCharacter->getDexterity();
+		BarbarianCharacter->getIntelligence();
+		BarbarianCharacter->getStrength();
+		BarbarianCharacter->getWisdom();
+		
 }
 		
 	

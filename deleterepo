@@ -1,0 +1,5 @@
+#!/usr/bin/python
+from github import Github
+g = Github("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")
+repo = g.get_user().get_repo("Hello-World")
+repo.delete()

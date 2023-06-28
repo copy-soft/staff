@@ -1,0 +1,13 @@
+diff --git a/include/linux/sched.h b/include/linux/sched.h
+index 63d242164b1a..68bf20bf9a52 100644
+--- a/include/linux/sched.h
++++ b/include/linux/sched.h
+@@ -397,7 +397,7 @@ struct sched_info {
+  * We define a basic fixed point arithmetic range, and then formalize
+  * all these metrics based on that basic range.
+  */
+-# define SCHED_FIXEDPOINT_SHIFT		10
++# define SCHED_FIXEDPOINT_SHIFT		20
+ # define SCHED_FIXEDPOINT_SCALE		(1L << SCHED_FIXEDPOINT_SHIFT)
+ 
+ /* Increase resolution of cpu_capacity calculations */
