@@ -57,10 +57,10 @@ class ConcreteArmor : public Item{
 enum ITEMTYPE {UNKNOWN, ARMOR, WEAPON};
 ITEMTYPE WhatIsItemType(Item* item){
 
-auto* the_cast_to_armor = dynamic_cast<ConcreteArmor*>(item);
+Item* the_cast_to_armor = dynamic_cast<ConcreteArmor*>(item);
 if (the_cast_to_armor)
 	return ITEMTYPE::ARMOR;
-auto* the_cast_to_weapon = dynamic_cast<ConcreteWeapon*>(item);
+Item* the_cast_to_weapon = dynamic_cast<ConcreteWeapon*>(item);
 if (the_cast_to_weapon)
 	return ITEMTYPE::WEAPON;
 
@@ -68,10 +68,10 @@ if (the_cast_to_weapon)
 }
 std::string WhatIsItemTypeString(Item* item){
 
-auto* the_cast_to_armor = dynamic_cast<ConcreteArmor*>(item);
+Item* the_cast_to_armor = dynamic_cast<ConcreteArmor*>(item);
 if (the_cast_to_armor)
         return "броня";
-auto* the_cast_to_weapon = dynamic_cast<ConcreteWeapon*>(item);
+Item* the_cast_to_weapon = dynamic_cast<ConcreteWeapon*>(item);
 if (the_cast_to_weapon)
 	return "оружие";
 
@@ -79,16 +79,6 @@ if (the_cast_to_weapon)
 }
 
 
-
-class Magic : public Item{
-        public:
-        Magic(Item* item, int mod): item_(item), magic_modifier_(mod){};
-        //int GetDamage() const {return damage+magic_damage;};
-        protected:
-	Item* item_;
-        int magic_modifier_;
-
-};
 
 class MagicDecorator : public Item{
         public:
