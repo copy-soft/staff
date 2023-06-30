@@ -71,11 +71,9 @@ if (the_cast_to_weapon)return ITEMTYPE::WEAPON;
 std::string WhatIsItemTypeString(Item* item){
 
 //Item* the_cast_to_armor = dynamic_cast<ConcreteArmor*>(item);
-Item* testa = new ConcreteArmor();
-if (typeid(testa).name()==typeid(dynamic_cast<ConcreteArmor*>(item)).name())return "броня";
+if (dynamic_cast<ConcreteArmor*>(item))return "броня";
 //Item* the_cast_to_weapon = dynamic_cast<ConcreteWeapon*>(item);
-Item* testw=new ConcreteWeapon();
-if (typeid(testw).name() == typeid(item).name())return "оружие";
+if (dynamic_cast<ConcreteWeapon*>(item))return "оружие";
 
         return "неизвестно";
 }
