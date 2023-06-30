@@ -1,4 +1,6 @@
 #include <string>
+#include <typeinfo>
+
 class Item{
 	public:
 	Item()=default;
@@ -34,7 +36,8 @@ class MagicWeapon : public Weapon{
 
 class ConcreteWeapon : public Item{
         public:
-        ConcreteWeapon(std::string n, int d): Item(n), damage(d){};
+        ConcreteWeapon(){};
+	ConcreteWeapon(std::string n, int d): Item(n), damage(d){};
         virtual std::string GetName()const override {return name;}
         virtual int GetDamage() const {return damage;};
         protected:
@@ -46,6 +49,7 @@ class ConcreteWeapon : public Item{
 
 class ConcreteArmor : public Item{
         public:
+	ConcreteArmor(){};
         ConcreteArmor(std::string n, int dr): Item(n), damage_res(dr){};
         virtual std::string GetName()const override {return name;}
         virtual int GetDamageRes() const {return damage_res;};
@@ -58,31 +62,29 @@ enum ITEMTYPE {UNKNOWN, ARMOR, WEAPON};
 ITEMTYPE WhatIsItemType(Item* item){
 
 Item* the_cast_to_armor = dynamic_cast<ConcreteArmor*>(item);
-if (the_cast_to_armor)
-	return ITEMTYPE::ARMOR;
+if (the_cast_to_armor)return ITEMTYPE::ARMOR;
 Item* the_cast_to_weapon = dynamic_cast<ConcreteWeapon*>(item);
-if (the_cast_to_weapon)
-	return ITEMTYPE::WEAPON;
+if (the_cast_to_weapon)return ITEMTYPE::WEAPON;
 
 	return ITEMTYPE::UNKNOWN;
 }
 std::string WhatIsItemTypeString(Item* item){
 
-Item* the_cast_to_armor = dynamic_cast<ConcreteArmor*>(item);
-if (the_cast_to_armor)
-        return "броня";
-Item* the_cast_to_weapon = dynamic_cast<ConcreteWeapon*>(item);
-if (the_cast_to_weapon)
-	return "оружие";
+//Item* the_cast_to_armor = dynamic_cast<ConcreteArmor*>(item);
+Item* testa = new ConcreteArmor();
+if (typeid(testa).name()==typeid(dynamic_cast<ConcreteArmor*>(item)).name())return "броня";
+//Item* the_cast_to_weapon = dynamic_cast<ConcreteWeapon*>(item);
+Item* testw=new ConcreteWeapon();
+if (typeid(testw).name() == typeid(item).name())return "оружие";
 
         return "неизвестно";
 }
 
 
 
-class MagicDecorator : public Item{
+class Magic : public Item{
         public:
-        MagicDecorator(Item* item, int mod): item_(item), magic_modifier_(mod){
+        Magic(Item* item, int mod): item_(item), magic_modifier_(mod){
 	}
 	virtual void SetName(const std::string& new_name) override {
 		magic_name_=new_name;
