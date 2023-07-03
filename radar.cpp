@@ -7,7 +7,7 @@ int main(){
 while(1){
 
 
-cout<<101<<endl;
+cout<<"distance "<<101<<endl;
 
 usleep(100000);
 
