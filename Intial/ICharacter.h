@@ -1,6 +1,6 @@
 class ICharacter {
 	public:
-	int getStrength(){return 18;};
+	int getStrength(){return s;};
 	int getDexterity();
 	int getConstitution();
 	int getIntelligence();

@@ -1,6 +1,6 @@
 #include <iostream>
-#include <unistd.h>
-
+#include <chrono>
+#include <thread>
 using namespace std;
 int main(){
 
@@ -9,7 +9,8 @@ while(1){
 
 cout<<"distance "<<101<<endl;
 
-usleep(100000);
+std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
 
 }
 
