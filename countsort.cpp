@@ -50,7 +50,10 @@ C2:;	for(i = n-1;i>=1; --i)
 	//printf("  not inversion count j\n");
 	}
 	}
-	
+	for (int c : d)
+        std::cout << c << ' ';
+        std::cout << '\n';
+
    	//for (i = 0; i < n; ++i)
 	//std::cout<<arr[i]<< " "; 
 	//std::cout<<std::endl;	
