@@ -14,7 +14,9 @@ Ally,
 Blessing,
 //location
 Monster,
-Barrier
+Barrier,
+Villain,
+Henchmen
 };
 
 class Card{
@@ -86,10 +88,19 @@ int main(){
         {Armor,2},
         {Item,1},
         {Ally,1},
-        {Blessing,6},
+        {Blessing,6}
         };
-
-	Location Farm;
+	Location FarmHouse, Woods, WaterFront;
+	Woods.cardlist={
+        {Weapon, 1}, 
+        {Spell, 0},
+        {Armor, 0},
+        {Item, 2},
+        {Ally, 0},
+        {Blessing, 0},
+	{Monster, 4},
+	{Barrier, 2}
+        };
 	std::deque<Card> d;
 	//std::deque<Ca> dn;
 	//d.push_front(13);
