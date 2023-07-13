@@ -12,7 +12,18 @@ class Card{
 };
 
 typedef std::map<int, Card> card;
-static card cards = {{1,{1,"BLESSING OF THE GOODS"}}};
+static card cards = {{1,{1, "BLESSING OF THE GOODS"}},
+		{2,{2, "THIEVES TOOLS"}},
+		{3,{3, "LEATHER ARMOR"}},
+		{4,{4, "SHERIFF HEMLOCK"}},
+		{5,{5, "BURGLAR"}},
+		{6,{6, "POTION OF VISIBLE"}},
+		{7,{7, "HOLY CANDLE"}},
+		{8,{8, "CROWBAR"}},
+		{9,{9, "DART"}},
+		{10,{10, "DAGGER"}}
+
+};
 
 
 void shuffle(int* arr, int N)
@@ -45,7 +56,7 @@ int main(){
 	//int arr[10] = {0};
         //int n = sizeof(arr)/sizeof(arr[0]); 
         srand(time(NULL));
-	for(int i=0;i<10;i++){Card f{rand()%11};d.push_back(f);}
+	for(int i=0;i<10;i++){Card f{rand()%11+1};d.push_back(f);}
         //for(int i=0;i<10;i++)dn.push_back(rand() % 11);
 
         //LogDuration ld("countsort");
@@ -77,8 +88,8 @@ C2:;	for(i = n-1;i>=1; --i)
 	}
 	}
 	for (Card c : d)
-        if (c.num==1)std::cout<<cards[1].name<<std::endl;
-	else std::cout << c.num << std::endl;
+        std::cout<<cards[c.num].name<<std::endl;
+	//else std::cout << c.num << std::endl;
         //std::cout << '\n';
 	//std::cout<<cards[1].name<<std::endl;
 	//for (int c : dn)
