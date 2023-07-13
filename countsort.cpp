@@ -19,6 +19,14 @@ class Card{
 	std::string name;
 	enum CardType type;
 };
+typedef std::map<int, Card> card;
+typedef std::map<CardType, int> CardList;
+
+class Hero{
+	public:
+	std::string name;
+	std::map<CardType, int> cardlist;
+};
 
 typedef std::map<int, Card> card;
 static card cards = {{1,{1, "BLESSING OF THE GOODS",Blessing}},
@@ -51,6 +59,8 @@ void shuffle(int* arr, int N)
 
 
 int main(){ 
+	Hero Merisiel;
+	Merisiel.cardlist[Weapon]=0;
 	std::deque<Card> d;
 	//std::deque<Ca> dn;
 	//d.push_front(13);
