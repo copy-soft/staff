@@ -25,7 +25,8 @@ typedef std::map<CardType, int> CardList;
 class Hero{
 	public:
 	std::string name;
-	std::map<CardType, int> cardlist;
+	CardList cardlist;
+	int Skills;
 };
 
 typedef std::map<int, Card> card;
@@ -60,7 +61,15 @@ void shuffle(int* arr, int N)
 
 int main(){ 
 	Hero Merisiel;
-	Merisiel.cardlist[Weapon]=0;
+	Merisiel.name="Merisiel";
+	Merisiel.cardlist={
+	{Weapon,2}, 
+	{Spell,0},
+	{Armor,1},
+	{Item,6},
+	{Ally,2},
+	{Blessing,4},
+	};
 	std::deque<Card> d;
 	//std::deque<Ca> dn;
 	//d.push_front(13);
