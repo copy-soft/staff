@@ -4,24 +4,33 @@
 #include <deque>
 #include <map>
 #include <string>
+enum CardType{
+Weapon,
+Spell,
+Armor,
+Item,
+Ally,
+Blessing
+};
+
 class Card{
 	public:
 	int num;
 	std::string name;
-
+	enum CardType type;
 };
 
 typedef std::map<int, Card> card;
-static card cards = {{1,{1, "BLESSING OF THE GOODS"}},
-		{2,{2, "THIEVES TOOLS"}},
-		{3,{3, "LEATHER ARMOR"}},
-		{4,{4, "SHERIFF HEMLOCK"}},
-		{5,{5, "BURGLAR"}},
-		{6,{6, "POTION OF VISIBLE"}},
-		{7,{7, "HOLY CANDLE"}},
-		{8,{8, "CROWBAR"}},
-		{9,{9, "DART"}},
-		{10,{10, "DAGGER"}}
+static card cards = {{1,{1, "BLESSING OF THE GOODS",Blessing}},
+		{2,{2, "THIEVES TOOLS", Item}},
+		{3,{3, "LEATHER ARMOR", Armor}},
+		{4,{4, "SHERIFF HEMLOCK", Ally}},
+		{5,{5, "BURGLAR", Ally}},
+		{6,{6, "POTION OF VISION", Item}},
+		{7,{7, "HOLY CANDLE", Item}},
+		{8,{8, "CROWBAR", Item}},
+		{9,{9, "DART", Weapon}},
+		{10,{10, "DAGGER", Weapon}}
 
 };
 
@@ -56,7 +65,7 @@ int main(){
 	//int arr[10] = {0};
         //int n = sizeof(arr)/sizeof(arr[0]); 
         srand(time(NULL));
-	for(int i=0;i<10;i++){Card f{rand()%11+1};d.push_back(f);}
+	for(int i=0;i<15;i++){Card f{rand()%10+1};d.push_back(f);}
         //for(int i=0;i<10;i++)dn.push_back(rand() % 11);
 
         //LogDuration ld("countsort");
@@ -88,12 +97,12 @@ C2:;	for(i = n-1;i>=1; --i)
 	}
 	}
 	for (Card c : d)
-        std::cout<<cards[c.num].name<<std::endl;
+        std::cout<<cards[c.num].name<<" "<<cards[c.num].type<<std::endl;
 	//else std::cout << c.num << std::endl;
         //std::cout << '\n';
 	//std::cout<<cards[1].name<<std::endl;
-	//for (int c : dn)
-        //std::cout << c << ' ';
+	//for (Card c : d)
+        //std::cout << c.num << ' ' << "type" << std::endl;
         //std::cout << '\n';
 
    	//for (i = 0; i < n; ++i)
