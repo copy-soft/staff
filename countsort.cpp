@@ -1,13 +1,38 @@
-//#include <stdio.h> 
-//#include <stdlib.h>
-//#include <time.h>
 #include <ctime>
 #include <chrono>
 #include <iostream>
 #include <deque>
-//#include "logdur.h"
+#include <map>
+#include <string>
+class Card{
+	public:
+	int num;
+	std::string name;
+
+};
+
+typedef std::map<int, Card> card;
+static card cards = {{1,{1,"BLESSING OF THE GOODS"}}};
+
+
+void shuffle(int* arr, int N)
+{
+    srand(time(NULL));
+ 
+    for (int i = N - 1; i >= 1; i--)
+    {
+        int j = rand() % (i + 1);
+ 
+        int tmp = arr[j];
+        arr[j] = arr[i];
+        arr[i] = tmp;
+    }
+}
+
+
 int main(){ 
-	std::deque<int> d;
+	std::deque<Card> d;
+	//std::deque<Ca> dn;
 	//d.push_front(13);
 	//d.push_back(25);
 	//for (int n : d)
@@ -20,7 +45,8 @@ int main(){
 	//int arr[10] = {0};
         //int n = sizeof(arr)/sizeof(arr[0]); 
         srand(time(NULL));
-	for(int i=0;i<10;i++)d.push_back(rand() % 11);
+	for(int i=0;i<10;i++){Card f{rand()%11};d.push_back(f);}
+        //for(int i=0;i<10;i++)dn.push_back(rand() % 11);
 
         //LogDuration ld("countsort");
         //{
@@ -31,7 +57,7 @@ C1:;    int count[d.size()]={0};
 	//clock_t t1;
 C2:;	for(i = n-1;i>=1; --i)
    	for (j=i-1;j>=0;--j){
-   	if (d[i]-d[j]>0)
+   	if (d[i].num-d[j].num>0)
    	{
 	++count[i];
 	//t1 = clock();
@@ -50,9 +76,14 @@ C2:;	for(i = n-1;i>=1; --i)
 	//printf("  not inversion count j\n");
 	}
 	}
-	for (int c : d)
-        std::cout << c << ' ';
-        std::cout << '\n';
+	for (Card c : d)
+        if (c.num==1)std::cout<<cards[1].name<<std::endl;
+	else std::cout << c.num << std::endl;
+        //std::cout << '\n';
+	//std::cout<<cards[1].name<<std::endl;
+	//for (int c : dn)
+        //std::cout << c << ' ';
+        //std::cout << '\n';
 
    	//for (i = 0; i < n; ++i)
 	//std::cout<<arr[i]<< " "; 
