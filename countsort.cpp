@@ -5,12 +5,16 @@
 #include <map>
 #include <string>
 enum CardType{
+//hero
 Weapon,
 Spell,
 Armor,
 Item,
 Ally,
-Blessing
+Blessing,
+//location
+Monster,
+Barrier
 };
 
 class Card{
@@ -28,8 +32,12 @@ class Hero{
 	CardList cardlist;
 	int Skills;
 };
+class Location{
+	public:
+	std::string name;
+	CardList cardlist;
 
-typedef std::map<int, Card> card;
+};
 static card cards = {{1,{1, "BLESSING OF THE GOODS",Blessing}},
 		{2,{2, "THIEVES TOOLS", Item}},
 		{3,{3, "LEATHER ARMOR", Armor}},
@@ -51,10 +59,10 @@ void shuffle(int* arr, int N)
     for (int i = N - 1; i >= 1; i--)
     {
         int j = rand() % (i + 1);
- 
-        int tmp = arr[j];
-        arr[j] = arr[i];
-        arr[i] = tmp;
+	std::swap(arr[i],arr[j]); 
+        //int tmp = arr[j];
+        //arr[j] = arr[i];
+        //arr[i] = tmp;
     }
 }
 
@@ -70,6 +78,7 @@ int main(){
 	{Ally,2},
 	{Blessing,4},
 	};
+	Location Farm;
 	std::deque<Card> d;
 	//std::deque<Ca> dn;
 	//d.push_front(13);
