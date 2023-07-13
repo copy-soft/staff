@@ -15,15 +15,16 @@ Blessing,
 //location
 Monster,
 Barrier,
-Villain,
-Henchmen
+//boss
+//Villain,
+//Henchmen
 };
-
 class Card{
 	public:
 	int num;
 	std::string name;
 	enum CardType type;
+	int Diff;
 };
 typedef std::map<int, Card> card;
 typedef std::map<CardType, int> CardList;
@@ -32,15 +33,17 @@ class Hero{
 	public:
 	std::string name;
 	CardList cardlist;
+	static card cards;
 	int Skills;
 };
 class Location{
 	public:
 	std::string name;
 	CardList cardlist;
+	static card cards;
 
 };
-static card cards = {{1,{1, "BLESSING OF THE GOODS",Blessing}},
+card Hero::cards = {{1,{1, "BLESSING OF THE GOODS",Blessing}},
 		{2,{2, "THIEVES TOOLS", Item}},
 		{3,{3, "LEATHER ARMOR", Armor}},
 		{4,{4, "SHERIFF HEMLOCK", Ally}},
@@ -50,6 +53,18 @@ static card cards = {{1,{1, "BLESSING OF THE GOODS",Blessing}},
 		{8,{8, "CROWBAR", Item}},
 		{9,{9, "DART", Weapon}},
 		{10,{10, "DAGGER", Weapon}}
+
+};
+card Location::cards = {{1,{1, "JUBRAIL VHISKI", Monster, 10}},//recharge 2 cards
+                {2,{2, "BANDIT", Monster, 10}},//recharge 1 card
+                {3,{3, "GOBLIN WARRIOR", Monster, 9}},
+                {4,{4, "PIT TRAP", Barrier, 7}},
+                {5,{5, "ZOMBIE", Monster, 9}},
+                {6,{6, "GIANT GECKO", Monster, 8}},
+                {7,{7, "CULTIST", Monster, 9}},
+                {8,{8, "SKELETON", Monster, 8}},
+                {9,{9, "BUGBEAR", Monster, 10}},
+                {10,{10, "GOBLIN COMMANDO", Monster, 9}}
 
 };
 
@@ -91,9 +106,9 @@ int main(){
         {Blessing,6}
         };
 	Location FarmHouse, Woods, WaterFront;
-	Woods.cardlist={
-        {Weapon, 1}, 
-        {Spell, 0},
+	Woods.cardlist={//undefeated monsters banished (not vill & hench)
+        {Weapon, 1}, //closing: wisdom or survival check 6
+        {Spell, 0}, //closed: no
         {Armor, 0},
         {Item, 2},
         {Ally, 0},
@@ -102,7 +117,7 @@ int main(){
 	{Barrier, 2}
         };
 	std::deque<Card> d;
-	//std::deque<Ca> dn;
+	std::deque<Card> dn;
 	//d.push_front(13);
 	//d.push_back(25);
 	//for (int n : d)
@@ -116,7 +131,7 @@ int main(){
         //int n = sizeof(arr)/sizeof(arr[0]); 
         srand(time(NULL));
 	for(int i=0;i<15;i++){Card f{rand()%10+1};d.push_back(f);}
-        //for(int i=0;i<10;i++)dn.push_back(rand() % 11);
+        for(int i=0;i<10;i++){Card s{rand()%10+1};dn.push_back(s);}
 
         //LogDuration ld("countsort");
         //{
@@ -147,7 +162,9 @@ C2:;	for(i = n-1;i>=1; --i)
 	}
 	}
 	for (Card c : d)
-        std::cout<<cards[c.num].name<<" "<<cards[c.num].type<<std::endl;
+        std::cout << Merisiel.cards[c.num].name << " "<< Merisiel.cards[c.num].type << std::endl;
+	for (Card c : dn)
+	std::cout << Woods.cards[c.num].name << " " << Woods.cards[c.num].type << std::endl;
 	//else std::cout << c.num << std::endl;
         //std::cout << '\n';
 	//std::cout<<cards[1].name<<std::endl;
