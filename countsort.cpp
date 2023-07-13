@@ -78,6 +78,17 @@ int main(){
 	{Ally,2},
 	{Blessing,4},
 	};
+	Hero Kyra;
+        Kyra.name="Kyra";
+        Kyra.cardlist={
+        {Weapon,2}, 
+        {Spell,3},
+        {Armor,2},
+        {Item,1},
+        {Ally,1},
+        {Blessing,6},
+        };
+
 	Location Farm;
 	std::deque<Card> d;
 	//std::deque<Ca> dn;
