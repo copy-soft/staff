@@ -4,6 +4,7 @@
 #include <deque>
 #include <map>
 #include <string>
+#include <vector>
 enum CardType{
 //hero
 Weapon,
@@ -19,12 +20,23 @@ Barrier,
 //Villain,
 //Henchmen
 };
+enum CharType{
+STR,
+DEX,
+CON,
+INT,
+WIS,
+CHA
+};
 class Card{
 	public:
 	int num;
 	std::string name;
 	enum CardType type;
 	int Diff;
+	enum CharType ctype;
+	int Diff2;
+	enum CharType ctype2;
 };
 typedef std::map<int, Card> card;
 typedef std::map<CardType, int> CardList;
@@ -33,38 +45,38 @@ class Hero{
 	public:
 	std::string name;
 	CardList cardlist;
-	static card cards;
+	//static card cards;
 	int Skills;
 };
 class Location{
 	public:
 	std::string name;
 	CardList cardlist;
-	static card cards;
+	//static card cards;
 
 };
-card Hero::cards = {{1,{1, "BLESSING OF THE GOODS",Blessing}},
-		{2,{2, "THIEVES TOOLS", Item}},
-		{3,{3, "LEATHER ARMOR", Armor}},
+card cards = {{1,{1, "BLESSING OF THE GOODS",Blessing, 0}},
+		{2,{2, "THIEVES TOOLS", Item, 4}},
+		{3,{3, "LEATHER ARMOR", Armor, 3, CON}},
 		{4,{4, "SHERIFF HEMLOCK", Ally}},
 		{5,{5, "BURGLAR", Ally}},
 		{6,{6, "POTION OF VISION", Item}},
 		{7,{7, "HOLY CANDLE", Item}},
-		{8,{8, "CROWBAR", Item}},
+		{8,{8, "CROWBAR", Item, 3}},
 		{9,{9, "DART", Weapon}},
-		{10,{10, "DAGGER", Weapon}}
-
-};
-card Location::cards = {{1,{1, "JUBRAIL VHISKI", Monster, 10}},//recharge 2 cards
-                {2,{2, "BANDIT", Monster, 10}},//recharge 1 card
-                {3,{3, "GOBLIN WARRIOR", Monster, 9}},
-                {4,{4, "PIT TRAP", Barrier, 7}},
-                {5,{5, "ZOMBIE", Monster, 9}},
-                {6,{6, "GIANT GECKO", Monster, 8}},
-                {7,{7, "CULTIST", Monster, 9}},
-                {8,{8, "SKELETON", Monster, 8}},
-                {9,{9, "BUGBEAR", Monster, 10}},
-                {10,{10, "GOBLIN COMMANDO", Monster, 9}}
+		{10,{10, "DAGGER", Weapon, 3, DEX, 3, STR}},
+		{11,{11, "JUBRAIL VHISKI", Monster, 10}},//recharge 2 cards
+                {12,{12, "BANDIT", Monster, 10}},//recharge 1 card
+                {13,{13, "GOBLIN WARRIOR", Monster, 9}},
+                {14,{14, "PIT TRAP", Barrier, 7, INT, 8, DEX}},
+                {15,{15, "ZOMBIE", Monster, 9}},
+                {16,{16, "GIANT GECKO", Monster, 8}},
+                {17,{17, "CULTIST", Monster, 9}},
+                {18,{18, "SKELETON", Monster, 8}},
+                {19,{19, "BUGBEAR", Monster, 10}},
+                {20,{20, "GOBLIN COMMANDO", Monster, 9}},
+		{21,{21, "SCOUT", Monster, 8}},
+		{22,{22, "WARLORD", Monster, 9}}
 
 };
 
@@ -131,7 +143,7 @@ int main(){
         //int n = sizeof(arr)/sizeof(arr[0]); 
         srand(time(NULL));
 	for(int i=0;i<15;i++){Card f{rand()%10+1};d.push_back(f);}
-        for(int i=0;i<10;i++){Card s{rand()%10+1};dn.push_back(s);}
+        for(int i=0;i<10;i++){Card s{rand()%20+1};dn.push_back(s);}
 
         //LogDuration ld("countsort");
         //{
@@ -161,10 +173,20 @@ C2:;	for(i = n-1;i>=1; --i)
 	//printf("  not inversion count j\n");
 	}
 	}
-	for (Card c : d)
-        std::cout << Merisiel.cards[c.num].name << " "<< Merisiel.cards[c.num].type << std::endl;
-	for (Card c : dn)
-	std::cout << Woods.cards[c.num].name << " " << Woods.cards[c.num].type << std::endl;
+   	std::vector<Card> hand;
+	for(int y = 0; y < 5; y++){
+	//Card f{rand()%10+1};	
+	hand.push_back(d.front());
+		d.pop_front();
+	}
+	//for (Card c : d)
+        //std::cout << cards[c.num].name << " "<< cards[c.num].type << std::endl;
+	std::cout<<"Hand:"<<std::endl;
+	for(Card c : hand)
+        std::cout << cards[c.num].name << " "<< cards[c.num].type << std::endl;
+	std::cout<<"Move:"<<std::endl;
+	//for (Card c : dn)
+	std::cout << cards[dn[0].num].name << " " << cards[dn[0].num].type << std::endl;
 	//else std::cout << c.num << std::endl;
         //std::cout << '\n';
 	//std::cout<<cards[1].name<<std::endl;
