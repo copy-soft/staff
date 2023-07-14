@@ -28,6 +28,14 @@ INT,
 WIS,
 CHA
 };
+enum Dice{
+d4,
+d6,
+d8,
+d10,
+d12,
+d20
+};
 class Card{
 	public:
 	int num;
@@ -37,16 +45,17 @@ class Card{
 	enum CharType ctype;
 	int Diff2;
 	enum CharType ctype2;
+	
 };
 typedef std::map<int, Card> card;
 typedef std::map<CardType, int> CardList;
-
+typedef std::map<CharType, Dice> Skills;
 class Hero{
 	public:
 	std::string name;
 	CardList cardlist;
 	//static card cards;
-	int Skills;
+	Skills skills;
 };
 class Location{
 	public:
@@ -56,14 +65,14 @@ class Location{
 
 };
 card cards = {{1,{1, "BLESSING OF THE GOODS",Blessing, 0}},
-		{2,{2, "THIEVES TOOLS", Item, 4}},
+		{2,{2, "THIEVES TOOLS", Item, 4, DEX}},
 		{3,{3, "LEATHER ARMOR", Armor, 3, CON}},
-		{4,{4, "SHERIFF HEMLOCK", Ally}},
-		{5,{5, "BURGLAR", Ally}},
-		{6,{6, "POTION OF VISION", Item}},
-		{7,{7, "HOLY CANDLE", Item}},
-		{8,{8, "CROWBAR", Item, 3}},
-		{9,{9, "DART", Weapon}},
+		{4,{4, "SHERIFF HEMLOCK", Ally, 8, CHA}},
+		{5,{5, "BURGLAR", Ally, 7, DEX, 8, CHA}},
+		{6,{6, "POTION OF VISION", Item, 4, INT}},
+		{7,{7, "HOLY CANDLE", Item, 10, WIS}},
+		{8,{8, "CROWBAR", Item, 3, STR}},
+		{9,{9, "DART", Weapon, 4, DEX}},
 		{10,{10, "DAGGER", Weapon, 3, DEX, 3, STR}},
 		{11,{11, "JUBRAIL VHISKI", Monster, 10}},//recharge 2 cards
                 {12,{12, "BANDIT", Monster, 10}},//recharge 1 card
@@ -186,7 +195,11 @@ C2:;	for(i = n-1;i>=1; --i)
         std::cout << cards[c.num].name << " "<< cards[c.num].type << std::endl;
 	std::cout<<"Move:"<<std::endl;
 	//for (Card c : dn)
-	std::cout << cards[dn[0].num].name << " " << cards[dn[0].num].type << std::endl;
+	std::cout << cards[dn[0].num].name 
+	<< " " << cards[dn[0].num].type 
+	<< " diffcheck: " << cards[dn[0].num].Diff 
+	<< " typecheck: " << cards[dn[0].num].ctype 
+	<< std::endl;
 	//else std::cout << c.num << std::endl;
         //std::cout << '\n';
 	//std::cout<<cards[1].name<<std::endl;
