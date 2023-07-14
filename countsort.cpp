@@ -195,7 +195,7 @@ C2:;	for(i = n-1;i>=1; --i)
         std::cout << cards[c.num].name << " "<< cards[c.num].type << std::endl;
 	std::cout<<"Move:"<<std::endl;
 	//for (Card c : dn)
-	std::cout << cards[dn[0].num].name 
+	std::cout << cards[dn.front().num].name 
 	<< " " << cards[dn[0].num].type 
 	<< " diffcheck: " << cards[dn[0].num].Diff 
 	<< " typecheck: " << cards[dn[0].num].ctype 
