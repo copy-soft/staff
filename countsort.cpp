@@ -26,7 +26,8 @@ DEX,
 CON,
 INT,
 WIS,
-CHA
+CHA,
+NONE
 };
 enum Dice{
 d4,
@@ -64,7 +65,7 @@ class Location{
 	//static card cards;
 
 };
-card cards = {{1,{1, "BLESSING OF THE GOODS",Blessing, 0}},
+card cards = {{1,{1, "BLESSING OF THE GOODS",Blessing, 0, NONE}},
 		{2,{2, "THIEVES TOOLS", Item, 4, DEX}},
 		{3,{3, "LEATHER ARMOR", Armor, 3, CON}},
 		{4,{4, "SHERIFF HEMLOCK", Ally, 8, CHA}},
@@ -85,9 +86,7 @@ card cards = {{1,{1, "BLESSING OF THE GOODS",Blessing, 0}},
                 {19,{19, "BUGBEAR", Monster, 10}},
                 {20,{20, "GOBLIN COMMANDO", Monster, 9}},
 		{21,{21, "SCOUT", Monster, 8}},
-		{22,{22, "WARLORD", Monster, 9}}
-
-};
+		{22,{22, "WARLORD", Monster, 9}}};
 
 
 void shuffle(int* arr, int N)
@@ -116,6 +115,7 @@ int main(){
 	{Ally,2},
 	{Blessing,4},
 	};
+	Merisiel.skills={{STR, d8}, {DEX, d12}, {CON, d6},{INT, d4}, {WIS, d6}, {CHA, d6}};
 	Hero Kyra;
         Kyra.name="Kyra";
         Kyra.cardlist={
@@ -200,6 +200,29 @@ C2:;	for(i = n-1;i>=1; --i)
 	<< " diffcheck: " << cards[dn[0].num].Diff 
 	<< " typecheck: " << cards[dn[0].num].ctype 
 	<< std::endl;
+	switch(Merisiel.skills[cards[dn[0].num].ctype])
+	{
+	case d4:
+		std::cout<<"d4"<<std::endl;
+		break;
+        case d6:
+		std::cout<<"d6"<<std::endl;
+		break;
+        case d8:
+		std::cout<<"d8"<<std::endl;
+		break;
+        case d10:
+		std::cout<<"d10"<<std::endl;
+		break;
+        case d12:
+		std::cout<<"d12"<<std::endl;
+		break;
+        case d20:
+		std::cout<<"d20"<<std::endl;
+		break;
+
+	};
+
 	//else std::cout << c.num << std::endl;
         //std::cout << '\n';
 	//std::cout<<cards[1].name<<std::endl;
