@@ -5,6 +5,59 @@
 #include <map>
 #include <string>
 #include <vector>
+#include <random>
+class dice {
+	public:
+        int nums;
+
+        explicit dice(int sides = -1);
+
+        ~dice() = default;
+
+        [[nodiscard]] int roll() const;
+
+        dice &operator=(const dice &a) = default;
+
+        bool operator==(const dice &a) const;
+
+        bool operator!=(const dice &a) const;
+};
+
+dice d0(0);
+dice d1(1);
+dice d2(2);
+dice d4(4);
+dice d6(6);
+dice d8(8);
+dice d10(10);
+dice d12(12);
+dice d20(20);
+dice d100(100);
+
+typedef std::map<int, dice> dmap;
+static dmap dices;
+
+
+dice::dice(int sides) {
+    nums = sides;
+}
+
+int dice::roll() const {
+    if (nums > 0) {
+        unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+        std::default_random_engine generator(seed);
+
+        std::uniform_int_distribution<int> distribution(1, nums);
+
+        return distribution(generator);
+    } else {
+        return nums;
+    }
+}
+
+
+
+
 enum CardType{
 //hero
 Weapon,
@@ -29,14 +82,14 @@ WIS,
 CHA,
 NONE
 };
-enum Dice{
+/*enum Dice{
 d4,
 d6,
 d8,
 d10,
 d12,
 d20
-};
+};*/
 class Card{
 	public:
 	int num;
@@ -50,7 +103,7 @@ class Card{
 };
 typedef std::map<int, Card> card;
 typedef std::map<CardType, int> CardList;
-typedef std::map<CharType, Dice> Skills;
+typedef std::map<CharType, dice> Skills;
 class Hero{
 	public:
 	std::string name;
@@ -183,8 +236,9 @@ C2:;	for(i = n-1;i>=1; --i)
 	//for (Card c : d)
         //std::cout << cards[c.num].name << " "<< cards[c.num].type << std::endl;
 	std::cout<<"Hand:"<<std::endl;
+	int g;
 	for(Card c : hand)
-        std::cout << cards[c.num].name << " "<< cards[c.num].type << std::endl;
+        {std::cout << g << " " << cards[c.num].name << " "<< cards[c.num].type << std::endl;g++;}
 	std::cout<<"Move:"<<std::endl;
 	//for (Card c : dn)
 	std::cout << cards[dn.front().num].name 
@@ -193,8 +247,8 @@ C2:;	for(i = n-1;i>=1; --i)
 	//<< " type: " << cards[dn[0].num].ctype 
 	<< std::endl;
 	std::cout<<cards[dn.front().num].text<<std::endl;
-	switch(Merisiel.skills[cards[dn[0].num].ctype])
-	{
+	std::cout<<Merisiel.skills[cards[dn.front().num].ctype].roll()<<std::endl;
+	/*{
 	case d4:
 		std::cout<<"d4 roll: "<<rand()%4+1<<std::endl;
 		break;
@@ -214,14 +268,14 @@ C2:;	for(i = n-1;i>=1; --i)
 		std::cout<<"d20 roll: "<<rand()%20+1<<std::endl;
 		break;
 
-	};
+	};*/
 
 	//else std::cout << c.num << std::endl;
         //std::cout << '\n';
 	//std::cout<<cards[1].name<<std::endl;
 	//for (Card c : d)
         //std::cout << c.num << ' ' << "type" << std::endl;
-        //std::cout << '\n';
+        //std::cout << 'q:wq\n';
 
    	//for (i = 0; i < n; ++i)
 	//std::cout<<arr[i]<< " "; 
