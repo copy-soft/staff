@@ -7,7 +7,7 @@ all:
 	#g++ point.cpp -g
 	#g++ job.cpp
 	#g++ der.cpp -g
-	g++ countsort.cpp;./a.out
+	g++ game.cpp;./a.out
 
 all1:
 	g++ inheritancefromvector.cpp

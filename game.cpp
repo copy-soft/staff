@@ -108,14 +108,15 @@ class Hero{
 	public:
 	std::string name;
 	CardList cardlist;
-	//static card cards;
+	std::vector<Card> hand;
+	std::deque<Card> cards;
 	Skills skills;
 };
 class Location{
 	public:
 	std::string name;
 	CardList cardlist;
-	//static card cards;
+	std::deque<Card> cards;
 
 };
 
@@ -182,8 +183,8 @@ int main(){
 	{Monster, 4},
 	{Barrier, 2}
         };
-	std::deque<Card> d;
-	std::deque<Card> dn;
+	//std::deque<Card> d;
+	//std::deque<Card> dn;
 	//d.push_front(13);
 	//d.push_back(25);
 	//for (int n : d)
@@ -196,12 +197,12 @@ int main(){
 	//int arr[10] = {0};
         //int n = sizeof(arr)/sizeof(arr[0]); 
         srand(time(NULL));
-	for(int i=1;i<16;i++){Card f{rand()%10+1};d.push_back(f);}
-        for(int i=1;i<11;i++){Card s{rand()%10+1};dn.push_back(s);}
+	for(int i=1;i<16;i++){Card f{rand()%10+1};Merisiel.cards.push_back(f);}
+        for(int i=1;i<11;i++){Card s{rand()%10+1};Woods.cards.push_back(s);}
 
         //LogDuration ld("countsort");
         //{
-
+/*
 	//int output[n]; 
 C1:;    int count[d.size()]={0};
 	int i, j, n=d.size(); 
@@ -218,7 +219,7 @@ C2:;	for(i = n-1;i>=1; --i)
 	//printf(" %i",count[k]); 
 	//printf("  inversion count i\n");
 	}else{
-	++count[j];
+	++count[j];v
 	//t1 = clock();
 	//printf ("%f ",((double)t1)/CLOCKS_PER_SEC);
 	//printf("i=%i j=%i [%i < %i]",i,j, arr[i],arr[j]);
@@ -226,28 +227,28 @@ C2:;	for(i = n-1;i>=1; --i)
 	//printf(" %i",count[k]);
 	//printf("  not inversion count j\n");
 	}
-	}
-   	std::vector<Card> hand;
+	}*/
+   	//std::vector<Card> hand;
 	for(int y = 0; y < 5; y++){
 	//Card f{rand()%10+1};	
-	hand.push_back(d.front());
-		d.pop_front();
+	Merisiel.hand.push_back(Merisiel.cards.front());
+		Merisiel.cards.pop_front();
 	}
 	//for (Card c : d)
         //std::cout << cards[c.num].name << " "<< cards[c.num].type << std::endl;
 	std::cout<<"Hand:"<<std::endl;
 	int g;
-	for(Card c : hand)
+	for(Card c : Merisiel.hand)
         {std::cout << g << " " << cards[c.num].name << " "<< cards[c.num].type << std::endl;g++;}
 	std::cout<<"Move:"<<std::endl;
 	//for (Card c : dn)
-	std::cout << cards[dn.front().num].name 
+	std::cout << cards[Woods.cards.front().num].name 
 	//<< " " << cards[dn[0].num].type 
-	<< " diff: " << cards[dn.front().num].Diff 
+	<< " diff: " << cards[Woods.cards.front().num].Diff 
 	//<< " type: " << cards[dn[0].num].ctype 
 	<< std::endl;
-	std::cout<<cards[dn.front().num].text<<std::endl;
-	std::cout<<Merisiel.skills[cards[dn.front().num].ctype].roll()<<std::endl;
+	std::cout<<cards[Woods.cards.front().num].text<<std::endl;
+	std::cout<<Merisiel.skills[cards[Woods.cards.front().num].ctype].roll()<<std::endl;
 	/*{
 	case d4:
 		std::cout<<"d4 roll: "<<rand()%4+1<<std::endl;
