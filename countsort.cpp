@@ -196,9 +196,9 @@ C2:;	for(i = n-1;i>=1; --i)
 	std::cout<<"Move:"<<std::endl;
 	//for (Card c : dn)
 	std::cout << cards[dn.front().num].name 
-	<< " " << cards[dn[0].num].type 
+	//<< " " << cards[dn[0].num].type 
 	<< " diff: " << cards[dn[0].num].Diff 
-	<< " type: " << cards[dn[0].num].ctype 
+	//<< " type: " << cards[dn[0].num].ctype 
 	<< std::endl;
 	switch(Merisiel.skills[cards[dn[0].num].ctype])
 	{
