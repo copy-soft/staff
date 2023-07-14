@@ -46,7 +46,7 @@ class Card{
 	enum CharType ctype;
 	int Diff2;
 	enum CharType ctype2;
-	
+	std::string text;	
 };
 typedef std::map<int, Card> card;
 typedef std::map<CardType, int> CardList;
@@ -65,16 +65,8 @@ class Location{
 	//static card cards;
 
 };
-card cards = {{1,{1, "BLESSING OF THE GOODS",Blessing, 0, NONE}},
-		{2,{2, "THIEVES TOOLS", Item, 4, DEX}},
-		{3,{3, "LEATHER ARMOR", Armor, 3, CON}},
-		{4,{4, "SHERIFF HEMLOCK", Ally, 8, CHA}},
-		{5,{5, "BURGLAR", Ally, 7, DEX, 8, CHA}},
-		{6,{6, "POTION OF VISION", Item, 4, INT}},
-		{7,{7, "HOLY CANDLE", Item, 10, WIS}},
-		{8,{8, "CROWBAR", Item, 3, STR}},
-		{9,{9, "DART", Weapon, 4, DEX}},
-		{10,{10, "DAGGER", Weapon, 3, DEX, 3, STR}},
+
+card cards = {{1,{1, "BLESSING OF THE GOODS", Blessing, 0, NONE, 0, NONE, "If you encounter this card, you automatically acquire it. Discard this card to add 1 die to a check. Discard this card to explore your current location. You may instead treat this card as if it had the same powers as the top card of the blessings discard pile."}}, {2,{2, "THIEVES TOOLS", Item, 4, DEX, 0, NONE, "Reveal this card to add 1 die to your Disable check. Discard this card to defeat a barrier whose highest difficulty to defeat is 11 or lower."}}, {3,{3, "LEATHER ARMOR", Armor, 3, CON, 0, NONE, "Recharge this card to reduce Combat damage dealt to you by 1. Banish this card to reduce all damage dealt to you to 0; if you are proficient with heavy armors, bury this card instead."}}, {4,{4, "SHERIFF HEMLOCK", Ally, 8, CHA, 0, NONE, "Discard this card to add 1d6 to a combat check. Discard this card to explore your location."}}, {5,{5, "BURGLAR", Ally, 7, DEX, 8, CHA, "Recharge this card to add 1d10 to your Stealth or Disable check, or your check to defeat a barrier. If you do not acquire this card, discard 1 weapon or item."}}, {6,{6, "POTION OF VISION", Item, 4, INT, 0, NONE, "Banish this card and chose a character at your location to succeed at a Perception check."}}, {7,{7, "HOLY CANDLE", Item, 10, WIS, 0, NONE, "Bury this card to shuffle 1d6 random cards from the blessings discard pile into the blessings deck."}}, {8,{8, "CROWBAR", Item, 3, STR, 0, NONE, "Reveal this card to add 1 die to your noncombat Strength check or check to defeat a barrier with either the Lock or Obstacle trait; you may additionally ydiscard this card to add another die."}}, {9,{9, "DART", Weapon, 4, DEX, 0, NONE, "For your combat check, reveal this card to roll your Dexterity or Ranged die + 1d4. If you fail a combat check using this weapon, you may discard this card to ignore the result and reroll the dice. You must take the second result."}}, {10,{10, "DAGGER", Weapon, 3, DEX, 3, STR, "For your combat check, reveal this card to roll your Dexterity or Ranged + 1d4; you may additionally recharge this card to add another 1d4. When playing another weapon, you may discard this card to add 1d4 to the combat check."}},
 		/*{11,{11, "JUBRAIL VHISKI", Monster, 10}},//recharge 2 cards
                 {12,{12, "BANDIT", Monster, 10}},//recharge 1 card
                 {13,{13, "GOBLIN WARRIOR", Monster, 9}},
@@ -197,9 +189,10 @@ C2:;	for(i = n-1;i>=1; --i)
 	//for (Card c : dn)
 	std::cout << cards[dn.front().num].name 
 	//<< " " << cards[dn[0].num].type 
-	<< " diff: " << cards[dn[0].num].Diff 
+	<< " diff: " << cards[dn.front().num].Diff 
 	//<< " type: " << cards[dn[0].num].ctype 
 	<< std::endl;
+	std::cout<<cards[dn.front().num].text<<std::endl;
 	switch(Merisiel.skills[cards[dn[0].num].ctype])
 	{
 	case d4:
