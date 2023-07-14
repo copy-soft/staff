@@ -75,7 +75,7 @@ card cards = {{1,{1, "BLESSING OF THE GOODS",Blessing, 0, NONE}},
 		{8,{8, "CROWBAR", Item, 3, STR}},
 		{9,{9, "DART", Weapon, 4, DEX}},
 		{10,{10, "DAGGER", Weapon, 3, DEX, 3, STR}},
-		{11,{11, "JUBRAIL VHISKI", Monster, 10}},//recharge 2 cards
+		/*{11,{11, "JUBRAIL VHISKI", Monster, 10}},//recharge 2 cards
                 {12,{12, "BANDIT", Monster, 10}},//recharge 1 card
                 {13,{13, "GOBLIN WARRIOR", Monster, 9}},
                 {14,{14, "PIT TRAP", Barrier, 7, INT, 8, DEX}},
@@ -86,7 +86,7 @@ card cards = {{1,{1, "BLESSING OF THE GOODS",Blessing, 0, NONE}},
                 {19,{19, "BUGBEAR", Monster, 10}},
                 {20,{20, "GOBLIN COMMANDO", Monster, 9}},
 		{21,{21, "SCOUT", Monster, 8}},
-		{22,{22, "WARLORD", Monster, 9}}};
+		{22,{22, "WARLORD", Monster, 9}}*/};
 
 
 void shuffle(int* arr, int N)
@@ -151,8 +151,8 @@ int main(){
 	//int arr[10] = {0};
         //int n = sizeof(arr)/sizeof(arr[0]); 
         srand(time(NULL));
-	for(int i=0;i<15;i++){Card f{rand()%10+1};d.push_back(f);}
-        for(int i=0;i<10;i++){Card s{rand()%20+1};dn.push_back(s);}
+	for(int i=1;i<16;i++){Card f{rand()%10+1};d.push_back(f);}
+        for(int i=1;i<11;i++){Card s{rand()%10+1};dn.push_back(s);}
 
         //LogDuration ld("countsort");
         //{
@@ -197,28 +197,28 @@ C2:;	for(i = n-1;i>=1; --i)
 	//for (Card c : dn)
 	std::cout << cards[dn.front().num].name 
 	<< " " << cards[dn[0].num].type 
-	<< " diffcheck: " << cards[dn[0].num].Diff 
-	<< " typecheck: " << cards[dn[0].num].ctype 
+	<< " diff: " << cards[dn[0].num].Diff 
+	<< " type: " << cards[dn[0].num].ctype 
 	<< std::endl;
 	switch(Merisiel.skills[cards[dn[0].num].ctype])
 	{
 	case d4:
-		std::cout<<"d4"<<std::endl;
+		std::cout<<"d4 roll: "<<rand()%4+1<<std::endl;
 		break;
         case d6:
-		std::cout<<"d6"<<std::endl;
+		std::cout<<"d6 roll: "<<rand()%6+1<<std::endl;
 		break;
         case d8:
-		std::cout<<"d8"<<std::endl;
+		std::cout<<"d8 roll: "<<rand()%8+1<<std::endl;
 		break;
         case d10:
-		std::cout<<"d10"<<std::endl;
+		std::cout<<"d10 roll: "<<rand()%10+1<<std::endl;
 		break;
         case d12:
-		std::cout<<"d12"<<std::endl;
+		std::cout<<"d12 roll: "<<rand()%12+1<<std::endl;
 		break;
         case d20:
-		std::cout<<"d20"<<std::endl;
+		std::cout<<"d20 roll: "<<rand()%20+1<<std::endl;
 		break;
 
 	};
