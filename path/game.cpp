@@ -167,12 +167,12 @@ int main(){
 	if(
 	Merisiel.skills[cards[Woods.cards.front().num].ctype].nums >
 	Merisiel.skills[cards[Woods.cards.front().num].ctype2].nums
-	)std::cout<<Merisiel.skills[cards[Woods.cards.front().num].ctype].roll()<<std::endl;
-	else std::cout<<Merisiel.skills[cards[Woods.cards.front().num].ctype2].roll()<<std::endl;
-	int u;
-	std::cout<<"input card from hand number: ";
-	std::cin>>u;
-	std::cout<<cards[Merisiel.hand[u].num].name<<std::endl;
-	std::cout<< cards[Merisiel.hand[u].num].text<<std::endl;
+	){if(Merisiel.skills[cards[Woods.cards.front().num].ctype].roll()-cards[Woods.cards.front().num].Diff>=0)std::cout<<"YOU WIN!"<<std::endl;}
+	else {if(Merisiel.skills[cards[Woods.cards.front().num].ctype2].roll()-cards[Woods.cards.front().num].Diff>=0)std::cout<<"YOU WIN!"<<std::endl;}
+	//	int u;
+	//std::cout<<"input card from hand number: ";
+	//std::cin>>u;
+	//std::cout<<cards[Merisiel.hand[u].num].name<<std::endl;
+	//std::cout<< cards[Merisiel.hand[u].num].text<<std::endl;
 	return 0; 
 } 
