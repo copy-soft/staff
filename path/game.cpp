@@ -173,7 +173,7 @@ int main(){
 	else {if(Merisiel.skills[cards[Woods.cards.front().num].ctype2].roll()-cards[Woods.cards.front().num].Diff>=0)std::cout<<"YOU WIN!"<<std::endl;else std::cout<<"YOU LOSE!"<<std::endl;}
 	Woods.cards.pop_front();
 	//int u;
-	std::cout<<"press any key.";
+	std::cout<<"press enter";
 	std::cin.get();
 }
 	//std::cout<<cards[Merisiel.hand[u].num].name<<std::endl;
