@@ -153,10 +153,12 @@ int main(){
 	Merisiel.hand.push_back(Merisiel.cards.front());
 		Merisiel.cards.pop_front();
 	}
+	while(!Woods.cards.empty()){
 	std::cout<<"Hand:"<<std::endl;
 	int g=1;
 	for(Card c : Merisiel.hand)
         {std::cout << g << " " << cards[c.num].name << " "<< cards[c.num].type << std::endl;g++;}
+
 	std::cout<<"Move:"<<std::endl;
 	std::cout << cards[Woods.cards.front().num].name 
 	//<< " " << cards[dn[0].num].type 
@@ -169,9 +171,11 @@ int main(){
 	Merisiel.skills[cards[Woods.cards.front().num].ctype2].nums
 	){if(Merisiel.skills[cards[Woods.cards.front().num].ctype].roll()-cards[Woods.cards.front().num].Diff>=0)std::cout<<"YOU WIN!"<<std::endl;}
 	else {if(Merisiel.skills[cards[Woods.cards.front().num].ctype2].roll()-cards[Woods.cards.front().num].Diff>=0)std::cout<<"YOU WIN!"<<std::endl;}
-	//	int u;
-	//std::cout<<"input card from hand number: ";
-	//std::cin>>u;
+	Woods.cards.pop_front();
+	//int u;
+	std::cout<<"press any key.";
+	std::cin.get();
+}
 	//std::cout<<cards[Merisiel.hand[u].num].name<<std::endl;
 	//std::cout<< cards[Merisiel.hand[u].num].text<<std::endl;
 	return 0; 
