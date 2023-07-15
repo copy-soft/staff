@@ -172,6 +172,7 @@ int main(){
 	int u;
 	std::cout<<"input card from hand number: ";
 	std::cin>>u;
-	std::cout<< cards[Merisiel.hand[1].num].text<<std::endl;
+	std::cout<<cards[Merisiel.hand[u].num].name<<std::endl;
+	std::cout<< cards[Merisiel.hand[u].num].text<<std::endl;
 	return 0; 
 } 
