@@ -169,8 +169,8 @@ int main(){
 	if(
 	Merisiel.skills[cards[Woods.cards.front().num].ctype].nums >
 	Merisiel.skills[cards[Woods.cards.front().num].ctype2].nums
-	){if(Merisiel.skills[cards[Woods.cards.front().num].ctype].roll()-cards[Woods.cards.front().num].Diff>=0)std::cout<<"YOU WIN!"<<std::endl;}
-	else {if(Merisiel.skills[cards[Woods.cards.front().num].ctype2].roll()-cards[Woods.cards.front().num].Diff>=0)std::cout<<"YOU WIN!"<<std::endl;}
+	){if(Merisiel.skills[cards[Woods.cards.front().num].ctype].roll()-cards[Woods.cards.front().num].Diff>=0)std::cout<<"YOU WIN!"<<std::endl;else std::cout<<"YOU LOSE!"<<std::endl;}
+	else {if(Merisiel.skills[cards[Woods.cards.front().num].ctype2].roll()-cards[Woods.cards.front().num].Diff>=0)std::cout<<"YOU WIN!"<<std::endl;else std::cout<<"YOU LOSE!"<<std::endl;}
 	Woods.cards.pop_front();
 	//int u;
 	std::cout<<"press any key.";
