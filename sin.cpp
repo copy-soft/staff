@@ -5,9 +5,9 @@
 int main(){
 
 
-std::cout<<sin(std::numbers::pi/2)<<std::endl;
-std::cout<<sin(0.5)<<std::endl;
-std::cout<<sin(1)-sin(0.5)<<std::endl;
+std::cout<<sin(std::numbers::pi/3)<<std::endl;
+std::cout<<sin(std::numbers::pi/6)<<std::endl;
+std::cout<<sin(std::numbers::pi/3)-sin(std::numbers::pi/6)<<std::endl;
 //std::cout << "double      " << std::numbers::pi << std::endl;
 
 
