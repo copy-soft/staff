@@ -7,7 +7,7 @@ all:
 	#g++ point.cpp -g
 	#g++ job.cpp
 	#g++ der.cpp -g
-	g++ sin.cpp;./a.out
+	g++ sin.cpp -std=c++20; ./a.out
 
 all1:
 	g++ inheritancefromvector.cpp
