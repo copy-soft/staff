@@ -1,4 +1,5 @@
 #include <iostream>
+int i;
 class Ferma 
 {
     	public:
@@ -9,18 +10,15 @@ class Ferma
 // реализация операторной функции operator=()
 int Ferma::operator=(Ferma fm)
 {
-	return p%(fm.p);
+	return i*p%(fm.p);
 }
 
 int main(){
 	Ferma prime1{7};
 	Ferma prime2{5};
-	for(int i=0;i<prime1.p;i++){
-	//prime2.p*=i;	
-
+	for(i=0;i<prime1.p;i++){
 	int j=prime2=prime1;
-	std::cout<< j*i%prime1.p << std::endl;
-	//prime2.p/=i;
+	std::cout<< j << std::endl;
 	}
 return 0;
 }
