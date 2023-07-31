@@ -15,9 +15,12 @@ int Ferma::operator=(Ferma fm)
 int main(){
 	Ferma prime1{7};
 	Ferma prime2{5};
-	for(int i=0;i<prime2.p;i++){
-	int j=prime1=prime2;
-	std::cout<< j << std::endl;
+	for(int i=0;i<prime1.p;i++){
+	//prime2.p*=i;	
+
+	int j=prime2=prime1;
+	std::cout<< j*i%prime1.p << std::endl;
+	//prime2.p/=i;
 	}
 return 0;
 }
