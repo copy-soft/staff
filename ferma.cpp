@@ -1,10 +1,10 @@
 #include <iostream>
-int i;
 class Ferma 
 {
     	public:
 	int operator=(Ferma fm);
 	int p;
+	int i;
 };
 
 int Ferma::operator=(Ferma fm)
@@ -15,6 +15,6 @@ int Ferma::operator=(Ferma fm)
 int main(){
 	Ferma prime1{7};
 	Ferma prime2{5};
-	for(i=0;i<prime1.p;i++)std::cout<<((int)(prime2=prime1))<<std::endl;
+	for(prime1.i=0;prime1.i<prime2.p;prime1.i++)std::cout<<((int)(prime1=prime2))<<std::endl;
 return 0;
 }
