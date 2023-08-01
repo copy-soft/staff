@@ -3,8 +3,7 @@ int gcd(int a, int b){
 
 if (b==0) return a;
 std::cout<<"a="<<a<<" b="<<b<<std::endl;
-int c = a/b;
-return gcd(b,a-b*c);
+if((a-b)<(b/2))return gcd(b,a-b);
 
 }
 
