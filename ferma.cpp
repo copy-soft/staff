@@ -11,7 +11,6 @@ int Ferma::operator=(Ferma fm)
 {
 	return i*p%(fm.p);
 }
-
 int main(){
 	Ferma prime1{7};
 	Ferma prime2{5};
