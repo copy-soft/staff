@@ -7,7 +7,8 @@ all:
 	#g++ point.cpp -g
 	#g++ job.cpp
 	#g++ sin.cpp -std=c++20; ./a.out
-	g++ ferma.cpp;./a.out
+	#g++ ferma.cpp;./a.out
+	g++ euclid.cpp;./a.out
 
 all1:
 	g++ inheritancefromvector.cpp
