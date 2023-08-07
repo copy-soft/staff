@@ -8,7 +8,10 @@ all:
 	#g++ job.cpp
 	#g++ sin.cpp -std=c++20; ./a.out
 	#g++ ferma.cpp;./a.out
-	g++ euclid.cpp;./a.out
+	#g++ euclid.cpp;./a.out
+	g++ ecu.cpp;./a.out
+	gcc x.c -o draw -lX11
+
 
 all1:
 	g++ inheritancefromvector.cpp
