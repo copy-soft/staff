@@ -9,8 +9,8 @@ all:
 	#g++ sin.cpp -std=c++20; ./a.out
 	#g++ ferma.cpp;./a.out
 	#g++ euclid.cpp;./a.out
+	#gcc x.c -o draw -lX11
 	g++ ecu.cpp;./a.out
-	gcc x.c -o draw -lX11
 
 
 all1:
