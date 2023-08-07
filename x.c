@@ -23,6 +23,9 @@ init();
 XEvent event;
 KeySym key;
 char *text[255];
+//XDrawLine(dis, win, gc, 300, 300, 0, 0);
+//XDrawLine(dis, win, gc, x1, y1, x2, y2);
+
 while(1){
 
 	XNextEvent(dis, &event);
@@ -32,6 +35,7 @@ while(1){
 		printf("You presed %c key\n", text[0]);}
 	if(event.type==ButtonPress){
 		XSetForeground(dis, gc, white);
+		XDrawLine(dis, win, gc, 300, 300, 0, 0);
 		XDrawPoint(dis, win ,gc, event.xbutton.x, event.xbutton.y);
 		
 	}
