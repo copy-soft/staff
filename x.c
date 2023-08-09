@@ -3,7 +3,8 @@
 #include <X11/Xos.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <iostream>
+#include <cmath>
 Display *dis;
 int screen;
 Window win;
@@ -39,6 +40,11 @@ while(1){
 		XDrawLine(dis, win, gc, 150, 300, 150, 0);
                 XDrawLine(dis, win, gc, 0, 150, 300, 150);
 		//XDrawPoint(dis, win ,gc, event.xbutton.x, event.xbutton.y);
+		for(double i =-1.6;i<3;i=i+0.2){
+	        std::cout<<"x= "<<i<<" y=";
+       		double j=(sqrt(pow(i,3)-i));
+        	std::cout<<j<<std::endl;
+		}
 		
 	}
 
