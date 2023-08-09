@@ -29,21 +29,20 @@ char *text[255];
 while(1){
 
 	XNextEvent(dis, &event);
-	if(event.type==Expose && event.xexpose.count==0)draw();
-	if(event.type==KeyPress && XLookupString(&event.xkey, text, 255, &key, 0)==1){
-		if(text[0]=='q')close(0);
-		printf("You presed %c key\n", text[0]);}
-	if(event.type==ButtonPress){
+	//if(event.type==Expose && event.xexpose.count==0)draw();
+	draw();
+	//if(event.type==KeyPress && XLookupString(&event.xkey, text, 255, &key, 0)==1){
+		//if(text[0]=='q')close(0);
+		//printf("You presed %c key\n", text[0]);}
+	//if(event.type==ButtonPress){
 		XSetForeground(dis, gc, white);
 		XDrawLine(dis, win, gc, 150, 300, 150, 0);
                 XDrawLine(dis, win, gc, 0, 150, 300, 150);
-		XDrawPoint(dis, win ,gc, event.xbutton.x, event.xbutton.y);
+		//XDrawPoint(dis, win ,gc, event.xbutton.x, event.xbutton.y);
 		
 	}
 
-	
 
-}
 return 0;
 }
 void init(){
