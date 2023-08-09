@@ -40,10 +40,11 @@ while(1){
 		XDrawLine(dis, win, gc, 150, 300, 150, 0);
                 XDrawLine(dis, win, gc, 0, 150, 300, 150);
 		//XDrawPoint(dis, win ,gc, event.xbutton.x, event.xbutton.y);
-		for(double i =-1.6;i<3;i=i+0.2){
-	        std::cout<<"x= "<<i<<" y=";
-       		double j=(sqrt(pow(i,3)-i));
-        	std::cout<<j<<std::endl;
+		for(double i =-1.6;i<3;i=i+0.02){
+	        //std::cout<<"x= "<<i<<" y=";
+       		//double j=
+	        XDrawPoint(dis, win ,gc, (i*20+150), (sqrt(pow(i,3)-i))*20+150);
+        	//std::cout<<j<<std::endl;
 		}
 		
 	}
