@@ -46,8 +46,8 @@ while(1){
        		//double j=
 	        //XDrawPoint(dis, win ,gc, (i*20+150), (sqrt(pow(i,3)-i))*20+150);
                 //XDrawPoint(dis, win ,gc, (i*20)+150, 150-(sqrt(pow(i,3)-i))*20);
-		XDrawPoint(dis, win ,gc, (i*20+150), (sqrt(pow(i,3)+2*i+1))*20+150);
-                XDrawPoint(dis, win ,gc, (i*20)+150, 150-(sqrt(pow(i,3)+2*i+1))*20);
+XDrawPoint(dis, win ,gc, (i*20+150), fmod((sqrt(pow(i,3)+2*i+1)*60),31)+150);
+XDrawPoint(dis, win ,gc, (i*20)+150, 150-fmod((sqrt(pow(i,3)+2*i+1)*60),31));
 
 
 
