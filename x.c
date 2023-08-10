@@ -41,13 +41,13 @@ while(1){
                 XDrawLine(dis, win, gc, 0, 150, 300, 150);
 		//XDrawPoint(dis, win ,gc, event.xbutton.x, event.xbutton.y);
                 std::cout<<"elipptic curve sqr(x^3-7x+10)"<<std::endl;
-		for(double i =-2;i<20;i++){
+		for(double i =-20;i<100;i++){
 	        //std::cout<<"elipptic curve x^3-x"<<std::endl;
        		//double j=
 	        //XDrawPoint(dis, win ,gc, (i*20+150), (sqrt(pow(i,3)-i))*20+150);
                 //XDrawPoint(dis, win ,gc, (i*20)+150, 150-(sqrt(pow(i,3)-i))*20);
-XDrawPoint(dis, win ,gc, (i+150), fmod((sqrt(pow(i,3)-7*i+10)),31)+150);
-XDrawPoint(dis, win ,gc, (i)+150, 150-fmod((sqrt(pow(i,3)-7*i+10)),31));
+XDrawPoint(dis, win ,gc, (i+150), fmod((sqrt(pow(i,3)-7*i+10)),61)+150);
+XDrawPoint(dis, win ,gc, (i)+150, 150-fmod((sqrt(pow(i,3)-7*i+10)),61));
 
 
 
