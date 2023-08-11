@@ -65,7 +65,8 @@ XDrawPoint(dis, win ,gc, (i*7)+150, (122-3*(i-(-1))));
 
 		//std::cout<<j<<std::endl;
 		}
-		
+	       // draw();
+	
 	}
 
 
