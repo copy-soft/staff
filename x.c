@@ -46,8 +46,16 @@ while(1){
        		//double j=
 	        //XDrawPoint(dis, win ,gc, (i*20+150), (sqrt(pow(i,3)-i))*20+150);
                 //XDrawPoint(dis, win ,gc, (i*20)+150, 150-(sqrt(pow(i,3)-i))*20);
-XDrawPoint(dis, win ,gc, (i+150), fmod((sqrt(pow(i,3)-7*i+10)),61)+150);
-XDrawPoint(dis, win ,gc, (i)+150, 150-fmod((sqrt(pow(i,3)-7*i+10)),61));
+//XDrawPoint(dis, win ,gc, (i+150), fmod((sqrt(pow(i,3)-7*i+10)),61)+150);
+//XDrawPoint(dis, win ,gc, (i)+150, 150-fmod((sqrt(pow(i,3)-7*i+10)),61));
+
+XDrawPoint(dis, win ,gc, (i*7+150), ((sqrt(pow(i,3)-7*i+10)*7))+150);
+XDrawPoint(dis, win ,gc, (i*7)+150, 150-((sqrt(pow(i,3)-7*i+10)*7)));
+if(i==-3)XDrawPoint(dis, win ,gc, (i*7+149), 150-((sqrt(pow(i,3)-7*i+10)*7)));
+if(i==-1)XDrawPoint(dis, win ,gc, (i*7+149), 150-((sqrt(pow(i,3)-7*i+10)*7)));
+int j=-3;
+int k=-1;
+XDrawLine(dis, win, gc, j*7+150, 150-((sqrt(pow(j,3)-7*j+10)*7)), k*7+150, 150-((sqrt(pow(k,3)-7*k+10)*7)));
 
 
 
