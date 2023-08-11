@@ -55,8 +55,11 @@ if(i==-3)XDrawPoint(dis, win ,gc, (i*7+149), 150-((sqrt(pow(i,3)-7*i+10)*7)));
 if(i==-1)XDrawPoint(dis, win ,gc, (i*7+149), 150-((sqrt(pow(i,3)-7*i+10)*7)));
 int j=-3;
 int k=-1;
-XDrawLine(dis, win, gc, j*7+150, 150-((sqrt(pow(j,3)-7*j+10)*7)), k*7+150, 150-((sqrt(pow(k,3)-7*k+10)*7)));
-
+//XDrawLine(dis, win, gc, j*7+150, 150-((sqrt(pow(j,3)-7*j+10)*7)), k*7+150, 150-((sqrt(pow(k,3)-7*k+10)*7)));
+//std::cout<<((sqrt(pow(k,3)-7*k+10)))<<std::endl;
+//std::cout<<(-1-3)/(((sqrt(pow(k,3)-7*k+10))))-(((sqrt(pow(j,3)-7*j+10))))<<std::endl;
+XDrawPoint(dis, win ,gc, (i*7)+150, (122-3*(i-(-1))));
+//std::cout<<k<<150-((sqrt(pow(k,3)-7*k+10)*7))<<std::endl;
 
 
 
