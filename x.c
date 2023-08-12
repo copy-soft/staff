@@ -39,6 +39,8 @@ while(1){
 		XSetForeground(dis, gc, white);
 		XDrawLine(dis, win, gc, 150, 300, 150, 0);
                 XDrawLine(dis, win, gc, 0, 150, 300, 150);
+                for(int i=10;i<120;i+=10)
+		XDrawLine(dis, win, gc, 90+i, 145, 90+i, 155);
 		//XDrawPoint(dis, win ,gc, event.xbutton.x, event.xbutton.y);
                 std::cout<<"elipptic curve sqr(x(x+1)(2x+1))"<<std::endl;
 		for(double x =-5;x<10;x+=0.02){
