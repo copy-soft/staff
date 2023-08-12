@@ -27,11 +27,11 @@ char *text[255];
 //XDrawLine(dis, win, gc, 300, 300, 0, 0);
 //XDrawLine(dis, win, gc, x1, y1, x2, y2);
 
-while(1){
+//while(1){
 
-	XNextEvent(dis, &event);
+	//XNextEvent(dis, &event);
 	//if(event.type==Expose && event.xexpose.count==0)draw();
-	draw();
+	XClearWindow(dis, win);
 	//if(event.type==KeyPress && XLookupString(&event.xkey, text, 255, &key, 0)==1){
 		//if(text[0]=='q')close(0);
 		//printf("You presed %c key\n", text[0]);}
@@ -43,7 +43,7 @@ while(1){
 		XDrawLine(dis, win, gc, 90+i, 145, 90+i, 155);
 		//XDrawPoint(dis, win ,gc, event.xbutton.x, event.xbutton.y);
                 std::cout<<"elipptic curve sqr(x(x+1)(2x+1))"<<std::endl;
-		for(double x =-5;x<10;x+=0.02){
+		for(double x =-5;x<10;x+=0.01){
 	        //std::cout<<"elipptic curve x^3-x"<<std::endl;
        		//double j=
 	        //XDrawPoint(dis, win ,gc, (i*20+150), (sqrt(pow(i,3)-i))*20+150);
@@ -72,8 +72,11 @@ XDrawPoint(dis, win ,gc, (x*100+150), ((sqrt(pow(x,3)-(pow(x,2)*(3/2))+(x*1/2))*
 		}
 	       // draw();
 	
-	}
+//	}
 
+
+
+pause();
 
 return 0;
 }
