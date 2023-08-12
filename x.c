@@ -40,25 +40,25 @@ while(1){
 		XDrawLine(dis, win, gc, 150, 300, 150, 0);
                 XDrawLine(dis, win, gc, 0, 150, 300, 150);
 		//XDrawPoint(dis, win ,gc, event.xbutton.x, event.xbutton.y);
-                std::cout<<"elipptic curve sqr(x^3-7x+10)"<<std::endl;
-		for(double i =-20;i<100;i+=0.02){
+                std::cout<<"elipptic curve sqr(x(x+1)(2x+1))"<<std::endl;
+		for(double x =-5;x<10;x+=0.02){
 	        //std::cout<<"elipptic curve x^3-x"<<std::endl;
        		//double j=
 	        //XDrawPoint(dis, win ,gc, (i*20+150), (sqrt(pow(i,3)-i))*20+150);
                 //XDrawPoint(dis, win ,gc, (i*20)+150, 150-(sqrt(pow(i,3)-i))*20);
 //XDrawPoint(dis, win ,gc, (i+150), fmod((sqrt(pow(i,3)-7*i+10)),61)+150);
 //XDrawPoint(dis, win ,gc, (i)+150, 150-fmod((sqrt(pow(i,3)-7*i+10)),61));
-
-XDrawPoint(dis, win ,gc, (i*7+150), ((sqrt(pow(i,3)-7*i+10)*7))+150);
-XDrawPoint(dis, win ,gc, (i*7)+150, 150-((sqrt(pow(i,3)-7*i+10)*7)));
-if(i==-3)XDrawPoint(dis, win ,gc, (i*7+149), 150-((sqrt(pow(i,3)-7*i+10)*7)));
-if(i==-1)XDrawPoint(dis, win ,gc, (i*7+149), 150-((sqrt(pow(i,3)-7*i+10)*7)));
-int j=-3;
-int k=-1;
+XDrawPoint(dis, win ,gc, (x*100+150), ((sqrt(x*(x+1)*(2*x+1)/6)*100))+150);
+XDrawPoint(dis, win ,gc, (x*100+150), 150-((sqrt(x*(x+1)*(2*x+1)/6)*100)));
+//XDrawPoint(dis, win ,gc, (i*7)+150, 150-((sqrt(pow(i,3)-7*i+10)*7)));
+//if(i==-3)XDrawPoint(dis, win ,gc, (i*7+149), 150-((sqrt(pow(i,3)-7*i+10)*7)));
+//if(i==-1)XDrawPoint(dis, win ,gc, (i*7+149), 150-((sqrt(pow(i,3)-7*i+10)*7)));
+//int j=-3;
+//int k=-1;
 //XDrawLine(dis, win, gc, j*7+150, 150-((sqrt(pow(j,3)-7*j+10)*7)), k*7+150, 150-((sqrt(pow(k,3)-7*k+10)*7)));
 //std::cout<<((sqrt(pow(k,3)-7*k+10)))<<std::endl;
 //std::cout<<(-1-3)/(((sqrt(pow(k,3)-7*k+10))))-(((sqrt(pow(j,3)-7*j+10))))<<std::endl;
-XDrawPoint(dis, win ,gc, (i*7)+150, (122-3*(i-(-1))));
+//XDrawPoint(dis, win ,gc, (i*7)+150, (122-3*(i-(-1))));
 //std::cout<<k<<150-((sqrt(pow(k,3)-7*k+10)*7))<<std::endl;
 
 
