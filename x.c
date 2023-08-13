@@ -63,6 +63,9 @@ XDrawPoint(dis, win ,gc, (x*100+150), 150-((sqrt(x*(x+1)*(2*x+1)/6)*100)));
 XDrawPoint(dis, win ,gc, (x*100+150), 150-((sqrt(pow(x,3)-(pow(x,2)*(3/2))+(x*1/2))*100)));
 XDrawPoint(dis, win ,gc, (x*100+150), ((sqrt(pow(x,3)-(pow(x,2)*(3/2))+(x*1/2))*100))+150);
 
+
+XDrawPoint(dis, win ,gc, (x*100+150), (sqrt(pow((x*3-2),2)*100))+150);
+
 //XDrawPoint(dis, win ,gc, (i*7)+150, (122-3*(i-(-1))));
 //std::cout<<k<<150-((sqrt(pow(k,3)-7*k+10)*7))<<std::endl;
 
