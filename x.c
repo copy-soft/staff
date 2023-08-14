@@ -42,7 +42,7 @@ char *text[255];
                 for(int i=10;i<120;i+=10)
 		//XDrawLine(dis, win, gc, 90+i, 145, 90+i, 155);
 		//XDrawPoint(dis, win ,gc, event.xbutton.x, event.xbutton.y);
-                std::cout<<"elipptic curve sqr(x(x+1)(2x+1))"<<std::endl;
+                //std::cout<<"elipptic curve sqr(x(x+1)(2x+1))"<<std::endl;
 		for(double x =-5;x<10;x+=0.01){
 	        //std::cout<<"elipptic curve x^3-x"<<std::endl;
        		//double j=
@@ -50,9 +50,16 @@ char *text[255];
                 //XDrawPoint(dis, win ,gc, (i*20)+150, 150-(sqrt(pow(i,3)-i))*20);
 //XDrawPoint(dis, win ,gc, (i+150), fmod((sqrt(pow(i,3)-7*i+10)),61)+150);
 //XDrawPoint(dis, win ,gc, (i)+150, 150-fmod((sqrt(pow(i,3)-7*i+10)),61));
-XDrawPoint(dis, win ,gc, (x*100+500), ((sqrt(x*(x+1)*(2*x+1)/6)*100))+500);
-XDrawPoint(dis, win ,gc, (x*100+500), 500-((sqrt(x*(x+1)*(2*x+1)/6)*100)));
-//XDrawPoint(dis, win ,gc, (i*7)+150, 150-((sqrt(pow(i,3)-7*i+10)*7)));
+//XDrawPoint(dis, win ,gc, (x*100+500), ((sqrt(x*(x+1)*(2*x+1)/6)*100))+500);
+/////XDrawPoint(dis, win ,gc, (x*100+500), 500-((sqrt(x*(x+1)*(2*x+1)/6)*100)));
+XDrawPoint(dis, win ,gc, (x*10)+500, 500-((sqrt(pow(x,3)-25*x)*10)));
+XDrawPoint(dis, win ,gc, (x*10)+500, ((sqrt(pow(x,3)-25*x)*10)+500));
+double m = (sqrt(abs(pow(-4,2)-25)));
+XDrawPoint(dis, win ,gc, (x*10)+500, 500-(m*(x+4)+(sqrt(pow(-4,3)-25*(-4))))*10);
+std::cout<<m<<std::endl;
+
+//XDrawPoint(dis, win ,gc, (x*10)+500, (((sqrt((pow(x,2)-25)/))*10)+500));
+
 //if(i==-3)XDrawPoint(dis, win ,gc, (i*7+149), 150-((sqrt(pow(i,3)-7*i+10)*7)));
 //if(i==-1)XDrawPoint(dis, win ,gc, (i*7+149), 150-((sqrt(pow(i,3)-7*i+10)*7)));
 //int j=-3;
@@ -60,11 +67,11 @@ XDrawPoint(dis, win ,gc, (x*100+500), 500-((sqrt(x*(x+1)*(2*x+1)/6)*100)));
 //XDrawLine(dis, win, gc, j*7+150, 150-((sqrt(pow(j,3)-7*j+10)*7)), k*7+150, 150-((sqrt(pow(k,3)-7*k+10)*7)));
 //std::cout<<((sqrt(pow(k,3)-7*k+10)))<<std::endl;
 //std::cout<<(-1-3)/(((sqrt(pow(k,3)-7*k+10))))-(((sqrt(pow(j,3)-7*j+10))))<<std::endl;
-XDrawPoint(dis, win ,gc, (x*100+500), 500-((sqrt(pow(x,3)-(pow(x,2)*(3/2))+(x*1/2))*100)));
-XDrawPoint(dis, win ,gc, (x*100+500), ((sqrt(pow(x,3)-(pow(x,2)*(3/2))+(x*1/2))*100))+500);
+/////XDrawPoint(dis, win ,gc, (x*100+500), 500-((sqrt(pow(x,3)-(pow(x,2)*(3/2))+(x*1/2))*100)));
+//////XDrawPoint(dis, win ,gc, (x*100+500), ((sqrt(pow(x,3)-(pow(x,2)*(3/2))+(x*1/2))*100))+500);
 
 
-XDrawPoint(dis, win ,gc, (x*100+500), (sqrt(pow((x*3-2),2)*100))+500);
+//////XDrawPoint(dis, win ,gc, (x*100+500), (sqrt(pow((x*3-2),2)*100))+500);
 
 //XDrawPoint(dis, win ,gc, (i*7)+150, (122-3*(i-(-1))));
 //std::cout<<k<<150-((sqrt(pow(k,3)-7*k+10)*7))<<std::endl;
