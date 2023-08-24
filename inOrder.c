@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 //#include<limits.h>
+//Knuth 1st  p396
 
 struct Node 
 {
