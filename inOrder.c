@@ -7,21 +7,12 @@ struct Node
 char data;
 struct Node *left, *right;
 };
-struct Nodel
-{
-struct Node *N;
-struct Nodel *next, *prev;
-};
 struct Node* newNode(char data)
 {
 	struct Node* Node = (struct Node*)malloc(sizeof(struct Node));
-	struct Nodel* Nod = (struct Nodel*)malloc(sizeof(struct Nodel));
         Node->data = data;
         Node->left = NULL;
         Node->right = NULL;
-	Nod->next = NULL;
-	Nod->prev = NULL;
-	Nod->N = Node;
         return(Node);
 }
 
