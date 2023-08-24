@@ -1,4 +1,4 @@
-all:
+default:
 	#g++ set1.cpp;./a.out
 	#g++ set2.cpp;./a.out
 	#g++ set3.cpp;./a.out
@@ -9,10 +9,10 @@ all:
 	#g++ sin.cpp -std=c++20; ./a.out
 	#g++ ferma.cpp;./a.out
 	#g++ euclid.cpp;./a.out
-	g++ x.c -o draw -lX11;./draw
+	#g++ x.c -o draw -lX11;./draw
 	#g++ ecu.cpp;./a.out
 	#gcc simple-drawing.c -o drawing -lX11;./drawing
-
+	gcc inOrder.c;./a.out
 
 all1:
 	g++ inheritancefromvector.cpp
