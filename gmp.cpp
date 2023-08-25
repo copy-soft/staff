@@ -5,14 +5,15 @@ using namespace std;
 
 int main (void) {
     
-	mpf_class a, b, c;
+	mpq_class a, b, c;
 
-    a = 12347777777777777.779999999999995555;
-    b = "-567888888888888.555555555558888882";
+    a = 12347777.7799995555;
+    b = -56788888.5558888882;
     c = a+b;
 
     cout << "sum of " << a << " and " << b << " is " << c << "\n";
     cout << "absolute value is " << abs(c) << "\n";
     // cin >> a;
+    cout <<6629162717921697/536870912<<endl;
     return 0;
 }
