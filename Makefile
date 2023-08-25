@@ -12,7 +12,9 @@ default:
 	#g++ x.c -o draw -lX11;./draw
 	#g++ ecu.cpp;./a.out
 	#gcc simple-drawing.c -o drawing -lX11;./drawing
-	gcc inOrder.c;./a.out
+	#gcc inOrder.c;./a.out
+	g++ gmp.cpp -lgmp -lgmpxx;./a.out
+
 
 all1:
 	g++ inheritancefromvector.cpp
