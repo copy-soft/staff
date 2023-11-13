@@ -15,7 +15,6 @@ int main(){
 	task(2,3);
 	std::cout << f.get() << '\n';
 
-
 	std::packaged_task<int()> task1(sleep);
 
 	auto f1 = task1.get_future();
