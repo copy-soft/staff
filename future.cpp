@@ -10,17 +10,23 @@ auto sleep = [](){
     return 1;
 };
 int main(){
-	std::packaged_task<int()> task(sleep);
-
+	std::packaged_task<int(int,int)> task([](int a, int b) { return a + b; });
 	auto f = task.get_future();
-	task(); // invoke the function
+	task(2,3);
+	std::cout << f.get() << '\n';
+
+
+	std::packaged_task<int()> task1(sleep);
+
+	auto f1 = task1.get_future();
+	task1(); // invoke the function
 
 	// You have to wait until task returns. Since task calls sleep
 	// you will have to wait at least 1 second.
 	std::cout << "You can see this after 1 second\n";
 
 	// However, f.get() will be available, since task has already finished.
-	std::cout << f.get() << std::endl;
+	std::cout << f1.get() << std::endl;
 
 
 
