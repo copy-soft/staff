@@ -13,8 +13,8 @@ default:
 	#g++ ecu.cpp;./a.out
 	#gcc simple-drawing.c -o drawing -lX11;./drawing
 	#gcc inOrder.c;./a.out
-	g++ gmp.cpp -lgmp -lgmpxx;./a.out
-
+	#g++ gmp.cpp -lgmp -lgmpxx;./a.out
+	g++ mutex.cpp --std=c++20;./a.out
 
 all1:
 	g++ inheritancefromvector.cpp
