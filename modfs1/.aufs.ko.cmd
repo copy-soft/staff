@@ -1,0 +1,1 @@
+savedcmd_/media/nvme0n1p4/home/programmer/modfs1/aufs.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /media/nvme0n1p4/home/programmer/modfs1/aufs.ko /media/nvme0n1p4/home/programmer/modfs1/aufs.o /media/nvme0n1p4/home/programmer/modfs1/aufs.mod.o;  true

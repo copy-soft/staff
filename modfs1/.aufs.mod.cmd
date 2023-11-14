@@ -1,0 +1,1 @@
+savedcmd_/media/nvme0n1p4/home/programmer/modfs1/aufs.mod := printf '%s\n'   dir.o | awk '!x[$$0]++ { print("/media/nvme0n1p4/home/programmer/modfs1/"$$0) }' > /media/nvme0n1p4/home/programmer/modfs1/aufs.mod
