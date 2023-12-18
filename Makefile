@@ -15,7 +15,7 @@ default:
 	#gcc inOrder.c;./a.out
 	#g++ gmp.cpp -lgmp -lgmpxx;./a.out
 	#g++ mutex1.cpp ;./a.out
-	g++ link.cpp;./a.out
+	g++ 1.cpp -lX11;./a.out
 
 all1:
 	g++ inheritancefromvector.cpp
