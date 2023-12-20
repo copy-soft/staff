@@ -1,3 +1,3 @@
 default:
-	g++ main.cpp
-	./a.out test
+	g++ main.cpp -fpermissive
+	./a.out 1 
