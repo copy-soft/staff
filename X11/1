@@ -1,0 +1,5 @@
+struct Image img = get_pixels_and_geometry_from_libpng("filename.png");
+XImage *img = XCreateImage(/*5000 paremeters*/);
+Pixmap pixmap = XCreatePixmap(dpy, img.width, img.height, 24);
+XPutImage(dpy, pixmap, gc, 0, 0, img.width, img.height);
+XCopyArea(dpy, pixmap, window, 0, 0, img.width, img.height, x, y);
