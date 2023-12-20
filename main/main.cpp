@@ -1,0 +1,5 @@
+#include <iostream>
+int main (int argc, const char * argv[]) { 
+if(argc>1)std::cout<< argv[1] <<std::endl;
+return 0;
+}
