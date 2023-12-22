@@ -1,4 +1,4 @@
 default:
-	g++ rpng-x.c readpng.c -lX11 -lpng
+	gcc xhw.c -lXaw -lXt
 	./a.out 1.png
 
