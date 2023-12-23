@@ -2,8 +2,8 @@
 //#include <accerts>
 class A{
 public:
-virtual char *get()=0;//{return priv;}
-//char *get1(){return pub;}
+//virtual char *get()=0;//{return priv;}
+char *get(){return pro;}
 public:
 char *pub="pub";
 protected:
@@ -13,9 +13,9 @@ char *priv="priv";
 };
 
 
-class B: virtual  public  A{
+class B: public  A{
 public:
-char *get()override {return pro;}
+//char *get()override {return pro;}
 void messpub(){
 std::cout<<pro<<std::endl;
 }
@@ -28,12 +28,12 @@ void messpriv(){
 }
 };
 
-class C: virtual private A{
+class C: private A{
 protected:
-char *get() override{
-return pro;
+//char *get() override{
+//return pro;
 //std::cout<<pro<<std::endl;
-}
+//}
 
 void messpro(){
 //std::cout<<pro<<std::endl;
