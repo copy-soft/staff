@@ -1,0 +1,2 @@
+default:
+	oscript main.os
