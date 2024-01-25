@@ -1,0 +1,5 @@
+qemu-img create vdisk.raw 15G
+qemu -enable-kvm    -drive file=vdisk.raw    -cdrom Fedora-16-x86_64-Live-LXDE.iso   -boot d      -m 4G 
+
+qemu -enable-kvm       -drive file=vdisk.raw     -m 4G   -display none  -nic user,hostfwd=tcp::2222-:22
+ssh localhost -p 2222 -lblueagle 
