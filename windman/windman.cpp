@@ -27,13 +27,6 @@ class WindMan{
 
 
 
-pid_t pid20 = fork();//create copy of current pri00000oceiiiiiiiiiiiiiiiiiiiiiiissr
-                    if (pid20 == 0) {//if child
-                      const char *argv2[] ={"aplay", "/root/sounds/Windows\ Logon.wav",NULL,NULL, NULL};
-                      execvp(argv2[0], const_cast<char *const *>(argv2));
-                      pid20=NULL;}
-
-
 
          XGrabKey(dpy, XKeysymToKeycode(dpy, XStringToKeysym("F11")), Mod1Mask,
                                              DefaultRootWindow(dpy), True, GrabModeAsync, GrabModeAsync);
@@ -74,13 +67,6 @@ for(;;)
 
 
 
-       pid_t pid2 = fork();//create copy of c
-       if (pid2 == 0) {//if child
-       const char *argv2[] ={"aplay", "/root/sounds/Windows\ Minimize.wav",NULL,NULL, NULL};
-       execvp(argv2[0], const_cast<char *const *>(argv2));
-       pid2=NULL;}
-
-
 
    if(ev.xkey.keycode==XKeysymToKeycode(dpy,XK_Tab)){
    XSync(dpy, True);
@@ -90,12 +76,7 @@ for(;;)
    x_alt_tab(r, dpy, wins, nwins);}
 
 
-if (ev.xkey.keycode==XKeysymToKeycode(dpy, XStringToKeysym("F11"))) {  pid_t pid2 = fork();//create copy of current processr
-if (pid2 == 0) {//if child
-const char *argv2[] ={"aplay", "/root/sounds/Windows\ Minimize.wav",NULL,NULL, NULL};
-execvp(argv2[0], const_cast<char *const *>(argv2));
-pid2=NULL;}
-}
+//if (ev.xkey.keycode==XKeysymToKeycode(dpy, XStringToKeysym("F11"))) { }
 
 
 
@@ -118,11 +99,6 @@ pid=NULL;}
 
 if(ev.type == ButtonPress && ev.xbutton.subwindow != None)
 {
-pid_t pid2 = fork();//create copy of c
-if (pid2 == 0) {//if child
-const char *argv2[] ={"aplay", "/root/sounds/Windows\ Minimize.wav",NULL,NULL, NULL};
-execvp(argv2[0], const_cast<char *const *>(argv2));
-pid2=NULL;}
 
 XRaiseWindow(dpy, ev.xkey.subwindow);
 XSetInputFocus(dpy, ev.xkey.subwindow, RevertToNone, CurrentTime);
@@ -184,10 +160,22 @@ XEvent ev;
 unsigned int nwins = 0;
 Window root, parent, *wins = 0;
 
-
-
+//thread terminal
+//thread browser
 
 };
+
+class task{
+task(){lunch}
+~task(){kill}
+public:
+};
+
+
+
+
+
+
 
 
 int main(void) {
