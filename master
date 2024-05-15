@@ -1,0 +1,24 @@
+MASTERMIND -THE GUESSING GAME
+
+
+You will have 12 guesses to guess the three digit number
+Guess: 123
+You got 2 digits correct
+You got 1 digits in correct position
+Guess: 456
+You got 0 digits correct
+You got 0 digits in correct position
+Guess: 789
+You got 1 digits correct
+You got 1 digits in correct position
+Guess: 213
+You got 2 digits correct
+You got 0 digits in correct position
+Guess: 327
+You got 1 digits correct
+You got 0 digits in correct position
+Guess: 182
+YOU WON!
+The correct number is indeed 182
+Do you want to play again?(y,n)
+
