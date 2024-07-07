@@ -1,0 +1,21 @@
+Guess: 123
+You got 1 digits correct
+You got 1 digits in correct position
+Guess: 321
+You got 1 digits correct
+You got 1 digits in correct position
+Guess: 456
+You got 0 digits correct
+You got 0 digits in correct position
+Guess: 789
+You got 1 digits correct
+You got 1 digits in correct position
+Guess: 879
+You got 1 digits correct
+You got 1 digits in correct position
+Guess: 029
+Bad guess!
+The number needs to be 3-digit
+Guess: 229
+YOU WON!
+The correct number is indeed 229
