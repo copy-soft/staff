@@ -1,3 +1,4 @@
+//g++ structrw.cpp;./a.out
 // C program for reading
 // struct from a file
 #include <stdio.h>
