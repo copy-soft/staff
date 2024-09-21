@@ -1,0 +1,11 @@
+function озу { cat /root/.bash_history | grep $@ ; }
+export -f озу
+
+@> a
+.
+.
+.
+.
+.
+
+rnd();
