@@ -20,6 +20,6 @@ int result=foo::number()+bar::number();
 std::cout<<result<<std::endl;
 
 
+//return (-(-![]{}))-(-!(![]{}));
 return -(-![]{});
-
 }
