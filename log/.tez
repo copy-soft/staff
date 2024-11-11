@@ -1,0 +1,12 @@
+function log4 { 
+                case $@ in
+                "") cat ~/.тезаурус | grep $(date +%F) ;; 
+                "задание") grep "задание" ~/.тезаурус ;;
+                *) case $1 in 
+                   "найти") grep ${@/"найти"}  ~/.тезаурус ;;
+                   *) echo $(date +%F) $(date +%T) $@ >> ~/.тезаурус ;;
+                   esac
+                esac
+                }
+export -f log4 
+
