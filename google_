@@ -1,10 +1,13 @@
-#для программы нужен https://github.com/MarioVilas/googlesearch
-#чтобы его установить нужно pip3 install google
+GREEN=$(tput setaf 2)
+RED=$(tput setaf 1)
+NC=$(tput sgr0)
+
 f=$(google $@ --stop=10)
+#f=$(cat 1.txt)
 declare -i i=0;
 for s in $f; 
 do
-echo $i $s
+echo "${GREEN} $i ${NC}" $s
 i=i+1
 done
 for num in {1..10};
