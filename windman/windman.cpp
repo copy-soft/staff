@@ -3,23 +3,17 @@
  * This software is in the public domain
  * and is provided AS IS, with NO WARRANTY. */
 
-#include <X11/Xlib.h>
-#include<stdio.h>
-#include<sys/types.h>
-#include <X11/Xutil.h>
-#include <unistd.h>
-#include <stdlib.h>
+#include "windman.h"
 //g++ -o windman -lX11 windman.cpp
 
 
-int argc =0;
-typedef enum RotationEnum { bottom_to_top, top_to_bottom } Rotation;
-
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
 
-class WindMan{
-  public:
-    WindMan(){
+class Gladius;
+
+
+
+Gladius::Gladius(){
 
 //dpy = XOpenDisplay(0x0);
 
@@ -28,18 +22,12 @@ class WindMan{
 
 
 
-         XGrabKey(dpy, XKeysymToKeycode(dpy, XStringToKeysym("F11")), Mod1Mask,
-                                             DefaultRootWindow(dpy), True, GrabModeAsync, GrabModeAsync);
-         XGrabKey(dpy, XKeysymToKeycode(dpy, XStringToKeysym("F12")), Mod1Mask,
-                                             DefaultRootWindow(dpy), True, GrabModeAsync, GrabModeAsync);
-         XGrabKey(dpy, XKeysymToKeycode(dpy, XStringToKeysym("F3")), Mod1Mask,
-                                             DefaultRootWindow(dpy), True, GrabModeAsync, GrabModeAsync);
-         XGrabKey(dpy, XKeysymToKeycode(dpy, XStringToKeysym("F4")), Mod1Mask,
-                                             DefaultRootWindow(dpy), True, GrabModeAsync, GrabModeAsync);
-         XGrabKey(dpy, XKeysymToKeycode(dpy, XStringToKeysym("F5")), Mod1Mask,
-                                             DefaultRootWindow(dpy), True, GrabModeAsync, GrabModeAsync);
-         XGrabKey(dpy, XKeysymToKeycode(dpy, XStringToKeysym("F6")), Mod1Mask,
-                                             DefaultRootWindow(dpy), True, GrabModeAsync, GrabModeAsync);
+         XGrabKey(dpy, XKeysymToKeycode(dpy, XStringToKeysym("F1")), AnyModifier,                                             DefaultRootWindow(dpy), True, GrabModeAsync, GrabModeAsync);
+         XGrabKey(dpy, XKeysymToKeycode(dpy, XStringToKeysym("F2")), AnyModifier,                                             DefaultRootWindow(dpy), True, GrabModeAsync, GrabModeAsync);
+         XGrabKey(dpy, XKeysymToKeycode(dpy, XStringToKeysym("F3")), AnyModifier,                                             DefaultRootWindow(dpy), True, GrabModeAsync, GrabModeAsync);
+         XGrabKey(dpy, XKeysymToKeycode(dpy, XStringToKeysym("F4")), AnyModifier,                                             DefaultRootWindow(dpy), True, GrabModeAsync, GrabModeAsync);
+         XGrabKey(dpy, XKeysymToKeycode(dpy, XStringToKeysym("F5")), AnyModifier,                                             DefaultRootWindow(dpy), True, GrabModeAsync, GrabModeAsync);
+         XGrabKey(dpy, XKeysymToKeycode(dpy, XStringToKeysym("F6")), AnyModifier,                                            DefaultRootWindow(dpy), True, GrabModeAsync, GrabModeAsync);
 
 
          XGrabKey (dpy, XKeysymToKeycode(dpy,XK_Tab), Mod1Mask, DefaultRootWindow(dpy), True, GrabModeAsync, GrabModeAsync);
@@ -47,11 +35,10 @@ class WindMan{
 
 
 
-         XGrabKey(dpy, XKeysymToKeycode(dpy, XStringToKeysym("F7")), Mod1Mask,
-                         DefaultRootWindow(dpy), True, GrabModeAsync, GrabModeAsync);
-         XGrabButton(dpy, 1, Mod1Mask, DefaultRootWindow(dpy), True,
+         XGrabKey(dpy, XKeysymToKeycode(dpy, XStringToKeysym("F7")), AnyModifier,          DefaultRootWindow(dpy), True, GrabModeAsync, GrabModeAsync);
+         XGrabButton(dpy, 1, AnyModifier, DefaultRootWindow(dpy), True,
                        ButtonPressMask|ButtonReleaseMask|PointerMotionMask, GrabModeAsync, GrabModeAsync, None, None);
-         XGrabButton(dpy, 3, Mod1Mask, DefaultRootWindow(dpy), True,
+         XGrabButton(dpy, 3, AnyModifier, DefaultRootWindow(dpy), True,
                        ButtonPressMask|ButtonReleaseMask|PointerMotionMask, GrabModeAsync, GrabModeAsync, None, None);
 
                         start.subwindow = None;
@@ -78,9 +65,37 @@ for(;;)
 
 //if (ev.xkey.keycode==XKeysymToKeycode(dpy, XStringToKeysym("F11"))) { }
 
-
-
+if (ev.xkey.keycode==68) {
+pid_t pid0 = fork();//create copy of current process
+if (pid0 == 0) {//if child
+const char *argv[] ={"vminus",NULL,NULL,NULL,NULL};
+execvp(argv[0], const_cast<char *const *>(argv));
+pid0=NULL;}
+}
 if (ev.xkey.keycode==69) {
+pid_t pid0 = fork();//create copy of current process
+if (pid0 == 0) {//if child
+const char *argv[] ={"vplus",NULL,NULL,NULL,NULL};
+execvp(argv[0], const_cast<char *const *>(argv));
+pid0=NULL;}
+}
+
+if (ev.xkey.keycode==67) {
+pid_t pid0 = fork();//create copy of current process
+if (pid0 == 0) {//if child
+const char *argv[] ={"vmute",NULL,NULL,NULL,NULL};
+execvp(argv[0], const_cast<char *const *>(argv));
+pid0=NULL;}
+}
+
+
+
+
+
+
+
+
+if (ev.xkey.keycode==70) {
 pid_t pid0 = fork();//create copy of current process
 if (pid0 == 0) {//if child
 const char *argv[] ={"st",NULL,NULL,NULL,NULL};
@@ -119,10 +134,10 @@ else if(ev.type == ButtonRelease)
 start.subwindow = None;
 }
 }
-void run(){}
+void Gladius::run(){}
 
 
-void x_alt_tab(Rotation r, Display *dpy, Window *wins, unsigned int nwins) {
+void Gladius::x_alt_tab(Rotation r, Display *dpy, Window *wins, unsigned int nwins) {
       Window *viewables[nwins], *w = 0;
       unsigned int vc = 0;
 
@@ -153,37 +168,15 @@ void x_alt_tab(Rotation r, Display *dpy, Window *wins, unsigned int nwins) {
       XSync(dpy, True);
 }
 
-Display *dpy = XOpenDisplay(0x0);
-XWindowAttributes attr;
-XButtonEvent start;
-XEvent ev;
-unsigned int nwins = 0;
-Window root, parent, *wins = 0;
-
-//thread terminal
-//thread browser
-
-};
-
-class task{
-task(){lunch}
-~task(){kill}
-public:
-};
-
-
-
-
-
 
 
 
 int main(void) {
 
 
-  WindMan *windman= new WindMan();
+  Gladius *gladius= new Gladius();
 
-  windman->run();
+  gladius->run();
 
 }
 
