@@ -1,2 +1,2 @@
 default:
-	g++ main.cpp ;./a.out
+	g++ mainu.cpp ;./a.out
