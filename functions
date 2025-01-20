@@ -1,17 +1,6 @@
-function googl {
-#10-строчный цветной графический консольный интерфейс для google search v49.0
 
-
-set -o nounset
-
-
-GREEN=$(tput setaf 2)
-RED=$(tput setaf 1)
-NC=$(tput sgr0)
-up='w'
-down='s'
-
-f=$(google $@ --stop=10)
+function games {
+f=(dfort_ factorio soft learn warcraft valheim crafttheworld)
 #f=$(cat 1.txt)
 declare -i i=0;
 declare -i j=0;
@@ -20,37 +9,38 @@ for num in {1..100000};
 do
 i=0;
 clear;
-for s in $f; 
+for s in ${f[*]}; 
 do
 #echo -e '\e[1;97;102m' $i '\e[0m' $s;
 if [ $i == $j ];
 then 
-echo -e '\e[1;97;102m' $i $s '\e[0m';
+echo -e '\e[1;30;44m' $i '\e[0m' '\e[1;30;44m'$s'\e[0m' ;
 else
-echo -e '\e[1;97;102m' $i '\e[0m' $s;
+echo -e '\e[1;30;44m' $i '\e[0m' $s;
 fi
 i=i+1
 done
 read -sN1 
-    echo "${REPLY}";
+    #echo "${REPLY}";
     case "${REPLY}" in
       A) j=j-1;i=0;;
       B) j=j+1;i=0;;
-      y)
+      " ")
 I=0;
-for h in $f; 
+for h in ${f[*]}; 
 do
 if [ $((I - j)) == 0 ];
 then 
-browser $h &
+$h &
 fi
 I=I+1
 done
-
     ;;
-
   esac
 done
-
 }
-export -f googl
+export -f games
+
+
+
+
