@@ -32,9 +32,9 @@ for s in $f;
 do
 if [ $i == $j ];
 then 
-echo -e '\e[1;31;45m' $i '\e[0m' '\e[1;31;45m'$s'\e[0m' ;
+echo -e '\e[1;31;102m' $i '\e[0m' '\e[1;31;102m'$s'\e[0m' ;
 else
-echo -e '\e[1;31;45m' $i '\e[0m' $s '\e[0m';
+echo -e '\e[1;31;102m' $i '\e[0m' $s '\e[0m';
 fi
 i=i+1
 done
