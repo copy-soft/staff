@@ -1,25 +1,21 @@
-#include <map>
-#include <vector>
-#include <stack>
-#include <iostream>
-//#include "math.h"
-//int _main();
-class Шуруп{
-public:
-Шуруп(char *x){материал=x;};
-char *мат(){return материал;};
-private:
-char *материал;
-};
-
-auto main() -> int {
+void run_chaotic(){}
+void display(){}
+void sleep(){}
 
 
-Шуруп шуруп = Шуруп("сталь");
+void fsm(){
+while(1){
+	run_chaotic();
+	display();
+	sleep();
+
+}
+}
 
 
-std::cout<<шуруп.мат()<<std::endl;
+int main(){
+
+fsm();
 
 return 0;
-
 }
