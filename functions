@@ -1,9 +1,7 @@
 function googl {
 #10-строчный цветной графический консольный интерфейс для google search
 
-
-
-f=$(google $@ --stop=10) & 
+google $@ --stop=10 > .result &
 BACK_PID=$!
 while kill -0 $BACK_PID ; do
 i=1
@@ -19,7 +17,9 @@ done
 
 
 
-#f=$(cat 1.txt)
+f=$(cat .result)
+
+
 declare -i i=0;
 declare -i j=0;
 declare -i I=0;
