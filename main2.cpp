@@ -35,16 +35,13 @@ int main(){
 	config_.reset(new HttpTransportLayerConfig);
 	HttpTransportFactory* factory = new CurlHttpTransportFactory(config_.get());
 	config_->ResetDefaultTransportFactory(factory);
+  util::Status status;
 	
+  HttpTransport* transport = config_->NewDefaultTransport(&status);
 
+string url = "http://www.google.ru";
 
-//HttpTransportFactory* factory = new HttpTransportFactory(config.get());
-	//config->ResetDefaultTransportFactory(factory);
-    
-string url = "http://www.google.com/cloudprint";
-    HttpTransport *transport;
-
-    //IllustrateGet(url.c_str(), transport);
+    IllustrateGet(url.c_str(), transport);
     return 0;
 
 }
