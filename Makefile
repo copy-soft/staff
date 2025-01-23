@@ -1,2 +1,2 @@
 default:
-	g++ mainu.cpp ;./a.out
+	g++ main5.cpp -lncurses
