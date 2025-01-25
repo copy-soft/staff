@@ -1,2 +1,1 @@
-default:
-	g++ main5.cpp -lncurses
+g++ main9.cpp -fpermissive -lX11
