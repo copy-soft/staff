@@ -1,64 +1,12 @@
-function googl {
-#10-строчный цветной графический консольный интерфейс для google search
-
-google $@ --stop=10 > .result &
-BACK_PID=$!
-while kill -0 $BACK_PID ; do
-i=1
-sp="/-\|"
-echo -n ' '
-while sleep 0.01 && kill -0 $BACK_PID 
-do
-    printf "\b${sp:i++%${#sp}:1}"
-done
-done
-
-
-
-
-
-f=$(cat .result)
-
-
-declare -i i=0;
-declare -i j=0;
-declare -i I=0;
-for num in {1..100000};
-do
-i=0;
-clear;
-echo -e '\e[1;97;40m' Результаты поиска: '\e[0m';
-for s in $f; 
-do
-if [ $i == $j ];
-then 
-echo -e '\e[1;31;102m' $i '\e[0m' '\e[1;31;102m'$s'\e[0m' ;
-else
-echo -e '\e[1;31;102m' $i '\e[0m' $s '\e[0m';
-fi
-i=i+1
-done
-read -sN1 
-    #echo "${REPLY}";
-    case "${REPLY}" in
-      A) j=j-1;i=0;;
-      B) j=j+1;i=0;;
-      " ")
-I=0;
-for h in $f; 
-do
-if [ $((I - j)) == 0 ];
-then 
-browser $h 2>/dev/null 1>/dev/null  &
-fi
-I=I+1
-done
-    ;;
-  esac
-done
-
+function work {  
+su -l -c "LD_LIBRARY_PATH=/usr/lib XDG_DATA_DIRS=/usr/share /usr/1cv8/x86_64/8.5.1.189/1cv8s DESIGNER /F'/home/pro/1C/work/' /ConfigurationRepositoryF '/home/pro/1C/ХранилищеРасшТехноРегион'  /ConfigurationRepositoryN 'Администратор' /ConfigurationRepositoryP '1' " root ; 
 }
-export -f googl
+export -f work
 
+
+function upload {
+su -l -c "LD_LIBRARY_PATH=/usr/lib XDG_DATA_DIRS=/usr/share /usr/1cv8/x86_64/8.5.1.189/1cv8s DESIGNER /F'/home/pro/1C/work' > /dev/null /DisableStartupMessages /DisableStartupDialogs /DumpCfg '/home/pro/1C/расширение/РасширениеТехноРегионВергун.cfe' -Extension 'РасширениеТехноРегионВергун'   " root;
+}
+export -f upload
 
 
