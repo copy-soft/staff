@@ -1,8 +1,8 @@
 #include <unistd.h>
 int main() {
-    int happily;
+    int успешность;
 
-    happily=sleep(1);
+    успешность=sleep(1);
 
-    return happily;
+    return успешность;
 }
