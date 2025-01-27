@@ -1,1 +1,1 @@
-g++ main9.cpp -fpermissive -lX11
+g++ main.cpp

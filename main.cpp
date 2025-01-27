@@ -1,21 +1,8 @@
-void run_chaotic(){}
-void display(){}
-void sleep(){}
+#include <unistd.h>
+int main() {
+    int happily;
 
+    happily=sleep(1);
 
-void fsm(){
-while(1){
-	run_chaotic();
-	display();
-	sleep();
-
-}
-}
-
-
-int main(){
-
-fsm();
-
-return 0;
+    return happily;
 }
