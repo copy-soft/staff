@@ -1,12 +1,21 @@
-function work {  
-su -l -c "LD_LIBRARY_PATH=/usr/lib XDG_DATA_DIRS=/usr/share /usr/1cv8/x86_64/8.5.1.189/1cv8s DESIGNER /F'/home/pro/1C/work/' /ConfigurationRepositoryF '/home/pro/1C/ХранилищеРасшТехноРегион'  /ConfigurationRepositoryN 'Администратор' /ConfigurationRepositoryP '1' " root ; 
+function d {  iptables -I INPUT -j DROP ;
+              iptables -I OUTPUT -j DROP ;
+                echo 1 > /var/run/drop.pid;
+                s;
 }
-export -f work
-
-
-function upload {
-su -l -c "LD_LIBRARY_PATH=/usr/lib XDG_DATA_DIRS=/usr/share /usr/1cv8/x86_64/8.5.1.189/1cv8s DESIGNER /F'/home/pro/1C/work' > /dev/null /DisableStartupMessages /DisableStartupDialogs /DumpCfg '/home/pro/1C/расширение/РасширениеТехноРегионВергун.cfe' -Extension 'РасширениеТехноРегионВергун'   " root;
+export -f d
+function a {  iptables -I INPUT -j ACCEPT ;
+              iptables -I OUTPUT -j ACCEPT ;
+                echo 0 > /var/run/drop.pid;
+                s;
 }
-export -f upload
-
+export -f a
+function s {
+                CAS=$(cat /var/run/drop.pid);
+                case $CAS in
+                "0") echo "ACCEPT";;
+                "1") echo "DROP";;
+                esac;
+}
+export -f s
 
