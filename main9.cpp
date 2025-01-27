@@ -32,7 +32,16 @@ main(int argc, char **argv) {
     ximg = XCreateImage(dpy, CopyFromParent, depth, ZPixmap, 0, img, w, h, 32, 0);
     pm = XCreatePixmap(dpy, root, w, h, depth);
     gc = XCreateGC(dpy, pm, 0, NULL);
-    XDrawLine(dpy, root, gc, 100, 100, 200, 200);
+    XDrawLine(dpy, root, gc, 100, 100, 200, 100);
+    XDrawLine(dpy, root, gc, 100, 120, 190, 120);
+    XDrawLine(dpy, root, gc, 100, 120, 100, 100);
+    XDrawLine(dpy, root, gc, 200, 100, 200, 110);
+
+    XMapWindow(dpy, root);
+
+    XFlush(dpy);
+    //XDrawArc(dpy, root, gc, 50-(30/2), 100-(30/2), 30, 30, 0, 360*64);
+    //XFlush(dpy);
     //XPutImage(dpy, pm, gc, ximg, 0, 0, 0, 0, w, h);
     //XCopyArea(dpy, pm, root, gc, 0, 0, w, h, 0, 0);
     //free(img);
