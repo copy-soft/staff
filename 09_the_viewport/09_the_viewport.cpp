@@ -13,11 +13,35 @@ and may not be redistributed without written permission.*/
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
 
+enum KeyPressSurfaces
+{
+        KEY_PRESS_SURFACE_DEFAULT,
+        KEY_PRESS_SURFACE_UP,
+        KEY_PRESS_SURFACE_DOWN,
+        KEY_PRESS_SURFACE_LEFT,
+        KEY_PRESS_SURFACE_RIGHT,
+        KEY_PRESS_SURFACE_TOTAL
+};
+
+
+//Current displayed image
+SDL_Surface* gCurrentSurface = NULL;
+
+//The surface contained by the window
+SDL_Surface* gScreenSurface = NULL;
+
+//The images that correspond to a keypress
+SDL_Surface* gKeyPressSurfaces[ KEY_PRESS_SURFACE_TOTAL ];
+
+
 //Starts up SDL and creates window
 bool init();
 
 //Loads media
 bool loadMedia();
+
+//Loads individual image
+SDL_Surface* loadSurface( int path );
 
 //Frees media and shuts down SDL
 void close();
@@ -34,6 +58,8 @@ SDL_Renderer* gRenderer = NULL;
 //Current displayed texture
 SDL_Texture* gTexture = NULL;
 SDL_Texture* gTexture2 = NULL;
+
+SDL_Rect topLeftViewport;
 
 bool init()
 {
@@ -85,6 +111,63 @@ bool init()
 			}
 		}
 	}
+	
+	   //Load default surface
+        gKeyPressSurfaces[ KEY_PRESS_SURFACE_DEFAULT ] = loadSurface( KEY_PRESS_SURFACE_DEFAULT );
+        if( gKeyPressSurfaces[ KEY_PRESS_SURFACE_DEFAULT ] == NULL )
+        {
+                printf( "Failed to load default image!\n" );
+                //success = false;
+        }
+
+        //Load up surface
+        gKeyPressSurfaces[ KEY_PRESS_SURFACE_UP ] = loadSurface( KEY_PRESS_SURFACE_UP );
+        if( gKeyPressSurfaces[ KEY_PRESS_SURFACE_UP ] == NULL )
+        {
+                printf( "Failed to load up image!\n" );
+                //success = false;
+        }
+
+        //Load down surface
+        gKeyPressSurfaces[ KEY_PRESS_SURFACE_DOWN ] = loadSurface( KEY_PRESS_SURFACE_DOWN );
+        if( gKeyPressSurfaces[ KEY_PRESS_SURFACE_DOWN ] == NULL )
+        {
+                printf( "Failed to load down image!\n" );
+                //success = false;
+        }
+
+        //Load left surface
+        gKeyPressSurfaces[ KEY_PRESS_SURFACE_LEFT ] = loadSurface( KEY_PRESS_SURFACE_LEFT );
+        if( gKeyPressSurfaces[ KEY_PRESS_SURFACE_LEFT ] == NULL )
+        {
+                printf( "Failed to load left image!\n" );
+                //success = false;
+        }
+
+        //Load right surface
+        gKeyPressSurfaces[ KEY_PRESS_SURFACE_RIGHT ] = loadSurface( KEY_PRESS_SURFACE_RIGHT );
+        if( gKeyPressSurfaces[ KEY_PRESS_SURFACE_RIGHT ] == NULL )
+        {
+                printf( "Failed to load right image!\n" );
+                //success = false;
+        }
+
+
+
+
+
+                                topLeftViewport.x = 0;
+                                topLeftViewport.y = 0;
+                                topLeftViewport.w = 30;
+                                topLeftViewport.h = 60;
+
+
+
+
+
+
+
+
 
 	return success;
 }
@@ -106,6 +189,47 @@ bool loadMedia()
 	//Nothing to load
 	return success;
 }
+
+SDL_Surface* loadSurface( int path )
+{
+        //Load image at specified path
+        SDL_Surface* loadedSurface = NULL;
+        switch (path){
+		case KEY_PRESS_SURFACE_DEFAULT:
+		break;
+                case KEY_PRESS_SURFACE_UP:
+		topLeftViewport.x=+10;
+		break;
+                case KEY_PRESS_SURFACE_DOWN:
+                printf("twt");
+		topLeftViewport.x=-10;
+		break;
+                case KEY_PRESS_SURFACE_LEFT:
+                topLeftViewport.y=+10;
+		break;
+                case KEY_PRESS_SURFACE_RIGHT:
+                topLeftViewport.y=-10;
+		break;
+
+
+
+
+	}
+
+
+
+	//if( loadedSurface == NULL )
+        //{
+        //        printf( "Unable to load image %s! SDL Error: %s\n", path.c_str(), SDL_GetError() );
+        //}
+
+        return loadedSurface;
+}
+
+
+
+
+
 
 void close()
 {
@@ -183,19 +307,50 @@ int main( int argc, char* args[] )
 					if( e.type == SDL_QUIT )
 					{
 						quit = true;
-					}
+					} 
+					if( e.type == SDL_KEYDOWN )
+                                        {
+                                                //Select surfaces based on key press
+                                                switch( e.key.keysym.sym )
+                                                {
+                                                        case SDLK_UP:
+                                                        topLeftViewport.y-=10;
+ 
+                                                        break;
+
+                                                        case SDLK_DOWN:
+                                                        topLeftViewport.y+=10;
+
+                                                        break;
+
+                                                        case SDLK_LEFT:
+                                                        topLeftViewport.x-=10;
+                                                        break;
+
+                                                        case SDLK_RIGHT:
+                                                        topLeftViewport.x+=10;
+                                                        break;
+
+                                                        default:
+                                                        gCurrentSurface = gKeyPressSurfaces[ KEY_PRESS_SURFACE_DEFAULT ];
+                                                        break;
+                                                }
+                                        }
+
 				}
+
+				
 
 				//Clear screen
 				SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
 				SDL_RenderClear( gRenderer );
 
 				//Top left corner viewport
-				SDL_Rect topLeftViewport;
-				topLeftViewport.x = 0;
-				topLeftViewport.y = 0;
-				topLeftViewport.w = 30;
-				topLeftViewport.h = 60;
+				//SDL_Rect topLeftViewport;
+				//topLeftViewport.x = 0;
+				//topLeftViewport.y = 0;
+				//topLeftViewport.w = 30;
+				//topLeftViewport.h = 60;
 				SDL_RenderSetViewport( gRenderer, &topLeftViewport );
 				
 				//Render texture to screen
@@ -213,11 +368,6 @@ int main( int argc, char* args[] )
 				//Render texture to screen
 				SDL_RenderCopy( gRenderer, gTexture2, NULL, NULL );
 
-				for(int i=0;i<300;i++)
-				{topLeftViewport.x = i;
-                                //topLeftViewport.y = 0;
-                                //topLeftViewport.w = 30;
-                                //topLeftViewport.h = 60;
                                 SDL_RenderSetViewport( gRenderer, &topLeftViewport );
 				usleep(10000);
 				
@@ -225,22 +375,22 @@ int main( int argc, char* args[] )
                                 SDL_RenderCopy( gRenderer, gTexture, NULL, NULL );
 
 				//Update screen
-				SDL_RenderPresent( gRenderer );}
+				SDL_RenderPresent( gRenderer );
 
-				for(int j=0;j<300;j++)
-                                {//topLeftViewport.x = 300;
-                                topLeftViewport.y = j;
-                                //topLeftViewport.w = 30;
-                                //topLeftViewport.h = 60;
-                                SDL_RenderSetViewport( gRenderer, &topLeftViewport );
-                                usleep(10000);
+				SDL_RenderSetViewport( gRenderer, &topLeftViewport );
+                                //usleep(10000);
 
                                 //Render texture to screen
                                 SDL_RenderCopy( gRenderer, gTexture, NULL, NULL );
 
                                 //Update screen
-                                SDL_RenderPresent( gRenderer );}
+                                SDL_RenderPresent( gRenderer );
 
+				                                //Apply the current image
+                                SDL_BlitSurface( gCurrentSurface, NULL, gScreenSurface, NULL );
+
+                                //Update the surface
+                                SDL_UpdateWindowSurface( gWindow );
 
 
 			}
