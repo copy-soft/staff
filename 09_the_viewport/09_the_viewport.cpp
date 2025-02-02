@@ -314,21 +314,21 @@ int main( int argc, char* args[] )
                                                 switch( e.key.keysym.sym )
                                                 {
                                                         case SDLK_UP:
-                                                        topLeftViewport.y-=10;
+                                                        topLeftViewport.y-=5;
  
                                                         break;
 
                                                         case SDLK_DOWN:
-                                                        topLeftViewport.y+=10;
+                                                        topLeftViewport.y+=5;
 
                                                         break;
 
                                                         case SDLK_LEFT:
-                                                        topLeftViewport.x-=10;
+                                                        topLeftViewport.x-=5;
                                                         break;
 
                                                         case SDLK_RIGHT:
-                                                        topLeftViewport.x+=10;
+                                                        topLeftViewport.x+=5;
                                                         break;
 
                                                         default:
