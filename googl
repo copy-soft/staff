@@ -1,8 +1,12 @@
 function поиск {
+#10-строчный цветной графический консольный интерфейс для google search
 clear;
 echo -e '\e[1;31;102m' введите запрос: '\e[0m';
+query=$@
+if [ $@ == "" ];
+then
 read query;
-
+fi
 
 google $query --stop=10 > .result &
 BACK_PID=$!
