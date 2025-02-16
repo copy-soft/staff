@@ -49,7 +49,7 @@ main(int argc, char **argv) {
 	for(int i=-100;i<=100;i++){
 	//if(i>12)j=i-12;
 	//XDrawLine(dpy, root, gc, 100, 100+i, 200-j, 100+i);
-	XDrawPoint(dpy, root, gc, 200+    i,200+     (-i));	
+	XDrawPoint(dpy, root, gc, 200+    i+100,200+     (-i)+100);	
         XDrawPoint(dpy, root, gc, 200+    i,200+     -(-i));
 
 
