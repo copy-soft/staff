@@ -11,7 +11,7 @@
 void close_file(std::FILE* fp)
 {
 
-	std::fclose(s);
+	std::fclose(fp);
 }
  
 // unique_ptr-based linked list demo
@@ -22,7 +22,7 @@ int main()
     std::ofstream("demo.txt") << 'x'; // prepare the file to read
     
         using unique_file_t = std::unique_ptr<std::FILE, decltype(&close_file)>;
-        unique_file_t fp(std::fopen("demo.txt", "r"), &close_file);
+        unique_file_t fp(std::fopen("demo.txt", "r"), close_file);
         if (fp)
             std::cout << char(std::fgetc(fp.get())) << '\n';
      	//std::FILE *s = fp.get();
