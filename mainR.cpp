@@ -1,3 +1,4 @@
+#include <iostream>
 template <class T>
 class i_am_class{
 public:
@@ -7,8 +8,8 @@ enum ee{
 void f(){
 
 using ee = i_am_class<T>::ee;
-ee e=hello;
-
+ee e =hello;
+std::cout<<e<<std::endl;
 }
 
 
