@@ -1,6 +1,18 @@
+"C:\Program Files\1cv8\8.3.21.1709\bin\1cv8.exe" Config /F ПутьКФайлуБД /DumpConfigToFiles "ПутьККаталогуВыгрузки" -Format Hierarchical -Extension EnglishCodeAdapter
+"C:\Program Files\1cv8\8.3.21.1709\bin\1cv8.exe" Config /F ПутьКФайлуБД /LoadConfigFromFiles "ПутьККаталогуВыгрузки" -Extension EnglishCodeAdapter /UpdateDBCfg -Dynamic-
+
+
+идем по графику
+
+
+09.02.2025 доделать форматер
+
+
 тайна квадрата
 
+Выбор стратегии и принятие решения
 
+спам
                 	     качеств.(строки)
 
 			мин	сред	макс
@@ -20,3 +32,33 @@
 удаление  |
 сортировка| 
 обход 	  |
+
+заапгрейдить алгоритм, на ssd и описка (предел отношений)
+
+РП(рабочий прогресс):
+
+рассылка old v0.56.4  new v0.59.0 
+
+STATUS
+planing			анализ требований
+defining		определение требований
+design			проектирование архитектуры
+development		разработка проекта coding standart version controli  code review
+system testing		тестипрвание    manual  automated
+demloyment & maintenace	развертывание release planning feedback
+
+
+
+			schedule
+
+feature    	status		  target	prio	
+----------------------------------------------------------
+update func(TODO) planing	0.59.0 		low
+tree fix	planing		0....		medium
+buttons		planing		0....		high
+GC		defining	0.59.0		hugh
+
+
+
+
+след версия - максимум и  сумма
