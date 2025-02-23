@@ -1,13 +1,17 @@
 template <class T>
 class i_am_class{
 public:
-enum class ee{
+enum ee{
 	hello
 };
 void f(){
 
 using ee = i_am_class<T>::ee;
+ee e=hello;
+
 }
+
+
 
 };
 
@@ -18,5 +22,5 @@ i_am_class<int>().f();
 
 int main(){
 
-
+f();
 }
